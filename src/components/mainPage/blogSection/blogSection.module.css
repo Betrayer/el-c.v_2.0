@@ -2,6 +2,7 @@
   width: 100%;
   background-color: rgb(235, 150, 150);
   margin-bottom: 100px;
+  position: relative;
 }
 
 .blogHeader {
@@ -37,6 +38,17 @@
 
 .postText {
   text-align: center;
+}
+
+.buttonWrapper {
+  position: absolute;
+  width: 120%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  left: -10%;
+  transform: translateY(-50%);
 }
 
 @media (min-width: 768px) {
