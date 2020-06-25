@@ -1,0 +1,49 @@
+#tsparticles,
+.particles {
+  background: url(../../assets/photos/toucan3.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  /* background-color: #ccc; */
+  /* width:100vw; */
+  height: calc(100vh - 68px);
+  top: 68px;
+}
+.wrapper {
+  position: absolute;
+  top: 400px;
+  /* left: -webkit-calc(50% - 140px);
+  left: -moz-calc(50% - 140px); */
+  left: calc(50% - 140px);
+  /* transform: translateX(-50%); */
+  width: 280px;
+  text-align: center;
+}
+.text {
+  color: #fff;
+  mix-blend-mode: difference;
+  font-size: 46px;
+  font-weight: 800;
+}
+/* canvas{
+  position: relative;
+}
+.particles:after{
+  content: "веб студия";
+  position: absolute;
+  color: #fff;
+  width: 280px;
+  top: 120px;
+  left: calc(50% - 140px);
+  font-size: 46px;
+
+  mix-blend-mode: difference;
+  font-weight: 800;
+} */
+@media (min-width: 1200px) {
+  #tsparticles,
+.particles {
+  height: calc(100vh - 100px);
+  top: 100px;
+}
+}

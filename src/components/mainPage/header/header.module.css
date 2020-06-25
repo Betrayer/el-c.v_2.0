@@ -1,0 +1,235 @@
+.triggerMenuWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  z-index: 2;
+  background: #fff;
+  transition: transform 0.4s;
+  box-shadow: 0px 0px 29px -3px rgba(204, 204, 204, 1);
+  height: 60px;
+}
+
+.triggerMenu {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #000;
+}
+.nav {
+  display: none;
+}
+.menu,
+.menuActive {
+  width: 30px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-appearence: none;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 3;
+}
+
+.menuSvg {
+  width: 56px;
+  height: 40px;
+  top: -6px;
+  left: -14px;
+  stroke: #000;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: block;
+  position: absolute;
+}
+
+.menuSvg path {
+  -webkit-transition: stroke-dasharray var(--duration, 0.85s)
+      var(--easing, ease) var(--delay, 0s),
+    stroke-dashoffset var(--duration, 0.85s) var(--easing, ease)
+      var(--delay, 0s);
+  transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease)
+      var(--delay, 0s),
+    stroke-dashoffset var(--duration, 0.85s) var(--easing, ease)
+      var(--delay, 0s);
+  stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+  stroke-dashoffset: var(--offset, 126px);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.menuSvg path:nth-child(2) {
+  --duration: 0.7s;
+  --easing: ease-in;
+  --offset: 100px;
+  --array-2: 74px;
+}
+
+.menuSvg path:nth-child(3) {
+  --offset: 133px;
+  --array-2: 107px;
+}
+
+.menuActive .menuSvg path {
+  --offset: 57px;
+}
+
+.menuActive .menuSvg path:nth-child(1),
+.menuActive .menuSvg path:nth-child(3) {
+  --delay: 0.15s;
+  --easing: cubic-bezier(0.2, 0.4, 0.2, 1.1);
+}
+
+.menuActive .menuSvg path:nth-child(2) {
+  --duration: 0.4s;
+  --offset: 2px;
+  --array-1: 1px;
+}
+
+.menuActive .menuSvg path:nth-child(3) {
+  --offset: 58px;
+}
+
+.scrollDown .triggerMenuWrapper {
+  transform: translate3d(0, -100%, 0);
+  box-shadow: none;
+}
+
+.scrollUp .triggerMenuWrapper {
+  transform: translate(0, 0%);
+}
+.menuSocialsList {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .triggerMenuWrapper {
+    height: 100px;
+    padding: 0 50px;
+  }
+  .menu {
+    display: none;
+  }
+  .logo {
+    width: 170px;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  .menuNavList {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+  .menuSocialsLinkActive {
+    transform: scale(1);
+    transition: all 0.3s;
+  }
+  .menuSocialsLinkActive:hover {
+    transform: scale(1.1);
+    color: #40bad5;
+  }
+  .menuSocialsList {
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+  }
+  .menuSocialsLink {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .menuSocialsCircle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+  .menuSocialsLink,
+  .menuSocialsLink:before {
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  }
+  .menuSocialsLink,
+  .menuSocialsLink:before {
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  }
+  .menuSocialsLink::after {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-image: url(../../../assets/icons/socials/facebook.svg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s;
+  }
+  .menuSocialsLink:nth-child(1)::after {
+    background-image: url(../../../assets/icons/socials/twitter.svg);
+  }
+  .menuSocialsLink:nth-child(3)::after {
+    background-image: url(../../../assets/icons/socials/instagram.svg);
+  }
+  .menuSocialsLink:before {
+    top: 90%;
+    left: -110%;
+  }
+  .menuSocialsLink:focus:before,
+  .menuSocialsLink:hover:before {
+    top: -10%;
+    left: -10%;
+  }
+  .menuSocialsLink:before {
+    content: "";
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .menuSocialsLink:before {
+    background-color: #3b5998;
+  }
+  .menuSocialsLink:nth-child(1)::before {
+    background-color: #3cf;
+  }
+  .menuSocialsLink:nth-child(3)::before {
+    background: linear-gradient(#4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
+  }
+  .menuSocialsLink:focus,
+  .menuSocialsLink:hover {
+    transform: scale(1.26);
+  }
+  .menuSocialsLink:focus::after,
+  .menuSocialsLink:hover::after {
+    background-image: url(../../../assets/icons/socials/facebookWh.svg);
+  }
+  .menuSocialsLink:nth-child(1):focus::after,
+  .menuSocialsLink:nth-child(1):hover::after {
+    background-image: url(../../../assets/icons/socials/twitterWh.svg);
+  }
+  .menuSocialsLink:nth-child(3):focus::after,
+  .menuSocialsLink:nth-child(3):hover::after {
+    background-image: url(../../../assets/icons/socials/instagramWh.svg);
+  }
+}

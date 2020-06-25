@@ -1,0 +1,183 @@
+.innerContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.circle, .circleExpand{
+    transition-delay: 0.3s;
+    border-radius: 50%;
+	width: 0px;
+	height: 0px; 
+	position:fixed;
+	top: 35px;
+	right: 0;
+	background:#fff;
+	opacity:1;
+	-webkit-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+	   -moz-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+	    -ms-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+	     -o-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+	        transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);	
+}
+.circleExpand{
+	width:1200px;
+	height:1200px;
+	top: -160px;
+	right: -460px; 	
+}
+ .linksWrapper{
+    /* display: none; */
+    opacity: 0;
+}
+ .linksWrapperActive{
+    position: absolute; 
+     /* top: 560px;
+    left: 33%; */
+    transition: all 0.4s ease;
+    opacity: 1;
+    transition-delay: 0.6s;
+    top: 70px;
+    left: 30px;
+}
+.menuPageLink,
+.menuSocialsLinkActive {
+  cursor: pointer;
+  font-size: 38px;
+  transform: translateX(-100%);
+  line-height: 80px;
+  position: relative;
+  display: block;
+}
+@keyframes slideIn {
+    0% {
+      transform: translateX(-82%);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .menuSocialsLinkActive {
+    transform: translateX(0%);
+    animation-name: slideIn;
+    animation-duration: 0.7s;
+    animation-timing-function: forwards;
+    transition: all 0.3s;
+    width: 200px;
+  }
+  .menuSocialsLinkActive:hover {
+    transform: translateX(3%);
+    color: #40bad5;
+  }
+  .menuSocials {
+    margin-top: 70px;
+  }
+  .menuSocialsTitle {
+    padding: 10px 0;
+  }
+  .menuSocialsList {
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+  }
+  .menuSocialsLink {
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .menuSocialsCircle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+  .menuSocialsLink,
+  .menuSocialsLink:before {
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  }
+  .menuSocialsLink,
+  .menuSocialsLink:before {
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  }
+  .menuSocialsLink::after {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-image: url(../../../assets/icons/socials/facebook.svg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s;
+  }
+  .menuSocialsLink:nth-child(1)::after {
+    background-image: url(../../../assets/icons/socials/twitter.svg);
+  }
+  .menuSocialsLink:nth-child(3)::after {
+    background-image: url(../../../assets/icons/socials/instagram.svg);
+  }
+  .menuSocialsLink:before {
+    top: 90%;
+    left: -110%;
+  }
+  .menuSocialsLink:focus:before,
+  .menuSocialsLink:hover:before {
+    top: -10%;
+    left: -10%;
+  }
+  .menuSocialsLink:before {
+    content: "";
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .menuSocialsLink:before {
+    background-color: #3b5998;
+  }
+  .menuSocialsLink:nth-child(1)::before {
+    background-color: #3cf;
+  }
+  .menuSocialsLink:nth-child(3)::before {
+    background: linear-gradient(#4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
+  }
+  .menuSocialsLink:focus,
+  .menuSocialsLink:hover {
+    transform: scale(1.26);
+  }
+  .menuSocialsLink:focus::after,
+  .menuSocialsLink:hover::after {
+    background-image: url(../../../assets/icons/socials/facebookWh.svg);
+  }
+  .menuSocialsLink:nth-child(1):focus::after,
+  .menuSocialsLink:nth-child(1):hover::after {
+    background-image: url(../../../assets/icons/socials/twitterWh.svg);
+  }
+  .menuSocialsLink:nth-child(3):focus::after,
+  .menuSocialsLink:nth-child(3):hover::after {
+    background-image: url(../../../assets/icons/socials/instagramWh.svg);
+  }
+  @media (min-width: 500px){
+    .circleExpand{
+      width:1400px;
+      height:1400px;
+      right: -260px; 	
+    }
+  }
+  @media (min-width: 1000px){
+    .circleExpand{
+      width:1600px;
+      height:1600px;
+      top: -260px;
+      right: -160px; 	
+    }
+  }
