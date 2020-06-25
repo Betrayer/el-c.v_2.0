@@ -1,5 +1,5 @@
 import React from "react";
-import  "./app.css";
+import "./app.css";
 import Header from "./components/header/Header";
 import ToucanPanel from "./components/toucanPanel/ToucanPanel";
 
