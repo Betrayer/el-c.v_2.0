@@ -54,6 +54,7 @@ const BlogSection = () => {
       <h2 className={css.blogHeader}>Наш блог</h2>
       <ul className={css.postsList}>
         {totalPosts.slice(0, 2).map((post) => (
+
           <li key={post.id} className={css.postsListItem}>
             {post.img ? (
               <img
