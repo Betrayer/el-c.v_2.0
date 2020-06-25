@@ -1,0 +1,27 @@
+.triggerMenuWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    z-index: 2;
+    background: #fff;
+    transition: transform 0.4s;
+    box-shadow: 0px 10px 29px -3px rgba(204,204,204,1);
+    height: 70px;
+  }
+   
+ .triggerMenu {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #000;
+  }
+   
+.triggerMenu svg {
+    fill: #000;
+    margin-right: 5px;
+    transition: transform 0.3s;
+  }
