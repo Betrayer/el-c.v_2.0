@@ -1,16 +1,20 @@
 import React from "react";
-import "./app.css";
-import Header from "./components/header/Header";
-import ToucanPanel from "./components/toucanPanel/ToucanPanel";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useRouter } from "./components/router/router";
+import Header from "./components/mainPage/header/Header";
+import Footer from "./components/mainPage/footer/Footer";
+import css from "./app.module.css";
+// import ToucanPanel from "./components/toucanPanel/ToucanPanel";
 
-const App = () => {
+const App = (props) => {
+  const routing = useRouter(props);
   return (
     <>
-      {/* <h2>I am app {"&"} main</h2>
-      <h2>bohdan was here</h2> */}
       <Header />
-      <ToucanPanel />
+      <Router>{routing}</Router>
+      <Footer />
     </>
+    //     {/* <ToucanPanel /> */}
   );
 };
 
