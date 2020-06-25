@@ -1,0 +1,9 @@
+#tsparticles {
+    background: url(../../assets/photos/toucan.png) ;
+    background-size: contain;
+    background-position: 50% 50%;
+    /* position: absolute; */
+    /* background-color: #ccc; */
+    top: 0;
+    /* width:100vw; */
+  }
