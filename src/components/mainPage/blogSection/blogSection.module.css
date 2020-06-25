@@ -1,0 +1,65 @@
+.blogSection {
+  width: 100%;
+  background-color: rgb(235, 150, 150);
+  margin-bottom: 100px;
+}
+
+.blogHeader {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.postsList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postsListItem {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.listHeader {
+  text-align: center;
+}
+
+.postImg {
+  height: 200px;
+  width: 200px;
+}
+
+.postText {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .postsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: unset;
+    justify-content: space-around;
+  }
+
+  .postsListItem {
+    width: 40%;
+  }
+
+  .postImg {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .postImg {
+    height: 300px;
+    width: 300px;
+  }
+}
