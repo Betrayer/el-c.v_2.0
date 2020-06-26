@@ -70,8 +70,12 @@
     transform: translateX(3%);
     color: #40bad5;
   }
-  .menuSocials {
+  .menuSocials, .menuSocialsActive {
     margin-top: 70px;
+    display: none;
+  }
+  .menuSocialsActive{
+    display: block;
   }
   .menuSocialsTitle {
     padding: 10px 0;
