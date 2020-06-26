@@ -29,7 +29,24 @@
   align-items: center;
   margin-bottom: 20px;
 }
-
+.copyright{
+  width: 50px;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.path{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.copyright:hover .path{
+  animation: dash 5s linear alternate infinite;
+}
 @media (min-width: 768px) {
   .servicesList {
     flex-direction: row;
