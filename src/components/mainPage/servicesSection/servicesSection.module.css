@@ -6,13 +6,13 @@
 .contentWrapper {
   width: 100%;
   height: 100%;
-  background-color: rgb(144, 196, 76);
+  text-align: center;
 }
 
 .servicesHeader {
-  text-align: center;
   padding-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 28px;
 }
 
 .servicesList {
@@ -27,10 +27,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  max-width: 240px;
 }
-.copyright{
+.servicesText{
+  font-size: 18px;
+}
+.icon{
   width: 50px;
+  margin-bottom: 16px;
 }
 @keyframes dash {
   from {
@@ -40,13 +45,14 @@
     stroke-dashoffset: 0;
   }
 }
-.path{
+path, g{
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
 }
-.copyright:hover .path{
+.copyright:hover path,.copyright:hover g{
   animation: dash 5s linear alternate infinite;
 }
+
 @media (min-width: 768px) {
   .servicesList {
     flex-direction: row;

@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 .circle, .circleExpand{
     transition-delay: 0.3s;
@@ -27,8 +27,11 @@
 	right: -460px; 	
 }
  .linksWrapper{
-    /* display: none; */
     opacity: 0;
+    height: 10px;
+}
+.menuNav{
+  height: 10px;
 }
  .linksWrapperActive{
     position: absolute; 
