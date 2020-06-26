@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { navLink, NavLink } from "react-router-dom";
+import React from "react";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import posts from "../../../postsRus.json";
 import css from "./blogSection.module.css";
 
 const BlogSection = () => {
-  const [totalPosts, setTotalPosts] = useState([]);
 
   return (
-    <section className={css.blogSection}>
+    <section id="blog" className={css.blogSection}>
       <h2 className={css.blogHeader}>Наш блог</h2>
       <ul className={css.postsList}>
         <AwesomeSlider>
-          {totalPosts.slice(0, 3).map((post) => (
+          {posts.slice(0, 3).map((post) => (
             <li key={post.id} className={css.postsListItem}>
               {post.img ? (
                 <img
