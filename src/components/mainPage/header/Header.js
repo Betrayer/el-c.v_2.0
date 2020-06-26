@@ -7,21 +7,21 @@ const Header = () => {
   const defLangState = "rus";
   const menuLinksRus = [
     // { name: "Портфолио", redirect: "/portfolio" },
-    { name: "Услуги", redirect: "/services" },
-    { name: "О нас", redirect: "/about" },
-    { name: "Блог", redirect: "/blog" },
+    { name: "Услуги", redirect: "services" },
+    { name: "О нас", redirect: "about" },
+    { name: "Блог", redirect: "blog" },
   ];
   const menuLinksUkr = [
     // { name: "Портфоліо", redirect: "/portfolio" },
-    { name: "Послуги", redirect: "/services" },
-    { name: "Про нас", redirect: "/about" },
-    { name: "Блог", redirect: "/blog" },
+    { name: "Послуги", redirect: "services" },
+    { name: "Про нас", redirect: "about" },
+    { name: "Блог", redirect: "blog" },
   ];
   const menuLinksEng = [
     // { name: "Portfolio", redirect: "/portfolio" },
-    { name: "Services", redirect: "/services" },
-    { name: "About us", redirect: "/about" },
-    { name: "Blog", redirect: "/blog" },
+    { name: "Services", redirect: "services" },
+    { name: "About us", redirect: "about" },
+    { name: "Blog", redirect: "blog" },
   ];
   const [active, setActive] = useState(false);
   const [header, setHeader] = useState(true);
@@ -79,15 +79,14 @@ const Header = () => {
               {defLangState === "rus" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksRus.map((link, ind) => (
-                    <NavLink
-                      to={link.redirect}
+                    <li
                       key={ind}
                       className={styles.menuSocialsLinkActive}
                     >
-                      <span className={styles.menuPageLinkText}>
+                      <a href="#" className={styles.menuPageLinkText}>
                         {link.name}
-                      </span>
-                    </NavLink>
+                      </a>
+                    </li>
                   ))}
                 </ul>
               ) : (
@@ -96,15 +95,14 @@ const Header = () => {
               {defLangState === "ukr" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksUkr.map((link, ind) => (
-                    <NavLink
-                      to={link.redirect}
+                    <li
                       key={ind}
                       className={styles.menuSocialsLinkActive}
                     >
                       <span className={styles.menuPageLinkText}>
                         {link.name}
                       </span>
-                    </NavLink>
+                    </li>
                   ))}
                 </ul>
               ) : (
@@ -113,15 +111,14 @@ const Header = () => {
               {defLangState === "en" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksEng.map((link, ind) => (
-                    <NavLink
-                    to={link.redirect}
+                    <li
                     key={ind}
                     className={styles.menuSocialsLinkActive}
                   >
                       <span className={styles.menuPageLinkText}>
                         {link.name}
                       </span>
-                    </NavLink>
+                    </li>
                   ))}
                 </ul>
               ) : (
