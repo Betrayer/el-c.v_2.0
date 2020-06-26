@@ -321,10 +321,10 @@ const ToucanPanel = () => {
         interactivity: {
           detectsOn: "canvas",
           events: {
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
+            // onClick: {
+            //   enable: true,
+            //   mode: "push",
+            // },
             onDiv: {
               elementId: "text",
               enable: true,
@@ -582,7 +582,7 @@ const ToucanPanel = () => {
     {/* <div id="text" className={styles.wrapper}>
       <p className={styles.text}>веб студия</p>
     </div> */}
-    <button className={styles.startBtn}>РОЗПОЧАТИ</button>
+    {/* <button className={styles.startBtn}>РОЗПОЧАТИ</button> */}
     </>
   );
 };
