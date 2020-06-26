@@ -88,7 +88,7 @@ const ExtendedMenu = ({ activeMenu }) => {
       ) : (
         <></>
       )}
-      <div className={styles.menuSocials}>
+      <div className={activeMenu ? styles.menuSocialsActive : styles.menuSocials}>
               <h3 className={styles.menuSocialsTitle}>
                 {defLangState === "rus" ? "Мы в соцсетях" : ""}
                 {defLangState === "ukr" ? "Ми в соцмережах" : ""}

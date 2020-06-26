@@ -60,7 +60,7 @@ const ToucanPanel = () => {
                 distance: 400,
                 duration: 10,
                 opacity: 1,
-                size: 140,
+                size: 200,
               },
               connect: {
                 distance: 80,
@@ -268,7 +268,7 @@ const ToucanPanel = () => {
                 enable: true,
                 minimumValue: 1,
               },
-              value: 13,
+              value: 8,
             },
             stroke: {
               color: {
