@@ -1,6 +1,6 @@
 #tsparticles,
 .particles {
-  background: url(../../assets/photos/toucan3.jpeg);
+  background: url(../../assets/photos/toucanUkr.png);
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
@@ -9,22 +9,7 @@
   height: calc(100vh - 68px);
   top: 68px;
 }
-.wrapper {
-  position: absolute;
-  top: 400px;
-  /* left: -webkit-calc(50% - 140px);
-  left: -moz-calc(50% - 140px); */
-  left: calc(50% - 140px);
-  /* transform: translateX(-50%); */
-  width: 280px;
-  text-align: center;
-}
-.text {
-  color: #fff;
-  mix-blend-mode: difference;
-  font-size: 46px;
-  font-weight: 800;
-}
+
 /* canvas{
   position: relative;
 }
@@ -36,14 +21,43 @@
   top: 120px;
   left: calc(50% - 140px);
   font-size: 46px;
-
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
   mix-blend-mode: difference;
   font-weight: 800;
 } */
+.startBtn {
+  position: absolute;
+  width: 304px;
+  height: 78px;
+  left: 50%;
+  top: 710px;
+  opacity: 0;
+  background: #414141de;
+  background-blend-mode: difference;
+  border-radius: 16px;
+  transform: translate(-50%) scale(0.8);
+  transition: all 0.4s ease;
+  font-weight: 800;
+  font-size: 30px;
+  color: #fff;
+}
+.startBtn:hover {
+  opacity: 1;
+  transform: translate(-50%) scale(1);
+}
+@media (min-width: 700px) {
+  .startBtn {
+    top: 750px;
+  }
+}
 @media (min-width: 1200px) {
   #tsparticles,
-.particles {
-  height: calc(100vh - 100px);
-  top: 100px;
-}
+  .particles {
+    height: calc(100vh - 100px);
+    top: 100px;
+  }
 }

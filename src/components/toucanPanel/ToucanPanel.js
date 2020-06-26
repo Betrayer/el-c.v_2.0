@@ -579,9 +579,10 @@ const ToucanPanel = () => {
         pauseOnBlur: true,
       }}
     />}
-    <div id="text" className={styles.wrapper}>
+    {/* <div id="text" className={styles.wrapper}>
       <p className={styles.text}>веб студия</p>
-    </div>
+    </div> */}
+    <button className={styles.startBtn}>РОЗПОЧАТИ</button>
     </>
   );
 };
