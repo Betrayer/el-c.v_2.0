@@ -29,6 +29,7 @@
   align-items: center;
   margin-bottom: 30px;
   max-width: 240px;
+  position: relative;
 }
 .servicesText{
   font-size: 18px;
@@ -36,6 +37,17 @@
 .icon{
   width: 50px;
   margin-bottom: 16px;
+}
+.servicesListItem:before{
+  width: 80px;
+  height: 80px;
+  background-color: #035aa67c;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  top: -14px;
+  left: 50%;
+  transform: translate(-50%);
 }
 @keyframes dash {
   from {
@@ -58,6 +70,7 @@ path, g{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
   }
 
   .servicesListItem {
