@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import ExtendedMenu from "../extendedMenu/ExtendedMenu";
 import styles from "./header.module.css";
 
@@ -59,6 +58,10 @@ const Header = () => {
     });
   }, [header, scroll]);
 
+  const scroller = (name) => {
+    document.getElementById(name).scrollIntoView();
+  };
+
   return (
     <>
       {!scroll ? (
@@ -79,13 +82,13 @@ const Header = () => {
               {defLangState === "rus" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksRus.map((link, ind) => (
-                    <li
-                      key={ind}
-                      className={styles.menuSocialsLinkActive}
-                    >
-                      <a href="#" className={styles.menuPageLinkText}>
+                    <li key={ind} className={styles.menuSocialsLinkActive}>
+                      <span
+                        onClick={() => scroller(link.redirect)}
+                        className={styles.menuPageLinkText}
+                      >
                         {link.name}
-                      </a>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -95,11 +98,11 @@ const Header = () => {
               {defLangState === "ukr" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksUkr.map((link, ind) => (
-                    <li
-                      key={ind}
-                      className={styles.menuSocialsLinkActive}
-                    >
-                      <span className={styles.menuPageLinkText}>
+                    <li key={ind} className={styles.menuSocialsLinkActive}>
+                      <span
+                        onClick={() => scroller(link.redirect)}
+                        className={styles.menuPageLinkText}
+                      >
                         {link.name}
                       </span>
                     </li>
@@ -111,11 +114,11 @@ const Header = () => {
               {defLangState === "en" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksEng.map((link, ind) => (
-                    <li
-                    key={ind}
-                    className={styles.menuSocialsLinkActive}
-                  >
-                      <span className={styles.menuPageLinkText}>
+                    <li key={ind} className={styles.menuSocialsLinkActive}>
+                      <span
+                        onClick={() => scroller(link.redirect)}
+                        className={styles.menuPageLinkText}
+                      >
                         {link.name}
                       </span>
                     </li>
@@ -124,40 +127,33 @@ const Header = () => {
               ) : (
                 <></>
               )}
-              
             </nav>
             <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    className={styles.menuSocialsCircle}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="https://twitter.com/AnteBadzim"
-                  >
-
-                  </a>
-                </li>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    rel="noopener noreferrer"
-                    className={styles.menuSocialsCircle}
-                    target="_blank"
-                    href="https://www.facebook.com/favouriteprimark/"
-                  >
-
-                  </a>
-                </li>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    rel="noopener noreferrer"
-                    className={styles.menuSocialsCircle}
-                    target="_blank"
-                    href="http://instagram.com/ante"
-                  >
-                    
-                  </a>
-                </li>
-              </ul>
+              <li className={styles.menuSocialsLink}>
+                <a
+                  className={styles.menuSocialsCircle}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://twitter.com/AnteBadzim"
+                ></a>
+              </li>
+              <li className={styles.menuSocialsLink}>
+                <a
+                  rel="noopener noreferrer"
+                  className={styles.menuSocialsCircle}
+                  target="_blank"
+                  href="https://www.facebook.com/favouriteprimark/"
+                ></a>
+              </li>
+              <li className={styles.menuSocialsLink}>
+                <a
+                  rel="noopener noreferrer"
+                  className={styles.menuSocialsCircle}
+                  target="_blank"
+                  href="http://instagram.com/ante"
+                ></a>
+              </li>
+            </ul>
           </div>
           <ExtendedMenu activeMenu={active} />
         </header>
@@ -179,15 +175,14 @@ const Header = () => {
               {defLangState === "rus" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksRus.map((link, ind) => (
-                    <NavLink
-                      to={link.redirect}
-                      key={ind}
-                      className={styles.menuSocialsLinkActive}
-                    >
-                      <span className={styles.menuPageLinkText}>
+                    <li key={ind} className={styles.menuSocialsLinkActive}>
+                      <span
+                        onClick={() => scroller(link.redirect)}
+                        className={styles.menuPageLinkText}
+                      >
                         {link.name}
                       </span>
-                    </NavLink>
+                    </li>
                   ))}
                 </ul>
               ) : (
@@ -196,15 +191,18 @@ const Header = () => {
               {defLangState === "ukr" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksUkr.map((link, ind) => (
-                    <NavLink
+                    <li
                       to={link.redirect}
                       key={ind}
                       className={styles.menuSocialsLinkActive}
                     >
-                      <span className={styles.menuPageLinkText}>
+                      <span
+                        onClick={() => scroller(link.redirect)}
+                        className={styles.menuPageLinkText}
+                      >
                         {link.name}
                       </span>
-                    </NavLink>
+                    </li>
                   ))}
                 </ul>
               ) : (
@@ -213,15 +211,18 @@ const Header = () => {
               {defLangState === "en" ? (
                 <ul className={styles.menuNavList}>
                   {menuLinksEng.map((link, ind) => (
-                    <NavLink
-                    to={link.redirect}
-                    key={ind}
-                    className={styles.menuSocialsLinkActive}
-                  >
-                      <span className={styles.menuPageLinkText}>
+                    <li
+                      to={link.redirect}
+                      key={ind}
+                      className={styles.menuSocialsLinkActive}
+                    >
+                      <span
+                        onClick={() => scroller(link.redirect)}
+                        className={styles.menuPageLinkText}
+                      >
                         {link.name}
                       </span>
-                    </NavLink>
+                    </li>
                   ))}
                 </ul>
               ) : (
@@ -230,37 +231,31 @@ const Header = () => {
             </nav>
 
             <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    className={styles.menuSocialsCircle}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="https://twitter.com/AnteBadzim"
-                  >
-
-                  </a>
-                </li>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    rel="noopener noreferrer"
-                    className={styles.menuSocialsCircle}
-                    target="_blank"
-                    href="https://www.facebook.com/favouriteprimark/"
-                  >
-
-                  </a>
-                </li>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    rel="noopener noreferrer"
-                    className={styles.menuSocialsCircle}
-                    target="_blank"
-                    href="http://instagram.com/ante"
-                  >
-                    
-                  </a>
-                </li>
-              </ul>
+              <li className={styles.menuSocialsLink}>
+                <a
+                  className={styles.menuSocialsCircle}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://twitter.com/AnteBadzim"
+                ></a>
+              </li>
+              <li className={styles.menuSocialsLink}>
+                <a
+                  rel="noopener noreferrer"
+                  className={styles.menuSocialsCircle}
+                  target="_blank"
+                  href="https://www.facebook.com/favouriteprimark/"
+                ></a>
+              </li>
+              <li className={styles.menuSocialsLink}>
+                <a
+                  rel="noopener noreferrer"
+                  className={styles.menuSocialsCircle}
+                  target="_blank"
+                  href="http://instagram.com/ante"
+                ></a>
+              </li>
+            </ul>
           </div>
           <ExtendedMenu activeMenu={active} />
         </header>

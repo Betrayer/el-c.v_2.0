@@ -7,7 +7,7 @@ import css from "./blogSection.module.css";
 const BlogSection = () => {
 
   return (
-    <section className={css.blogSection}>
+    <section id="blog" className={css.blogSection}>
       <h2 className={css.blogHeader}>Наш блог</h2>
       <ul className={css.postsList}>
         <AwesomeSlider>
