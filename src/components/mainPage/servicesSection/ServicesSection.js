@@ -8,6 +8,9 @@ const ServicesSection = () => {
         <h2 className={css.servicesHeader}>Что мы предлагаем</h2>
         <ul className={css.servicesList}>
           <li className={css.servicesListItem}>
+            <span className={css.iconCircle}></span>
+            <span className={css.iconCircleLight}></span>
+            <span className={css.iconCircleLighter}></span>
             <img
               className={css.icon}
               src={require("../../../assets/services/pencil.svg")}
@@ -20,6 +23,9 @@ const ServicesSection = () => {
             </p>
           </li>
           <li className={css.servicesListItem}>
+          <span className={css.iconCircle}></span>
+            <span className={css.iconCircleLight}></span>
+            <span className={css.iconCircleLighter}></span>
             <svg
               className={css.icon}
               version="1.1"
@@ -54,10 +60,13 @@ const ServicesSection = () => {
             </svg>
 
             <p className={css.servicesText}>
-              Наши прекрасные услуги по продвижению в поисковиках
+              Наши прекрасные CEO услуги 
             </p>
           </li>
           <li className={css.servicesListItem}>
+          <span className={css.iconCircle}></span>
+            <span className={css.iconCircleLight}></span>
+            <span className={css.iconCircleLighter}></span>
             <svg
               className={css.icon}
               version="1.1"
@@ -153,6 +162,9 @@ const ServicesSection = () => {
             </p>
           </li>
           <li className={css.servicesListItem}>
+          <span className={css.iconCircle}></span>
+            <span className={css.iconCircleLight}></span>
+            <span className={css.iconCircleLighter}></span>
             <img
               className={css.icon}
               src={require("../../../assets/services/data.svg")}
@@ -161,7 +173,7 @@ const ServicesSection = () => {
               width={"auto"}
             />
             <p className={css.servicesText}>
-              Наши прекрасные услуги по великолепному коду
+              Наши прекрасные услуги по great коду
             </p>
           </li>
         </ul>
