@@ -13,7 +13,10 @@ const Footer = () => {
           <ul className={css.contactsList}>
             <li className={css.contactsListItem}>
               <a className={css.contactsLink} href="#a">
-                +38 067 809 55 78
+                <span className={css.linkText}>+38 067 809 55 78</span>
+                <svg className={css.underline} viewBox="0 0 13 20">
+                  <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
+                </svg>
               </a>
             </li>
             <li className={css.contactsListItem}>
@@ -42,9 +45,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 href="https://twitter.com/AnteBadzim"
-              >
-                
-              </a>
+              ></a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -52,9 +53,7 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="https://www.facebook.com/favouriteprimark/"
-              >
-
-              </a>
+              ></a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -62,9 +61,7 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="http://instagram.com/ante"
-              >
-
-              </a>
+              ></a>
             </li>
           </ul>
         </div>

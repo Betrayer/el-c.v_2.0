@@ -89,6 +89,9 @@
   height: 100%;
   margin-bottom: 14px;
 }
+.underline {
+  display: none;
+}
 .socialsList {
   flex-direction: row;
   max-width: 320px;
@@ -96,7 +99,7 @@
 .contactsListItem {
   margin-bottom: 10px;
 }
-.contactsLink {
+.contactsLink, .linkText {
   text-align: center;
   font-weight: 300;
 }
@@ -208,22 +211,21 @@
     width: 40%;
   }
   .subheader,
-.socialsSubheader {
-  font-size: 24px;
-}
+  .socialsSubheader {
+    font-size: 24px;
+  }
   .socialsList {
     flex-direction: column;
     max-width: 420px;
   }
 }
 @media (min-width: 1200px) {
-
-  .contactsList{
+  .contactsList {
     height: 130px;
     flex-wrap: wrap;
     justify-content: flex-start;
   }
-  .contactsListItem{
+  .contactsListItem, .linkText {
     margin-bottom: 20px;
     font-size: 18px;
   }
@@ -232,7 +234,63 @@
     max-width: 320px;
     align-items: flex-start;
   }
-  .socialsSubheader{
+  .socialsSubheader {
     margin-bottom: 20px;
+  }
+  .contactsListItem {
+    --line: #C6F0F9;
+    --color: #2b3044;
+    text-decoration: none;
+    color: var(--color);
+    position: relative;
+  }
+  .linkText {
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(var(--color)),
+      to(var(--color))
+    );
+    background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: var(--background-size, 100%) 1px;
+    -webkit-transition: background-size 0.2s linear
+      var(--background-delay, 0.15s);
+    transition: background-size 0.2s linear var(--background-delay, 0.15s);
+    font-size: 18px;
+    line-height: 20px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .underline {
+    vertical-align: top;
+    display: inline;
+    line-height: 1;
+    width: 13px;
+    height: 20px;
+    position: relative;
+    bottom: -4px;
+    left: -2px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1px;
+    stroke: var(--color);
+    stroke-dasharray: 7.95 30;
+    stroke-dashoffset: var(--stroke-dashoffset, 46);
+    -webkit-transition: stroke-dashoffset var(--stroke-duration, 0.15s)
+      var(--stroke-easing, linear) var(--stroke-delay, 0s);
+    transition: stroke-dashoffset var(--stroke-duration, 0.15s)
+      var(--stroke-easing, linear) var(--stroke-delay, 0s);
+  }
+  .contactsLink:hover {
+    --background-size: 0%;
+    --background-delay: 0s;
+    --stroke-dashoffset: 26;
+    --stroke-duration: 0.3s;
+    --stroke-easing: cubic-bezier(0.3, 1.5, 0.5, 1);
+    --stroke-delay: 0.195s;
   }
 }
