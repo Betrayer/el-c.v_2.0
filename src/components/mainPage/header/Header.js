@@ -67,7 +67,7 @@ const Header = () => {
       {!scroll ? (
         <header className={styles.scrollUp}>
           <div className={styles.triggerMenuWrapper}>
-            <p className={styles.logo}>LOGO</p>
+            <p className={styles.logo}>EL-C</p>
             <button
               onClick={() => setActive(!active)}
               className={active ? styles.menuActive : styles.menu}
@@ -135,7 +135,9 @@ const Header = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                   href="https://twitter.com/AnteBadzim"
-                ></a>
+                >
+                  <span></span>
+                </a>
               </li>
               <li className={styles.menuSocialsLink}>
                 <a
@@ -143,7 +145,9 @@ const Header = () => {
                   className={styles.menuSocialsCircle}
                   target="_blank"
                   href="https://www.facebook.com/favouriteprimark/"
-                ></a>
+                >
+                  <span></span>
+                </a>
               </li>
               <li className={styles.menuSocialsLink}>
                 <a
@@ -151,7 +155,9 @@ const Header = () => {
                   className={styles.menuSocialsCircle}
                   target="_blank"
                   href="http://instagram.com/ante"
-                ></a>
+                >
+                  <span></span>
+                </a>
               </li>
             </ul>
           </div>
@@ -160,7 +166,7 @@ const Header = () => {
       ) : (
         <header className={header ? styles.scrollUp : styles.scrollDown}>
           <div className={styles.triggerMenuWrapper}>
-            <p className={styles.logo}>LOGO</p>
+            <p className={styles.logo}>EL-C</p>
             <button
               onClick={() => setActive(!active)}
               className={active ? styles.menuActive : styles.menu}
@@ -229,7 +235,6 @@ const Header = () => {
                 <></>
               )}
             </nav>
-
             <ul className={styles.menuSocialsList}>
               <li className={styles.menuSocialsLink}>
                 <a
@@ -237,7 +242,9 @@ const Header = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                   href="https://twitter.com/AnteBadzim"
-                ></a>
+                >
+                  <span></span>
+                </a>
               </li>
               <li className={styles.menuSocialsLink}>
                 <a
@@ -245,7 +252,9 @@ const Header = () => {
                   className={styles.menuSocialsCircle}
                   target="_blank"
                   href="https://www.facebook.com/favouriteprimark/"
-                ></a>
+                >
+                  <span></span>
+                </a>
               </li>
               <li className={styles.menuSocialsLink}>
                 <a
@@ -253,7 +262,9 @@ const Header = () => {
                   className={styles.menuSocialsCircle}
                   target="_blank"
                   href="http://instagram.com/ante"
-                ></a>
+                >
+                  <span></span>
+                </a>
               </li>
             </ul>
           </div>
