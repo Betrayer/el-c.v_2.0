@@ -86,6 +86,7 @@
 }
 
 
+
 @media (min-width: 768px) {
   .servicesList {
     flex-direction: row;
@@ -104,8 +105,11 @@
   }
 }
 @media(min-width: 1200px){
+  .servicesSection {
+    padding: 60px 0;
+  }
   .servicesHeader{
-    font-size: 38px;
+    font-size: 40px;
     padding-top: 20px;
   }
 }

@@ -23,9 +23,10 @@ const BlogSection = () => {
               ) : (
                 <></>
               )}
+              <div className={css.textWrapper}>
               {post.message.map((text) => (
                 <p className={css.postText}>{text}</p>
-              ))}
+              ))}</div>
             </li>
           ))}
         </AwesomeSlider>
