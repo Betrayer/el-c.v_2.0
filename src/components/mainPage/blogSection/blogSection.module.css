@@ -93,11 +93,11 @@ background-color: #fff;
 }
 @media (min-width: 520px){
   .postsListItem {
-    width: 90%;
+    width: 100%;
   }
   .postImg {
     height: 320px;  
-    width: 100%;
+    /* width: 80%; */
   }
   .postsList div{
     height: 600px;
@@ -105,6 +105,7 @@ background-color: #fff;
   .textWrapper{
     top: -100px;
     padding: 10px;
+    /* width: 76%; */
   }
   .postText {
     font-weight: 100;
@@ -131,6 +132,7 @@ background-color: #fff;
   .textWrapper{
     top: -198px;
     padding: 10px;
+    width: 90%;
   }
   .postsListItem {
     width: 90%;
