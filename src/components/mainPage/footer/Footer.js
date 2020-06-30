@@ -54,9 +54,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 href="https://twitter.com/AnteBadzim"
-              >
-                
-              </a>
+              ></a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -64,9 +62,7 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="https://www.facebook.com/favouriteprimark/"
-              >
-
-              </a>
+              ></a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -74,9 +70,7 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="http://instagram.com/ante"
-              >
-
-              </a>
+              ></a>
             </li>
           </ul>
         </div>
