@@ -1,8 +1,9 @@
 .blogSection {
   width: 100%;
-  background-color: rgb(235, 150, 150);
+  /* background-color: rgb(235, 150, 150); */
   margin-bottom: 100px;
   position: relative;
+  height: calc(100vh +30px);
 }
 
 .blogHeader {
@@ -18,9 +19,12 @@
   flex-direction: column;
   align-items: center;
 }
-
+.postsList div{
+height: 640px;
+background-color: #fff;
+}
 .postsListItem {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,14 +36,82 @@
 }
 
 .postImg {
-  height: 200px;  
-  width: 200px;
+  height: 260px;  
+  width: 100%;
+  object-fit: cover;
 }
-
+.textWrapper{
+  position: relative;
+  top: -100px;
+  background-color: #fff;
+  width: 90%;
+  padding-top: 10px;
+  box-shadow: 4px 6px 10px 0px rgba(0,0,0,0.23);
+}
 .postText {
   text-align: center;
+  font-weight: 100;
+  font-size: 14px;
 }
-
+.postText:nth-child(1){
+  font-weight: 400;
+  padding-bottom: 6px;
+  font-size: 15px;
+}
+@media (min-width: 352px){
+  .textWrapper{
+    padding: 0 10px;
+    padding-top: 10px;  
+  }
+  .postsList div{
+    height: 620px;
+    }
+}
+@media (min-width: 450px){
+  .postImg {
+    height: 320px;  
+    width: 100%;
+  }
+  .postsList div{
+    height: 600px;
+    }
+  .textWrapper{
+    top: -100px;
+    padding: 0 10px;
+    padding-top: 10px;
+  }
+  .postText {
+    font-weight: 100;
+    font-size: 16px;
+  }
+  .postText:nth-child(1){
+    font-size: 17px;
+  }
+}
+@media (min-width: 520px){
+  .postsListItem {
+    width: 90%;
+  }
+  .postImg {
+    height: 320px;  
+    width: 100%;
+  }
+  .postsList div{
+    height: 600px;
+    }
+  .textWrapper{
+    top: -100px;
+    padding: 0 10px;
+    padding-top: 10px;
+  }
+  .postText {
+    font-weight: 100;
+    font-size: 16px;
+  }
+  .postText:nth-child(1){
+    font-size: 17px;
+  }
+}
 @media (min-width: 768px) {
   .postsList {
     flex-direction: row;
@@ -49,18 +121,18 @@
   }
 
   .postsListItem {
-    width: 40%;
+    width: 90%;
   }
 
   .postImg {
-    height: 250px;
-    width: 250px;
+    height: 520px;  
+    width: 100%;
   }
 }
 
 @media (min-width: 1200px) {
   .postImg {
-    height: 300px;
-    width: 300px;
+    /* height: 300px; */
+    height: 700px;
   }
 }

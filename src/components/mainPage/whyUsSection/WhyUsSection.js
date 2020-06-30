@@ -3,7 +3,7 @@ import styles from "./whyussection.module.css";
 
 const WhyUsSection = () => {
   return (
-    <section className={styles.whyUsContainer}>
+    <section id="about" className={styles.whyUsContainer}>
       <h2 className={styles.whyUsTitle}>Why work with us</h2>
       <ul className={styles.whyUsList}>
         <li className={styles.whyUsItem}>

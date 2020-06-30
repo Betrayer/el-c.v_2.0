@@ -321,10 +321,6 @@ const ToucanPanel = () => {
         interactivity: {
           detectsOn: "canvas",
           events: {
-            // onClick: {
-            //   enable: true,
-            //   mode: "push",
-            // },
             onDiv: {
               elementId: "text",
               enable: true,
@@ -346,7 +342,7 @@ const ToucanPanel = () => {
               distance: 200,
               duration: 100,
               opacity: 1,
-              size: 70,
+              size: 90,
             },
             connect: {
               distance: 20,
