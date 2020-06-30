@@ -294,3 +294,23 @@
     --stroke-delay: 0.195s;
   }
 }
+@media (min-width: 1200px) {
+
+  .contactsList{
+    height: 130px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .contactsListItem{
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .socialsList {
+    flex-direction: row;
+    max-width: 320px;
+    align-items: flex-start;
+  }
+  .socialsSubheader{
+    margin-bottom: 20px;
+  }
+}
