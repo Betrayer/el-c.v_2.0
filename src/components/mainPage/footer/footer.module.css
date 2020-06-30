@@ -238,7 +238,7 @@
     margin-bottom: 20px;
   }
   .contactsListItem {
-    --line: #C6F0F9;
+    --line: rgb(220, 249, 255);
     --color: #2b3044;
     text-decoration: none;
     color: var(--color);
@@ -293,10 +293,10 @@
     --stroke-easing: cubic-bezier(0.3, 1.5, 0.5, 1);
     --stroke-delay: 0.195s;
   }
-}
-@media (min-width: 1200px) {
+/* }
+@media (min-width: 1200px) { */
 
-  .contactsList{
+  /* .contactsList{
     height: 130px;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -312,5 +312,5 @@
   }
   .socialsSubheader{
     margin-bottom: 20px;
-  }
+  } */
 }

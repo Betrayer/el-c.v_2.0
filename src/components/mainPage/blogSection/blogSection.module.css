@@ -4,12 +4,15 @@
   margin-bottom: 100px;
   position: relative;
   height: calc(100vh +30px);
+  margin-top: 10px;
 }
 
 .blogHeader {
   padding-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+  font-weight: 500;
+  font-size: 24px;
 }
 
 .postsList {
@@ -20,7 +23,7 @@
   align-items: center;
 }
 .postsList div{
-height: 640px;
+height: 630px;
 background-color: #fff;
 }
 .postsListItem {
@@ -64,7 +67,7 @@ background-color: #fff;
     padding-top: 10px;  
   }
   .postsList div{
-    height: 620px;
+    height: 600px;
     }
 }
 @media (min-width: 450px){
@@ -73,16 +76,16 @@ background-color: #fff;
     width: 100%;
   }
   .postsList div{
-    height: 600px;
+    height: 620px;
     }
   .textWrapper{
-    top: -100px;
+    top: -120px;
     padding: 0 10px;
     padding-top: 10px;
   }
   .postText {
     font-weight: 100;
-    font-size: 16px;
+    font-size: 15px;
   }
   .postText:nth-child(1){
     font-size: 17px;
@@ -101,8 +104,7 @@ background-color: #fff;
     }
   .textWrapper{
     top: -100px;
-    padding: 0 10px;
-    padding-top: 10px;
+    padding: 10px;
   }
   .postText {
     font-weight: 100;
@@ -113,13 +115,23 @@ background-color: #fff;
   }
 }
 @media (min-width: 768px) {
+  .blogHeader {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
   .postsList {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: unset;
     justify-content: space-around;
   }
-
+  .postsList div{
+    height: 640px;
+    }
+  .textWrapper{
+    top: -198px;
+    padding: 10px;
+  }
   .postsListItem {
     width: 90%;
   }
@@ -129,10 +141,57 @@ background-color: #fff;
     width: 100%;
   }
 }
-
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .postImg {
     /* height: 300px; */
+    height: 540px;
+  }
+  .postsList div{
+    height: 670px;
+    }
+  .textWrapper{
+    padding: 10px 26px;
+  }
+  .postText {
+    font-size: 18px;
+  }
+  .postText:nth-child(1){
+    font-size: 19px;
+  }
+}
+@media (min-width: 1200px) {
+  .blogHeader {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .postsList div{
+    height: 750px;
+    }
+  .postImg {
     height: 700px;
+  }
+  .postText:nth-child(1){
+    padding-bottom: 10px;
+  }
+  .textWrapper{
+    top: -170px;
+    padding: 16px 26px;
+  }
+}
+@media (min-width: 1400px) {
+  .postsListItem{
+    max-width: 1350px;
+  }
+  .postImg {
+    height: 700px;
+    max-width: 1034px;
+  }
+  .postText:nth-child(1){
+    padding-bottom: 10px;
+  }
+  .textWrapper{
+    top: -170px;
+    padding: 16px 26px;
+    max-width: 930px;
   }
 }
