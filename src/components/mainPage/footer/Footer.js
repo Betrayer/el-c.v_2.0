@@ -12,7 +12,11 @@ const Footer = () => {
           <h3 className={css.subheader}>Контакты</h3>
           <ul className={css.contactsList}>
             <li className={css.contactsListItem}>
-              <a className={css.contactsLink} href="tel:+380678095578">
+              <a
+                className={css.contactsLink}
+                href="tel:+380678095578"
+                rel="noopener noreferrer"
+              >
                 <span className={css.linkText}>+38 067 809 55 78</span>
                 <svg className={css.underline} viewBox="0 0 13 20">
                   <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
@@ -20,7 +24,11 @@ const Footer = () => {
               </a>
             </li>
             <li className={css.contactsListItem}>
-              <a className={css.contactsLink} href="tel:+380663862689">
+              <a
+                className={css.contactsLink}
+                href="tel:+380663862689"
+                rel="noopener noreferrer"
+              >
                 <span className={css.linkText}>+38 066 386 26 89</span>
                 <svg className={css.underline} viewBox="0 0 13 20">
                   <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
@@ -31,6 +39,7 @@ const Footer = () => {
               <a
                 className={css.contactsLink}
                 href="mailto:Ellie.Yelizarieva@el-c.com.ua"
+                rel="noopener noreferrer"
               >
                 <span className={css.linkText}>
                   Ellie.Yelizarieva@el-c.com.ua
