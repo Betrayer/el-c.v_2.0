@@ -54,6 +54,7 @@ const Footer = () => {
                 className={css.contactsLink}
                 href="https://2gis.ua/kiev/geo/15059546909457325?m=30.505205%2C50.512694%2F18.5"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className={css.linkText}>
                   Маршала Тимошенка, 29Б лит А
@@ -74,7 +75,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 href="https://twitter.com/AnteBadzim"
-              ></a>
+              >
+                <span className={css.linkContent}>content</span>
+              </a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -82,7 +85,9 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="https://www.facebook.com/favouriteprimark/"
-              ></a>
+              >
+                <span className={css.linkContent}>content</span>
+              </a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -90,7 +95,9 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="http://instagram.com/ante"
-              ></a>
+              >
+                <span className={css.linkContent}>content</span>
+              </a>
             </li>
           </ul>
         </div>

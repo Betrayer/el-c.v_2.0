@@ -6,6 +6,12 @@ import css from "./blogSection.module.css";
 
 const BlogSection = () => {
 
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(0);
+    max = Math.floor(999999);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   return (
     <section id="blog" className={css.blogSection}>
       <h2 className={css.blogHeader}>Наш блог</h2>
@@ -25,7 +31,7 @@ const BlogSection = () => {
               )}
               <div className={css.textWrapper}>
               {post.message.map((text) => (
-                <p className={css.postText}>{text}</p>
+                <p key={getRandomIntInclusive()} className={css.postText}>{text}</p>
               ))}</div>
             </li>
           ))}
