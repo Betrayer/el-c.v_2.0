@@ -1,3 +1,27 @@
 .whyUsContainer{
     width: 100%;
+    position: relative;
+}
+.bannerMiddle{
+    height: 512px;
+    /* position: absolute; */
+}
+/* .bannerClouds{
+    position: absolute;
+    z-index: 3;
+} */
+/* .closeImg{
+    background-image: url('../../../assets/photos/close.PNG');
+} */
+.human{
+    height: 300px;
+}
+@media (min-width: 768px) {
+    .bannerMiddle{
+        height: 732px;
+    }
+    /* .bannerClouds{
+        width: 80vw;
+        z-index: 2;
+    } */
 }
