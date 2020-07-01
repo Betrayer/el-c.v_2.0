@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import ExtendedMenu from "../extendedMenu/ExtendedMenu";
 import styles from "./header.module.css";
 
@@ -62,12 +63,28 @@ const Header = () => {
     document.getElementById(name).scrollIntoView();
   };
 
+  const history = useHistory();
+
+  const refresh = () => {
+    history.go();
+  };
+
+  const refresher = () => {
+    if (history.location.pathname === "/") {
+      refresh();
+    } else {
+      history.push("/");
+    }
+  };
+
   return (
     <>
       {!scroll ? (
         <header className={styles.scrollUp}>
           <div className={styles.triggerMenuWrapper}>
-            <p className={styles.logo}>EL-C</p>
+            <p className={styles.logo} onClick={refresher}>
+              EL-C
+            </p>
             <button
               onClick={() => setActive(!active)}
               className={active ? styles.menuActive : styles.menu}
@@ -166,7 +183,7 @@ const Header = () => {
       ) : (
         <header className={header ? styles.scrollUp : styles.scrollDown}>
           <div className={styles.triggerMenuWrapper}>
-            <p className={styles.logo}>EL-C</p>
+            <p className={styles.logo} onClick={refresher}>EL-C</p>
             <button
               onClick={() => setActive(!active)}
               className={active ? styles.menuActive : styles.menu}

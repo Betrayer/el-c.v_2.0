@@ -4,12 +4,12 @@ import { Switch, Route } from "react-router-dom";
 const lazyMain = lazy(
   () => import("../mainPage/mainPage.js") /* webpackChunkName: 'Main' */
 );
-const lazyServices = lazy(
-  () =>
-    import(
-      "../pages/servicesPage/ServicesPage.js"
-    ) /* webpackChunkName: 'Main' */
-);
+// const lazy404 = lazy(
+//   () =>
+//     import(
+//       "../pages/pageNotFound/PageNotFound.js"
+//     ) /* webpackChunkName: '404' */
+// );
 
 export const useRouter = () => {
   return (
@@ -22,9 +22,6 @@ export const useRouter = () => {
     >
       <Switch>
         <Route exact path="/" component={lazyMain} />
-        {/* <Route exact path="/blog" component={lazyBlog} /> */}
-        <Route exact path="/services" component={lazyServices} />
-        {/* <Route exact path="/about" component={lazyAboutUs} /> */}
         {/* <Route path="*" component={lazy404} /> */}
       </Switch>
     </Suspense>
