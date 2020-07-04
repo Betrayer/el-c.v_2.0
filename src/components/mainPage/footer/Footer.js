@@ -12,7 +12,11 @@ const Footer = () => {
           <h3 className={css.subheader}>Контакты</h3>
           <ul className={css.contactsList}>
             <li className={css.contactsListItem}>
-              <a className={css.contactsLink} href="#a">
+              <a
+                className={css.contactsLink}
+                href="tel:+380678095578"
+                rel="noopener noreferrer"
+              >
                 <span className={css.linkText}>+38 067 809 55 78</span>
                 <svg className={css.underline} viewBox="0 0 13 20">
                   <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
@@ -20,24 +24,41 @@ const Footer = () => {
               </a>
             </li>
             <li className={css.contactsListItem}>
-              <a className={css.contactsLink} href="#a">
-              <span className={css.linkText}>+38 066 386 26 89</span>
-              <svg className={css.underline} viewBox="0 0 13 20">
+              <a
+                className={css.contactsLink}
+                href="tel:+380663862689"
+                rel="noopener noreferrer"
+              >
+                <span className={css.linkText}>+38 066 386 26 89</span>
+                <svg className={css.underline} viewBox="0 0 13 20">
                   <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
                 </svg>
               </a>
             </li>
             <li className={css.contactsListItem}>
-              <a className={css.contactsLink} href="#a">
-              <span className={css.linkText}>Ellie.Yelizarieva@el-c.com.ua</span>
-              <svg className={css.underline} viewBox="0 0 13 20">
+              <a
+                className={css.contactsLink}
+                href="mailto:Ellie.Yelizarieva@el-c.com.ua"
+                rel="noopener noreferrer"
+              >
+                <span className={css.linkText}>
+                  Ellie.Yelizarieva@el-c.com.ua
+                </span>
+                <svg className={css.underline} viewBox="0 0 13 20">
                   <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
                 </svg>
               </a>
             </li>
             <li className={css.contactsListItem}>
-              <a className={css.contactsLink} href="#a">
-              <span className={css.linkText}>ул. Нойс, дом 420, офис 69</span>
+              <a
+                className={css.contactsLink}
+                href="https://2gis.ua/kiev/geo/15059546909457325?m=30.505205%2C50.512694%2F18.5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className={css.linkText}>
+                  Маршала Тимошенка, 29Б лит А
+                </span>
                 <svg className={css.underline} viewBox="0 0 13 20">
                   <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
                 </svg>
@@ -54,7 +75,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 href="https://twitter.com/AnteBadzim"
-              ></a>
+              >
+                <span className={css.linkContent}>content</span>
+              </a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -62,7 +85,9 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="https://www.facebook.com/favouriteprimark/"
-              ></a>
+              >
+                <span className={css.linkContent}>content</span>
+              </a>
             </li>
             <li className={css.socialsListItem}>
               <a
@@ -70,7 +95,9 @@ const Footer = () => {
                 className={css.socialIcon}
                 target="_blank"
                 href="http://instagram.com/ante"
-              ></a>
+              >
+                <span className={css.linkContent}>content</span>
+              </a>
             </li>
           </ul>
         </div>

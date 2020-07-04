@@ -15,7 +15,6 @@ const App = (props) => {
         <ToucanPanel />
         <div className={css.container}>{routing}</div>
       </Router>
-
       <Footer />
     </>
   );
