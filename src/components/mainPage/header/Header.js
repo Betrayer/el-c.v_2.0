@@ -4,23 +4,26 @@ import ExtendedMenu from "../extendedMenu/ExtendedMenu";
 import styles from "./header.module.css";
 
 const Header = () => {
-  const defLangState = "rus";
+  const [defLangState, setDefLangState] = useState(localStorage.getItem("lang"));
   const menuLinksRus = [
     // { name: "Портфолио", redirect: "/portfolio" },
     { name: "Услуги", redirect: "services" },
-    { name: "О нас", redirect: "about" },
+    { name: "О нас", redirect: "weWork" },
+    { name: "Почему мы", redirect: "why" },
     { name: "Блог", redirect: "blog" },
   ];
   const menuLinksUkr = [
     // { name: "Портфоліо", redirect: "/portfolio" },
     { name: "Послуги", redirect: "services" },
-    { name: "Про нас", redirect: "about" },
+    { name: "Про нас", redirect: "weWork" },
+    { name: "Чому ми", redirect: "why" },
     { name: "Блог", redirect: "blog" },
   ];
   const menuLinksEng = [
     // { name: "Portfolio", redirect: "/portfolio" },
     { name: "Services", redirect: "services" },
-    { name: "About us", redirect: "about" },
+    { name: "About us", redirect: "weWork" },
+    { name: "Why us", redirect: "why" },
     { name: "Blog", redirect: "blog" },
   ];
   const [active, setActive] = useState(false);
@@ -30,6 +33,7 @@ const Header = () => {
 
   useEffect(() => {
     lastScroll = 0;
+    defLang()
   }, []);
 
   useEffect(() => {
@@ -59,6 +63,14 @@ const Header = () => {
     });
   }, [header, scroll]);
 
+  const defLang = () => {
+    let lang = localStorage.getItem("lang");
+    if (!lang) {
+      localStorage.setItem("lang", "ukr");
+      setDefLangState("ukr");
+      refresh();
+    }
+  };
   const scroller = (name) => {
     document.getElementById(name).scrollIntoView();
   };

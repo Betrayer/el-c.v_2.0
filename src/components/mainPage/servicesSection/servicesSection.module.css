@@ -32,7 +32,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
-  max-width: 240px;
+  max-width: 280px;
   position: relative;
   padding: 20px 10px;
   transition: all 0.24s ease;
@@ -41,8 +41,8 @@
   border-bottom-right-radius: 0px;
 }
 .iconCircle, .iconCircleLight, .iconCircleLighter {
-  width: 300px;
-  height: 300px;
+  width: 440px;
+  height: 440px;
   background-color: #0379e09d;
   position: absolute;
   content: "";
@@ -60,9 +60,9 @@
 }
 .iconCircleLighter{
   background-color: rgb(235, 249, 255);
-  width: 304px;
-  height: 304px;
-  top: -60px;
+  width: 444px;
+  height: 444px;
+  top: -70px;
   transition-delay: 0s;
 }
 .servicesListItem:hover .iconCircle, .servicesListItem:hover .iconCircleLight, .servicesListItem:hover .iconCircleLighter {
@@ -77,8 +77,14 @@
 .servicesListItem:hover .iconCircleLighter{
   transition-delay: 0.38s;
 }
-.servicesText {
+.servicesTitle {
   font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.servicesText{
+  font-size: 15px;
+  font-weight: 300;
 }
 .icon {
   width: 50px;
@@ -97,11 +103,18 @@
 
   .servicesListItem {
     width: 40%;
-    margin: 30px;
+    margin: 20px;
   }
   .servicesHeader{
     font-size: 30px;
     padding-top: 10px;
+  }
+  .servicesTitle {
+    font-size: 20px;
+  }
+  .servicesText{
+    font-size: 15px;
+    font-weight: 300;
   }
 }
 @media(min-width: 1200px){
@@ -113,7 +126,7 @@
     padding-top: 20px;
   }
 }
-@media(min-width: 1500px){
+@media(min-width: 1600px){
   .servicesList{
     max-width: 100%;
   }

@@ -7,6 +7,7 @@
   font-family: "Catamaran", sans-serif;
   font-weight: 800;
   margin: 20px 15px;
+  padding-bottom: 100px;
 }
 
 .errorContainer > span {
@@ -135,32 +136,13 @@
 }
 
 /* demo stuff */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body {
-  background-color: #416475;
-  margin-bottom: 50px;
-}
-html,
-button,
-input,
-select,
-textarea {
-  font-family: "Montserrat", Helvetica, sans-serif;
-  color: #92a4ad;
-}
-h1 {
-  text-align: center;
-  margin: 30px 15px;
-}
 .zoomArea {
   max-width: 490px;
   margin: 30px auto 30px;
   font-size: 19px;
   text-align: center;
+  padding-top: 150px;
+
 }
 /* .link-container {
   text-align: center;

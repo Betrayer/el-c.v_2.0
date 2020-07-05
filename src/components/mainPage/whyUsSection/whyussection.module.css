@@ -1,27 +1,196 @@
-.whyUsContainer{
-    width: 100%;
-    position: relative;
+.whyUsContainer {
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
 }
-.bannerMiddle{
-    height: 512px;
-    /* position: absolute; */
+
+.whyUsTitle {
+  padding-top: 20px;
+  margin-bottom: 32px;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
 }
-/* .bannerClouds{
-    position: absolute;
-    z-index: 3;
-} */
-/* .closeImg{
-    background-image: url('../../../assets/photos/close.PNG');
-} */
-.human{
-    height: 300px;
+
+.whyUsItem,
+.animatedwhyUsItem {
+  position: relative;
+  height: 60px;
+  transition: all 0.4s ease-in-out;
+  padding-left: 40px;
+}
+.animatedwhyUsItem {
+  height: 180px;
+}
+.animatedwhyUsItem:nth-child(2) {
+  height: 220px;
+}
+.animatedwhyUsItem:nth-child(1),
+.animatedwhyUsItem:nth-child(4) {
+  height: 200px;
+}
+.whyUsItem .toucanIcon,
+.animatedwhyUsItem .toucanIcon {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  background-image: url(../../../assets/logo/logo1.svg);
+  background-repeat: no-repeat;
+  transition: all 0.4s ease;
+  top: 0px;
+  left: -0px;
+  transform: scaleX(1);
+  opacity: 0.7;
+}
+.whyUsItem:nth-child(2n) .toucanIcon {
+  background-image: url(../../../assets/logo/logo2.svg);
+}
+.animatedwhyUsItem .toucanIcon {
+  transform: scaleX(-1);
+  background-image: url(../../../assets/logo/logo.svg);
+  opacity: 0.8;
+}
+
+.whyUsItemTitle {
+  display: inline-block;
+  font-size: 19px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  padding-bottom: 10px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}
+.whyUsItemTitle:hover {
+  color: #1ac3e8;
+}
+.whyUsItemTitle:hover .toucanIcon {
+  transform: scale(1.1, 1.1);
+}
+.animatedwhyUsItem .whyUsItemTitle:hover .toucanIcon {
+  transform: scale(-1.1, 1.1);
+}
+.whyUsItemText {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgb(139, 139, 139);
+}
+.likeWrapper {
+  display: none;
+}
+@media (min-width: 458px) {
+  .whyUsList {
+    padding-left: 30px;
+  }
+  .whyUsItemTitle {
+    font-size: 20px;
+  }
+  .whyUsItem{
+    max-width: 400px;
+  }
+  .animatedwhyUsItem {
+    height: 140px;
+    max-width: 400px;
+  }
+  .animatedwhyUsItem:nth-child(2) {
+    height: 180px;
+  }
+  .animatedwhyUsItem:nth-child(1),
+  .animatedwhyUsItem:nth-child(4) {
+    height: 160px;
+  }
 }
 @media (min-width: 768px) {
-    .bannerMiddle{
-        height: 732px;
-    }
-    /* .bannerClouds{
-        width: 80vw;
-        z-index: 2;
-    } */
+  .whyUsTitle {
+    font-size: 30px;
+    padding-top: 30px;
+  }
+  .whyUsList {
+    padding-left: 0px;
+    width: 58%;
+  }
+  .whyUsItem .toucanIcon,
+  .animatedwhyUsItem .toucanIcon {
+    width: 46px;
+    height: 60px;
+    top: -6px;
+    left: -4px;
+  }
+  .whyUsItem,
+  .animatedwhyUsItem {
+    padding-left: 60px;
+    margin-bottom: 20px;
+  }
+  .animatedwhyUsItem {
+    height: 146px;
+  }
+  .whyUsItemTitle {
+    font-size: 22px;
+  }
+  .whyUsContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  .likeWrapper {
+    display: inline-block;
+    width: 38%;
+    margin-top: 150px;
+    position: relative;
+    margin-left: 20px;
+  }
+  .likeWrapper::before,  .likeWrapper::after{
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    background-color: #1AC3E8;
+    opacity: 0.9;
+    z-index: -1;
+    top: -15%;
+    left: -15%;
+    border-radius: 4px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  .likeWrapper::after{
+    width: 40%;
+    height: 40%;
+    border-radius: 2px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(246,129,127);
+    top: 90%;
+    left: -25%;
+  }
+  .btnTop {
+    cursor: pointer;
+  }
+  .like {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .whyUsTitle {
+    font-size: 40px;
+    padding-top: 20px;
+  }
+  .whyUsList {
+    width: 38%;
+  }
+  .likeWrapper{
+    width: 36%;
+    margin-top: 7%;
+    max-width: 460px;
+  }
+  .animatedwhyUsItem {
+    height: 130px;
+  }
+  .animatedwhyUsItem:nth-child(2) {
+    height: 160px;
+  }
+  .animatedwhyUsItem:nth-child(1),
+  .animatedwhyUsItem:nth-child(4) {
+    height: 130px;
+  }
 }

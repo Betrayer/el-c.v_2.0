@@ -1,15 +1,16 @@
 import React from 'react'
 import ServicesSection from './servicesSection/ServicesSection';
 import BlogSection from './blogSection/BlogSection';
-import WhyUsSection from './whyUsSection/WhyUsSection';
 import WeWorkSection from './weWorkSection/WeWorkSection';
+import WhyUsSection from './whyUsSection/WhyUsSection';
 
 const mainPage = () => {
+
     return (
         <>
             <ServicesSection />
-            <WhyUsSection />
             <WeWorkSection />
+            <WhyUsSection />
             <BlogSection />
         </>
     );
