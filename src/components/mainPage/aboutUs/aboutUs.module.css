@@ -115,9 +115,18 @@
     font-size: 30px;
     padding-top: 10px;
   }
+  .aboutList {
+    width: 90%;
+    display: flex;
+    max-width: 1090px;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 1200px) {
+  .aboutList {
+    width: 80%;
+  }
   .aboutSection {
     padding-top: 90px;
   }
