@@ -1,0 +1,137 @@
+.aboutSection {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.contentWrapper {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.aboutTitle {
+  padding-top: 20px;
+  margin-bottom: 32px;
+  font-size: 28px;
+  font-weight: 500;
+}
+.aboutList {
+  width: 100%;
+}
+.aboutListItem {
+    /* color: #fff; */
+  width: 206px;
+  margin: 20px auto;
+  padding: 50px 0;
+  position: relative;
+  min-height: 206px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: linear-gradient(-25deg, #4facfe 0%, #02e1ff 80%);
+  /* background: linear-gradient(rgb(0, 234, 255), #1AC3E8); */
+}
+.aboutListTitle {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.aboutListText {
+  width: 80%;
+  margin: 4px auto;
+}
+/*.lineBlue{
+    background-image: url(../../../assets/photos/modern-art-painting-in-white-950241.jpg);
+     mix-blend-mode: soft-light; 
+    position: absolute;
+    background-size: contain;
+    /* filter: blur(1px); 
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* opacity: 0.9; 
+}*/
+/* .lineBlue,
+.lineLightBlue,
+.lineYellow, .lineBlueTwo, .lineLightBlueTwo, .lineYellowTwo {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 2px solid #0367bd;
+  top: -0px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  animation: rotate 18s linear infinite;
+}
+.lineLightBlue{
+    border: 2px solid #1AC3E8;
+    animation-delay: 0.3s;
+}
+.lineYellow{
+    border: 2px solid #fcbf1e;
+    animation-delay: 0.6s;
+}
+.lineYellowTwo{
+    border: 2px solid #ffa931;
+    animation-delay: 0.9s;
+}
+.lineLightBlueTwo{
+    border: 2px solid #76e6ff;
+    animation-delay: 1.2s;
+}
+.lineBlueTwo{
+    border: 2px solid #034580;
+    animation-delay: 1.5s;
+} */
+@keyframes rotate{
+    0% {transform: translateX(-50%) rotate(0deg);}
+    5%{transform: translateX(-50%) rotate(10deg)}
+    10%{transform: translateX(-50%) rotate(30deg)}
+    20%{transform: translateX(-50%) rotate(70deg)}
+    30%{transform: translateX(-50%) rotate(90deg)}
+    35% {transform: translateX(-50%) rotate(95deg)}
+    38% {transform: translateX(-50%) rotate(95deg)}
+    40% {transform: translateX(-50%) rotate(90deg)}
+    45% {transform: translateX(-50%) rotate(80deg)}
+    50% {transform: translateX(-50%) rotate(60deg)}
+    54% {transform: translateX(-50%) rotate(60deg)}
+    60%{transform: translateX(-50%) rotate(70deg)}
+    65%{transform: translateX(-50%) rotate(90deg)}
+    75%{transform: translateX(-50%) rotate(120deg)}
+    80%{transform: translateX(-50%) rotate(110deg)}
+    90% {transform: translateX(-50%) rotate(95deg)}
+    94% {transform: translateX(-50%) rotate(95deg)}
+    98% {transform: translateX(-50%) rotate(80deg)}
+    100% {transform: translateX(-50%) rotate(90deg);}
+}
+/* .aboutListItem:nth-child(2) .lineBlue{
+    top: 0px;
+} */
+@media (min-width: 768px) {
+  .aboutTitle {
+    font-size: 30px;
+    padding-top: 10px;
+  }
+  .aboutList {
+    width: 90%;
+    display: flex;
+    max-width: 1090px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .aboutList {
+    width: 80%;
+  }
+  .aboutSection {
+    padding-top: 90px;
+  }
+  .aboutTitle {
+    font-size: 40px;
+    padding-top: 20px;
+  }
+}

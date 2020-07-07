@@ -4,23 +4,29 @@ import ExtendedMenu from "../extendedMenu/ExtendedMenu";
 import styles from "./header.module.css";
 
 const Header = () => {
-  const defLangState = "rus";
+  const [langSwitcher, setLangSwitcher] = useState(false);
+  const [defLangState, setDefLangState] = useState(
+    localStorage.getItem("lang")
+  );
   const menuLinksRus = [
-    // { name: "Портфолио", redirect: "/portfolio" },
     { name: "Услуги", redirect: "services" },
-    { name: "О нас", redirect: "about" },
+    { name: "Портфолио", redirect: "portfolio" },
+    { name: "О нас", redirect: "weWork" },
+    { name: "Почему мы", redirect: "why" },
     { name: "Блог", redirect: "blog" },
   ];
   const menuLinksUkr = [
-    // { name: "Портфоліо", redirect: "/portfolio" },
     { name: "Послуги", redirect: "services" },
-    { name: "Про нас", redirect: "about" },
+    { name: "Портфоліо", redirect: "portfolio" },
+    { name: "Про нас", redirect: "weWork" },
+    { name: "Чому ми", redirect: "why" },
     { name: "Блог", redirect: "blog" },
   ];
   const menuLinksEng = [
-    // { name: "Portfolio", redirect: "/portfolio" },
     { name: "Services", redirect: "services" },
-    { name: "About us", redirect: "about" },
+    { name: "Portfolio", redirect: "portfolio" },
+    { name: "About us", redirect: "weWork" },
+    { name: "Why us", redirect: "why" },
     { name: "Blog", redirect: "blog" },
   ];
   const [active, setActive] = useState(false);
@@ -30,7 +36,11 @@ const Header = () => {
 
   useEffect(() => {
     lastScroll = 0;
+    defLang();
   }, []);
+  const langSwitch = () => {
+    setLangSwitcher(!langSwitcher);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -59,6 +69,30 @@ const Header = () => {
     });
   }, [header, scroll]);
 
+  const defLang = () => {
+    let lang = localStorage.getItem("lang");
+    if (!lang) {
+      localStorage.setItem("lang", "ukr");
+      setDefLangState("ukr");
+      refresh();
+    }
+  };
+  const changeLang = (e) => {
+    if (e.target.id === "rus") {
+      setDefLangState("rus");
+      localStorage.setItem("lang", "rus");
+      refresh();
+    } else if (e.target.id === "en") {
+      setDefLangState("en");
+      localStorage.setItem("lang", "en");
+      refresh();
+    } else {
+      setDefLangState("ukr");
+      localStorage.setItem("lang", "ukr");
+      refresh();
+    }
+    setLangSwitcher(!langSwitcher);
+  };
   const scroller = (name) => {
     document.getElementById(name).scrollIntoView();
   };
@@ -145,45 +179,108 @@ const Header = () => {
                 <></>
               )}
             </nav>
-            <ul className={styles.menuSocialsList}>
-              <li className={styles.menuSocialsLink}>
-                <a
-                  className={styles.menuSocialsCircle}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://twitter.com/AnteBadzim"
-                >
-                  <span></span>
-                </a>
-              </li>
-              <li className={styles.menuSocialsLink}>
-                <a
-                  rel="noopener noreferrer"
-                  className={styles.menuSocialsCircle}
-                  target="_blank"
-                  href="https://www.facebook.com/favouriteprimark/"
-                >
-                  <span></span>
-                </a>
-              </li>
-              <li className={styles.menuSocialsLink}>
-                <a
-                  rel="noopener noreferrer"
-                  className={styles.menuSocialsCircle}
-                  target="_blank"
-                  href="http://instagram.com/ante"
-                >
-                  <span></span>
-                </a>
-              </li>
-            </ul>
+            <div className={styles.rightWrapper}>
+              <div className={styles.langWrapper}>
+                {defLangState === "ukr" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    UKR
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {defLangState === "rus" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    RU
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {defLangState === "en" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    EN
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {langSwitcher ? (
+                  <div className={styles.langs}>
+                    <span
+                      className={styles.langSpan}
+                      id="ukr"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      UKR
+                    </span>
+                    <span
+                      className={styles.langSpan}
+                      id="rus"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      RU
+                    </span>
+                    <span
+                      className={styles.langSpan}
+                      id="en"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      EN
+                    </span>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+              <ul className={styles.menuSocialsList}>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    className={styles.menuSocialsCircle}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://twitter.com/AnteBadzim"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    rel="noopener noreferrer"
+                    className={styles.menuSocialsCircle}
+                    target="_blank"
+                    href="https://www.facebook.com/favouriteprimark/"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    rel="noopener noreferrer"
+                    className={styles.menuSocialsCircle}
+                    target="_blank"
+                    href="http://instagram.com/ante"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    className={styles.menuSocialsCircle}
+                    href="tel:+380678095578"
+                    rel="noopener noreferrer"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <ExtendedMenu activeMenu={active} />
         </header>
       ) : (
         <header className={header ? styles.scrollUp : styles.scrollDown}>
           <div className={styles.triggerMenuWrapper}>
-            <p className={styles.logo}>EL-C</p>
+            <p className={styles.logo} onClick={refresher}>
+              EL-C
+            </p>
             <button
               onClick={() => setActive(!active)}
               className={active ? styles.menuActive : styles.menu}
@@ -252,38 +349,99 @@ const Header = () => {
                 <></>
               )}
             </nav>
-            <ul className={styles.menuSocialsList}>
-              <li className={styles.menuSocialsLink}>
-                <a
-                  className={styles.menuSocialsCircle}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://twitter.com/AnteBadzim"
-                >
-                  <span></span>
-                </a>
-              </li>
-              <li className={styles.menuSocialsLink}>
-                <a
-                  rel="noopener noreferrer"
-                  className={styles.menuSocialsCircle}
-                  target="_blank"
-                  href="https://www.facebook.com/favouriteprimark/"
-                >
-                  <span></span>
-                </a>
-              </li>
-              <li className={styles.menuSocialsLink}>
-                <a
-                  rel="noopener noreferrer"
-                  className={styles.menuSocialsCircle}
-                  target="_blank"
-                  href="http://instagram.com/ante"
-                >
-                  <span></span>
-                </a>
-              </li>
-            </ul>
+            <div className={styles.rightWrapper}>
+              <div className={styles.langWrapper}>
+                {defLangState === "ukr" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    UKR
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {defLangState === "rus" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    RU
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {defLangState === "en" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    EN
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {langSwitcher ? (
+                  <div className={styles.langs}>
+                    <span
+                      className={styles.langSpan}
+                      id="ukr"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      UKR
+                    </span>
+                    <span
+                      className={styles.langSpan}
+                      id="rus"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      RU
+                    </span>
+                    <span
+                      className={styles.langSpan}
+                      id="en"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      EN
+                    </span>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+              <ul className={styles.menuSocialsList}>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    className={styles.menuSocialsCircle}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://twitter.com/AnteBadzim"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    rel="noopener noreferrer"
+                    className={styles.menuSocialsCircle}
+                    target="_blank"
+                    href="https://www.facebook.com/favouriteprimark/"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    rel="noopener noreferrer"
+                    className={styles.menuSocialsCircle}
+                    target="_blank"
+                    href="http://instagram.com/ante"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    className={styles.menuSocialsCircle}
+                    href="tel:+380678095578"
+                    rel="noopener noreferrer"
+                  >
+                    <span></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <ExtendedMenu activeMenu={active} />
         </header>

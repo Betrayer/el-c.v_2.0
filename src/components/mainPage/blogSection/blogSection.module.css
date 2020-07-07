@@ -4,7 +4,7 @@
   margin-bottom: 100px;
   position: relative;
   height: calc(100vh +30px);
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .blogHeader {
@@ -12,7 +12,7 @@
   margin-bottom: 20px;
   text-align: center;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .postsList {
@@ -26,6 +26,10 @@
 height: 630px;
 background-color: #fff;
 }
+/* .postsList button[aria-label="next"]{
+  right: -20px;
+  width: 20px;
+} */
 .postsListItem {
   width: 100%;
   display: flex;
@@ -93,27 +97,21 @@ background-color: #fff;
 }
 @media (min-width: 520px){
   .postsListItem {
-    width: 100%;
+    width: 88%;
   }
   .postImg {
     height: 320px;  
-    /* width: 80%; */
+    width: 88%;
   }
   .postsList div{
-    height: 600px;
+    height: 650px;
     }
   .textWrapper{
-    top: -100px;
+    top: -130px;
     padding: 10px;
-    /* width: 76%; */
+    width: 80%;
   }
-  .postText {
-    font-weight: 100;
-    font-size: 16px;
-  }
-  .postText:nth-child(1){
-    font-size: 17px;
-  }
+  
 }
 @media (min-width: 768px) {
   .blogHeader {
@@ -132,15 +130,10 @@ background-color: #fff;
   .textWrapper{
     top: -198px;
     padding: 10px;
-    width: 90%;
-  }
-  .postsListItem {
-    width: 90%;
   }
 
   .postImg {
-    height: 520px;  
-    width: 100%;
+    height: 500px; 
   }
 }
 @media (min-width: 1000px) {
@@ -170,7 +163,7 @@ background-color: #fff;
     height: 750px;
     }
   .postImg {
-    height: 700px;
+    height: 600px;
   }
   .postText:nth-child(1){
     padding-bottom: 10px;
@@ -186,7 +179,7 @@ background-color: #fff;
   }
   .postImg {
     height: 700px;
-    max-width: 1034px;
+    max-width: 1134px;
   }
   .postText:nth-child(1){
     padding-bottom: 10px;

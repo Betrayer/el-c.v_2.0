@@ -1,6 +1,6 @@
 #tsparticles,
 .particles {
-  background: url(../../assets/photos/toucanUkr.png);
+  background: url(../../assets/photos/toucan.png);
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
@@ -12,15 +12,24 @@
 
 /* canvas{
   position: relative;
-}
-.particles:after{
-  content: "веб студия";
+}*/
+/* .panelText{
   position: absolute;
-  color: #fff;
-  width: 280px;
-  top: 120px;
-  left: calc(50% - 140px);
-  font-size: 46px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+} */
+.name, .textTop, .textBottom, .textMiddle{
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  font-size: 86px;
   user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -28,30 +37,75 @@
   -o-user-select: none;
   mix-blend-mode: difference;
   font-weight: 800;
-} */
-.startBtn {
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  display: block;
+  width: 90%;
+} 
+.textTop, .textMiddle, .textBottom{
+  color: #fff;
+  font-size: 24px;
+  top: 26%;
+  line-height: 0.9;
+  font-weight: 400;
+}
+.textMiddle, .textBottom{
+  top: 62%;
+  font-size: 16px;
+  text-transform: uppercase;
+  word-spacing: 18px;
+}
+.textBottom{
+  top: 60%;
+  line-height: 1.6;
+  font-weight: 500;       
+}
+.textSpanBottom{
+  display: block;
+}
+.textSpan{
+  display: block;
+  font-weight: 300;
+}
+.getInTouchBtn {
   position: absolute;
-  width: 304px;
-  height: 78px;
+  width: 244px;
+  height: 68px;
   left: 50%;
-  top: 710px;
-  opacity: 0;
-  background: #414141de;
-  background-blend-mode: difference;
-  border-radius: 16px;
+  top: 76%;
+  mix-blend-mode: difference;
+  background-color: #e0de3a;
+  border-radius: 30px;
   transform: translate(-50%) scale(0.8);
   transition: all 0.4s ease;
   font-weight: 800;
-  font-size: 30px;
-  color: #fff;
+  font-size: 18px;
+  color: #000;
+  /* border: 2px solid #fff; */
 }
-.startBtn:hover {
-  opacity: 1;
+.getInTouchBtn:hover {
   transform: translate(-50%) scale(1);
 }
 @media (min-width: 700px) {
-  .startBtn {
-    top: 750px;
+  .getInTouchBtn {
+    width: 304px;
+    height: 78px;
+    font-size: 24px;
+    top: 70%;
+  }
+  .name{
+    font-size: 126px;
+    top: 40%;
+  }
+  .textTop, .textMiddle, .textBottom{
+    font-size: 30px;
+    top: 26%;
+    width: 60%;
+  }
+  .textMiddle, .textBottom{
+    top: 56%;
+    font-size: 20px;
+    word-spacing: 18px;
   }
 }
 @media (min-width: 1200px) {
@@ -59,5 +113,22 @@
   .particles {
     height: calc(100vh - 100px);
     top: 100px;
+  }
+  .getInTouchBtn {
+    top: 76%;
+  }
+  .textTop, .textMiddle, .textBottom{
+    font-size: 30px;
+    top: 36%;
+    width: 60%;
+  }
+  .textMiddle, .textBottom{
+    top: 65%;
+    font-size: 20px;
+    word-spacing: 18px;
+  }
+  .name{
+    font-size: 146px;
+    top: 50%;
   }
 }
