@@ -1,7 +1,7 @@
 .whyUsContainer {
   width: 100%;
   position: relative;
-  padding: 20px 0;
+  padding-top: 40px;
 }
 
 .whyUsTitle {
@@ -171,6 +171,9 @@
 }
 
 @media (min-width: 1200px) {
+  .whyUsContainer {
+    padding-top: 80px;
+  }
   .whyUsTitle {
     font-size: 40px;
     padding-top: 20px;

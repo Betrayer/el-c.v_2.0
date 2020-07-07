@@ -11,7 +11,6 @@ const Footer = () => {
           {defLangState === "rus" ? "Свяжитесь с нами" : ""}
           {defLangState === "ukr" ? "Зв'яжіться з нами" : ""}
           {defLangState === "en" ? "Contact us" : ""}
-          Зв'яжіться з нами
         </span>
       </h2>
       <div className={css.footerWrapper}>
