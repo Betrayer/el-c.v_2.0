@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Particles from "react-particles-js";
 import { useHistory } from "react-router-dom";
 import PageNotFound from "../pages/pageNotFound/PageNotFound";
 import styles from "./toucanPanel.module.css";
 
 const ToucanPanel = () => {
+  const [canvas, setCanvas] = useState(
+    document.getElementsByClassName("tsparticles-canvas-el")
+  );
   const intFrameWidth = window.innerWidth;
   const history = useHistory();
+  useEffect(() => {
+    window.onload = function () {
+      const canvas = document.getElementsByClassName(
+        "tsparticles-canvas-el"
+      )[0];
+      var ctx = canvas.getContext("2d");
+
+      ctx.font = "58px Arial";
+      ctx.fillStyle = "rgba(20, 20, 20, .8)";
+      ctx.fillText("Hello World", 10, 50);
+    };
+    // var ctx = canvas.getContext("2d");
+    // ctx.font = "30px Arial";
+  }, [canvas]);
+
   return (
     <>
       {history.location.pathname === "/" ? (
-        <>
+        <div id="toucan">
           {intFrameWidth > 700 ? (
             <Particles
               className={styles.particles}
@@ -30,7 +48,7 @@ const ToucanPanel = () => {
                   enable: true,
                 },
                 detectRetina: true,
-                fpsLimit: 30,
+                fpsLimit: 120,
                 infection: {
                   cure: false,
                   delay: 0,
@@ -39,7 +57,7 @@ const ToucanPanel = () => {
                   stages: [],
                 },
                 interactivity: {
-                  detectsOn: "canvas",
+                  detectsOn: "window",
                   events: {
                     onClick: {
                       enable: true,
@@ -300,7 +318,7 @@ const ToucanPanel = () => {
                 },
                 pauseOnBlur: true,
               }}
-            />
+            ></Particles>
           ) : (
             <Particles
               className={styles.particles}
@@ -586,9 +604,18 @@ const ToucanPanel = () => {
                 },
                 pauseOnBlur: true,
               }}
-            />
+            >
+              <h1 className={styles.name}>EL-C</h1>
+            </Particles>
           )}
-        </>
+          <div className={styles.panelText}>
+            <p className={styles.textTop}>студія <span className={styles.textSpan}>веб-розробки</span></p>
+            <h1 className={styles.name}>EL-C</h1>
+            {/* <p className={styles.textMiddle}>Створюємо проекти будь-якої складності</p> */}
+            <p className={styles.textBottom}>Пропонуємо рішення для простих <span className={styles.textSpanBottom}>і не стандартних завдань</span></p>
+          </div>
+          <button className={styles.getInTouchBtn}>Залишити заявку</button>
+        </div>
       ) : (
         <>{<PageNotFound />}</>
       )}

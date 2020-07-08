@@ -122,11 +122,62 @@
 .scrollUp .triggerMenuWrapper {
   transform: translate(0, 0%);
 }
-.menuSocialsList {
+.rightWrapper {
   display: none;
 }
+.langWrapper {
+  width: 36px;
+  position: relative;
+}
 
-@media (min-width: 1200px) {
+.langWrapper::after {
+  content: "";
+  background-color: #1AC3E8;
+  height: 1px;
+  width: 36px;
+  position: absolute;
+}
+
+.langWrapper:hover {
+  cursor: pointer;
+}
+
+.lang {
+  text-align: center;
+}
+
+.langs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 40px;
+  height: 100px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 6px;
+  z-index: 5;
+  transition: all 0.1s ease-in-out;
+}
+
+.langSpan {
+  width: 40px;
+  padding: 5px 0;
+  cursor: pointer;
+  text-align: center;
+  z-index: 4;
+  transition: all 0.1s ease-in-out;
+}
+
+.langSpan:hover {
+  background-color: rgba(26, 194, 232, 0.219);
+}
+.langSpann:nth-child(3):hover{
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+@media(min-width: 900px){
   .triggerMenuWrapper {
     height: 100px;
     padding: 0 50px;
@@ -143,11 +194,24 @@
     top: -16px;
     left: -12px;
   }
+  .menu,
+.menuActive {
+  width: 40px;
+  height: 46px;
+}
+
+.menuSvg {
+  width: 76px;
+  height: 60px;
+}
+}
+@media (min-width: 1200px) {
+
   .menu {
     display: none;
   }
   .logo {
-    width: 170px;
+    width: 270px;
   }
   .nav {
     display: flex;
@@ -155,7 +219,7 @@
   }
   .menuNavList {
     display: flex;
-    width: 300px;
+    width: 540px;
     justify-content: space-between;
     align-items: center;
     height: 60px;
@@ -169,14 +233,28 @@
     transform: scale(1.1);
     color: #40bad5;
   }
+  .rightWrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+    align-items: center;
+  }
+  .contactsSocials{
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+  }
   .menuSocialsList {
     display: flex;
-    width: 170px;
+    width: 200px;
     justify-content: space-between;
   }
   .menuSocialsLink {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     background-color: #fff;
     border-radius: 50%;
     position: relative;
@@ -184,8 +262,8 @@
     cursor: pointer;
   }
   .menuSocialsCircle {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     display: block;
     position: relative;
@@ -204,8 +282,8 @@
   .menuSocialsLink::after {
     position: absolute;
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background-image: url(../../../assets/icons/socials/facebook.svg);
     top: 50%;
     left: 50%;
@@ -217,6 +295,9 @@
   }
   .menuSocialsLink:nth-child(3)::after {
     background-image: url(../../../assets/icons/socials/instagram.svg);
+  }
+  .menuSocialsLink:nth-child(4)::after {
+    background-image: url(../../../assets/icons/socials/phone.svg);
   }
   .menuSocialsLink:before {
     top: 90%;
@@ -243,6 +324,9 @@
   .menuSocialsLink:nth-child(3)::before {
     background: linear-gradient(#4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
   }
+  .menuSocialsLink:nth-child(4)::before {
+    background: linear-gradient(#0367BD, #1AC3E8, #fcbf1e);
+  }
   .menuSocialsLink:focus,
   .menuSocialsLink:hover {
     transform: scale(1.26);
@@ -258,5 +342,9 @@
   .menuSocialsLink:nth-child(3):focus::after,
   .menuSocialsLink:nth-child(3):hover::after {
     background-image: url(../../../assets/icons/socials/instagramWh.svg);
+  }
+  .menuSocialsLink:nth-child(4):focus::after,
+  .menuSocialsLink:nth-child(4):hover::after {
+    background-image: url(../../../assets/icons/socials/phoneWh.svg);
   }
 }

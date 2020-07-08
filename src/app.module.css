@@ -90,12 +90,16 @@ img {
 }
 
 #tsparticles {
-  background: url(./assets/photos/toucanUkr.png);
+  background: url(./assets/photos/toucan.png);
   background-size: contain;
   background-position: 50% 50%;
   /* position: relative; */
   top: 100px;
   /* background-color: #ccc; */
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* width:100vw; */
 }

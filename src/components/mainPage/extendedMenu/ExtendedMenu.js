@@ -1,38 +1,42 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styles from "./extendedMenu.module.css";
-import { NavLink } from "react-router-dom";
 
 const ExtendedMenu = ({ activeMenu }) => {
-    const defLangState = "rus"
+  const [defLangState] = useState(localStorage.getItem("lang"));
+  useEffect(() => {}, [defLangState]);
   const menuLinksRus = [
     // { name: "Портфолио", redirect: "/portfolio" },
-    { name: "Услуги", redirect: "/services" },
-    { name: "О нас", redirect: "/about" },
-    { name: "Блог", redirect: "/blog" },
+    { name: "Услуги", redirect: "services" },
+    { name: "О нас", redirect: "weWork" },
+    { name: "Почему мы", redirect: "why" },
+    { name: "Блог", redirect: "blog" },
   ];
   const menuLinksUkr = [
     // { name: "Портфоліо", redirect: "/portfolio" },
-    { name: "Послуги", redirect: "/services" },
-    { name: "Про нас", redirect: "/about" },
-    { name: "Блог", redirect: "/blog" },
+    { name: "Послуги", redirect: "services" },
+    { name: "Про нас", redirect: "weWork" },
+    { name: "Чому ми", redirect: "why" },
+    { name: "Блог", redirect: "blog" },
   ];
   const menuLinksEng = [
     // { name: "Portfolio", redirect: "/portfolio" },
-    { name: "Services", redirect: "/services" },
-    { name: "About us", redirect: "/about" },
-    { name: "Blog", redirect: "/blog" },
+    { name: "Services", redirect: "services" },
+    { name: "About us", redirect: "weWork" },
+    { name: "Why us", redirect: "why" },
+    { name: "Blog", redirect: "blog" },
   ];
+  const scroller = (name) => {
+    document.getElementById(name).scrollIntoView();
+  };
   return (
     <div className={styles.innerContainer}>
-      {/* <div className={styles.circle}></div> */}
       <div className={activeMenu ? styles.circleExpand : styles.circle}></div>
-      {/* <ul className={activeMenu ? styles.menuNavActive : styles.menuNav}> */}
       <div className={activeMenu ? styles.linksWrapperActive : styles.linksWrapper}>
       {defLangState === "rus" ? (
         <ul className={activeMenu ? styles.menuNavActive : styles.menuNav}>
           {menuLinksRus.map((link, ind) => (
-            <NavLink
-              to={link.redirect}
+            <li
+              onClick={() => scroller(link.redirect)}
               key={ind}
               style={{
                 animationDelay: `${ind * 0.1 + 0.4}s`,
@@ -42,7 +46,7 @@ const ExtendedMenu = ({ activeMenu }) => {
               }
             >
               <span className={styles.menuPageLinkText}>{link.name}</span>
-            </NavLink>
+            </li>
           ))}
         </ul>
       ) : (
@@ -51,8 +55,8 @@ const ExtendedMenu = ({ activeMenu }) => {
       {defLangState === "ukr" ? (
         <ul className={activeMenu ? styles.menuNavActive : styles.menuNav}>
           {menuLinksUkr.map((link, ind) => (
-            <NavLink
-              to={link.redirect}
+            <li
+            onClick={() => scroller(link.redirect)}
               key={ind}
               style={{
                 animationDelay: `${ind * 0.1 + 0.4}s`,
@@ -62,7 +66,7 @@ const ExtendedMenu = ({ activeMenu }) => {
               }
             >
               <span className={styles.menuPageLinkText}>{link.name}</span>
-            </NavLink>
+            </li>
           ))}
         </ul>
       ) : (
@@ -71,8 +75,8 @@ const ExtendedMenu = ({ activeMenu }) => {
       {defLangState === "en" ? (
         <ul className={activeMenu ? styles.menuNavActive : styles.menuNav}>
           {menuLinksEng.map((link, ind) => (
-            <NavLink
-              to={link.redirect}
+            <li
+            onClick={() => scroller(link.redirect)}
               key={ind}
               style={{
                 animationDelay: `${ind * 0.1 + 0.4}s`,
@@ -82,7 +86,7 @@ const ExtendedMenu = ({ activeMenu }) => {
               }
             >
               <span className={styles.menuPageLinkText}>{link.name}</span>
-            </NavLink>
+            </li>
           ))}
         </ul>
       ) : (
