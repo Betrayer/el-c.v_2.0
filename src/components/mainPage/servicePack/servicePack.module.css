@@ -24,10 +24,16 @@
   align-items: center;
   max-width: 898px;
   margin: 0 auto;
+  transition: all 0.24s ease-in-out;
 }
-
+.slider{
+  background-color: #fff;
+}
+.servicesSliderPage{
+  display: flex;
+}
 .servicesListItem {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,13 +47,13 @@
   border-bottom-right-radius: 0px;
 }
 .iconCircle, .iconCircleLight, .iconCircleLighter {
-  width: 440px;
-  height: 440px;
+  width: 640px;
+  height: 640px;
   background-color: #0379e09d;
   position: absolute;
   content: "";
   border-radius: 50%;
-  top: -58px;
+  top: -128px;
   left: 50%;
   transform: translate(-50%) scale(0);
   transition: all 0.24s ease;
@@ -60,16 +66,18 @@
 }
 .iconCircleLighter{
   background-color: rgb(235, 249, 255);
-  width: 444px;
-  height: 444px;
-  top: -70px;
+  width: 644px;
+  height: 644px;
+  top: -50px;
   transition-delay: 0s;
 }
 .servicesListItem:hover .iconCircle, .servicesListItem:hover .iconCircleLight, .servicesListItem:hover .iconCircleLighter {
   transform: translate(-50%) scale(1);
+  top: -28px;
 }
 .servicesListItem:hover{
-  transform: scale(1.16);
+  transform: scale(1.1);
+  height: 530px;
 }
 .servicesListItem:hover .iconCircle{
   transition-delay: 0s;
@@ -85,6 +93,7 @@
 .servicesText{
   font-size: 15px;
   font-weight: 300;
+  margin-bottom: 6px;
 }
 .icon {
   width: 50px;
