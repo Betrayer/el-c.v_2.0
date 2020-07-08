@@ -1,18 +1,22 @@
-import React from 'react'
-import ServicesSection from './servicesSection/ServicesSection';
-import BlogSection from './blogSection/BlogSection';
-import WhyUsSection from './whyUsSection/WhyUsSection';
-import WeWorkSection from './weWorkSection/WeWorkSection';
+import React from "react";
+import ServicePack from "./servicePack/ServicePack";
+import BlogSection from "./blogSection/BlogSection";
+import WeWorkSection from "./weWorkSection/WeWorkSection";
+import WhyUsSection from "./whyUsSection/WhyUsSection";
+import ServicesSection from "./servicesSection/ServicesSection";
+import AboutUs from "./aboutUs/AboutUs";
 
 const mainPage = () => {
-    return (
-        <>
-            <ServicesSection />
-            <WhyUsSection />
-            <WeWorkSection />
-            <BlogSection />
-        </>
-    );
-}
+  return (
+    <>
+      <ServicesSection />
+      <AboutUs />
+      <WeWorkSection />
+      <ServicePack />
+      <WhyUsSection />
+      <BlogSection />
+    </>
+  );
+};
 
 export default mainPage;
