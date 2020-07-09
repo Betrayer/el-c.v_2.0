@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./aboutUs.module.css";
+import CountUp from "react-countup";
+import { CSSTransition } from "react-transition-group";
+import slideR from "../../transitions/slideR.module.css";
+import slideL from "../../transitions/slideL.module.css";
 
-const AboutUs = () => {
+const AboutUs = ({ inViewPort }) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
   useEffect(() => {}, [defLangState]);
 
@@ -13,29 +17,83 @@ const AboutUs = () => {
           {defLangState === "ukr" ? "Про нас" : ""}
           {defLangState === "en" ? "About us" : ""}
         </h2>
+        <p className={styles.aboutDescriptionMob}>
+                Наши опыт сформировал практики и методы, руководствуясь которыи
+                мы работаем с нашими клиентами, обеспечивая решения,
+                поддерживаемые передовыми технологиями.
+              </p>
+        <div className={styles.aboutDesctopWrapper}>
+          <CSSTransition
+            timeout={2000}
+            classNames={slideR}
+            unmountOnExit
+            in={inViewPort}
+          >
+            <div className={styles.aboutImage}></div>
+          </CSSTransition>
+          
+            <CSSTransition
+              timeout={2000}
+              classNames={slideL}
+              unmountOnExit
+              in={inViewPort}
+            >
+              <p className={styles.aboutDescription}>
+                Наши опыт сформировал практики и методы, руководствуясь которыи
+                мы работаем с нашими клиентами, обеспечивая решения,
+                поддерживаемые передовыми технологиями.
+              </p>
+            </CSSTransition>
+          
+        </div>
+
         <ul className={styles.aboutList}>
           <li className={styles.aboutListItem}>
-            <div className={styles.lineBlue}></div>
-            {/* <div className={styles.lineLightBlue}></div>
-            <div className={styles.lineYellow}></div>
-            <div className={styles.lineBlueTwo}></div>
-            <div className={styles.lineLightBlueTwo}></div>
-            <div className={styles.lineYellowTwo}></div> */}
-            <h3 className={styles.aboutListTitle}>10 лет</h3>
-            <p className={styles.aboutListText}>успешной работы</p>
+            {inViewPort ? (
+              <CountUp
+                className={styles.aboutCounter}
+                start={0}
+                end={10}
+                duration={4}
+                separator=" "
+              ></CountUp>
+            ) : (
+              <></>
+            )}
+            <p className={styles.aboutListItemText}> ЛЕТ на рынке</p>
           </li>
           <li className={styles.aboutListItem}>
-            <div className={styles.lineBlue}></div>
-            
-            <h3 className={styles.aboutListTitle}>99%</h3>
-            <p className={styles.aboutListText}>удовлетворённости заказчика</p>
+            {inViewPort ? (
+              <CountUp
+                className={styles.aboutCounter}
+                start={0}
+                end={99}
+                duration={4}
+                separator=" "
+                suffix=" %"
+              ></CountUp>
+            ) : (
+              <></>
+            )}
+            <p className={styles.aboutListItemText}>Довольных Клиентов</p>
           </li>
           <li className={styles.aboutListItem}>
-            <div className={styles.lineBlue}></div>
-            <h3 className={styles.aboutListTitle}>100%</h3>
-            <p className={styles.aboutListText}>соблюдение сроков</p>
+            {inViewPort ? (
+              <CountUp
+                className={styles.aboutCounter}
+                start={0}
+                end={100}
+                duration={4}
+                separator=" "
+                suffix=" %"
+              ></CountUp>
+            ) : (
+              <></>
+            )}
+            <p className={styles.aboutListItemText}>Соблюдение Сроков</p>
           </li>
         </ul>
+        <button className={styles.aboutButton}>Оставить заявку</button>
       </div>
     </section>
   );
