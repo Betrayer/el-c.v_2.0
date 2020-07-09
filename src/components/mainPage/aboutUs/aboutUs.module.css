@@ -1,6 +1,8 @@
 .aboutSection {
   width: 100%;
   padding-top: 50px;
+  margin-top: 30px;
+  background-color: #0367BD;
 }
 
 .contentWrapper {
@@ -10,13 +12,80 @@
 }
 
 .aboutTitle {
-  padding-top: 20px;
+  padding-top: 12px;
   margin-bottom: 32px;
   font-size: 28px;
   font-weight: 500;
+  color: #ffffff;
 }
-.aboutList {
+.aboutDescription,
+.aboutImage{
+  display: none;
+}
+.aboutDescriptionMob{
+  position: relative;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 300;
+  padding-bottom: 30px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.aboutDescriptionMob::after{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: #fff;
+  margin-top: 38px;
+  left: 10%;
+}
+
+ .aboutList {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.aboutListItem{
+  margin-bottom: 20px;
+}
+
+.aboutCounter{
+  font-family: "Fredoka One";
+  letter-spacing: 1px;
+  font-size: 36px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.aboutListItemText{
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 6px;
+  color: #ffffff;
+}
+.aboutButton{
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 70%;
+  height: 50px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid white;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.aboutButton:hover{
+  background-color: #fff;
+  color: #0367BD;
+  border: 2px solid #0367BD;
 }
 
 @media (min-width: 768px) {
@@ -24,14 +93,73 @@
     font-size: 30px;
     padding-top: 10px;
   }
+  .aboutList {
+   flex-direction: row;
+   justify-content: space-around;
+  }
 }
 
 @media (min-width: 1200px) {
+  .aboutDescriptionMob{
+    display: none;
+  }
   .aboutSection {
+    position: relative;
     padding-top: 90px;
+    background-color:#fff;
   }
   .aboutTitle {
     font-size: 40px;
     padding-top: 20px;
+    color: black;
   }
+  .aboutList {
+    background-color: #0367BD;
+    padding-top: 20px;
+    justify-content: flex-end;
+  }
+  .aboutListItem{
+    padding-right: 50px;
+  }
+
+  .aboutImage{
+    display: inline-block;
+    position: absolute;
+    background-image: url('../../../assets/photos/about.png');
+    width:60%;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .aboutDesctopWrapper{
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .aboutDescription{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 40%;
+    font-size: 17px;
+    font-weight: 300;
+    padding-right: 30px;
+    color: black;
+  }
+  .aboutDescription::after{
+    background-color: black;
+  }
+  .aboutButton{
+    margin-top: 66px;
+    color: #0367BD;
+    border: 2px solid #0367BD;
+  }
+  .aboutButton:hover{
+    background-color: #0367BD;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
 }

@@ -1,0 +1,75 @@
+.portfolioSection {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .contentWrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+
+  .portfolioTitle{
+    padding-top: 12px;
+    margin-bottom: 32px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  .portfolioList{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .aboutListTitle{
+      display: none;
+  }
+
+  .aboutListText{
+      padding-top: 4px;
+      color: #ffffff;
+  }
+
+  .portfolioButton{
+      display: block;
+      margin: 0 auto;
+      line-height: 2;
+      width: 60%;
+      margin-top: 120px;
+      padding: 4px 2px;
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 16px;
+  }
+
+  .portfolioListItem{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    border: 2px solid #0367BD;
+  }
+  .portfolioListItem:nth-child(3) .portfolioButton{
+    height: 40px;
+    width: 60%;
+    margin-top: 120px;
+    background-color: transparent;
+    color: rgb(44, 38, 129);
+    border: 2px solid rgb(138, 57, 231);
+    border-radius: 20px;
+}
+  .portfolioListItem:nth-child(2){
+      background-image: url('../../../assets/photos/secondElementLi.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  .portfolioListItem:nth-child(3){
+    background-image: url('../../../assets/photos/thirdElementLi.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

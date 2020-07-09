@@ -1,3 +1,7 @@
+.scrollUp,
+.scrollDown{
+  overflow: hidden;
+}
 .triggerMenuWrapper {
   position: fixed;
   top: 0;
