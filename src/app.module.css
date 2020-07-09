@@ -47,6 +47,14 @@
   src: local("M PLUS 1p Black"), local("MPLUS1p-Black"),
     url("./assets/fonts/MPLUS1p-Black.ttf") format("truetype"); /* Safari, Android, iOS */
 }
+@font-face {
+  font-family: 'Fredoka One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fredoka One'), local('FredokaOne-Regular'),
+    url("./assets/fonts/FredokaOne-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
 
 * {
   margin-block-start: 0;
@@ -103,3 +111,4 @@ img {
   align-items: center;
   /* width:100vw; */
 }
+

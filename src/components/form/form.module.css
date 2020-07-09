@@ -181,7 +181,9 @@
     flex-wrap: wrap;
     align-items: flex-start;
   }
-
+  .formInputsRight .formDiv::after{
+    display: none;
+}
   .formInputsLeft,
   .formInputsLeft {
     width: 50%;
