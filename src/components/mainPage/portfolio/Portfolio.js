@@ -14,10 +14,12 @@ const Portfolio = () => {
         </h2>
         <ul className={styles.portfolioList}>
           <li className={styles.portfolioListItem}>
-            <div className={styles.portfolioListItemBg}></div>
-            <h3 className={styles.aboutListTitle}>Кеды</h3>
+           <div className={styles.portfolioListItemBg}></div>
+           <div className={styles.portfolioListTextWrapper}>
+            <h3 className={styles.aboutListTitle}>Sneakers</h3>
             <p className={styles.aboutListText}>Мобильное приложение</p>
             <button className={styles.portfolioButton}>Посмотреть демо</button>
+            </div>
           </li>
           <li className={styles.portfolioListItem}>
             <div className={styles.portfolioListItemBg}></div>

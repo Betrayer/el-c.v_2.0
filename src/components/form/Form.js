@@ -341,8 +341,8 @@ const Form = (props) => {
       />
       <form className={css.form} onSubmit={(e) => handleSubmit(e)}>
         <h3 className={css.formTitleForm}>
-          {defLangState === "rus" ? "Есть крутая задумка?" : ""}
-          {defLangState === "ukr" ? "Є крута задумка?" : ""}
+          {defLangState === "rus" ? "Есть крутая идея?" : ""}
+          {defLangState === "ukr" ? "Є крута ідея?" : ""}
           {defLangState === "en" ? "Have a cool idea?" : ""}
         </h3>
         <h3 className={css.formTitleForm}>
@@ -431,8 +431,8 @@ const Form = (props) => {
           </div>
           <div className={css.formInputsRight}>
             <p className={css.formText}>
-              {defLangState === "rus" ? "Опишите вашу задумку" : ""}
-              {defLangState === "ukr" ? "Опишіть вашу задумку" : ""}
+              {defLangState === "rus" ? "Опишите вашу идею" : ""}
+              {defLangState === "ukr" ? "Опишіть вашу ідею" : ""}
               {defLangState === "en" ? "Describe your idea" : ""}
             </p>
             <div className={css.formDiv}>

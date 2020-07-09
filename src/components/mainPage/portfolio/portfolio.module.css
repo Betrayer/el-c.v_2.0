@@ -23,13 +23,9 @@
       align-items: center;
   }
 
-  .aboutListTitle{
-      display: none;
-  }
-
   .aboutListText{
       padding-top: 4px;
-      color: #ffffff;
+      /* color: #ffffff; */
   }
 
   .portfolioButton{
@@ -37,21 +33,37 @@
       margin: 0 auto;
       line-height: 2;
       width: 60%;
-      margin-top: 120px;
+      margin-top: 20px;
       padding: 4px 2px;
       background-color: transparent;
-      color: #fff;
-      border: 2px solid #fff;
+      /* color: #fff; */
+      /* border: 2px solid #fff; */
       border-radius: 16px;
   }
 
   .portfolioListItem{
     width: 100%;
-    height: 200px;
     margin-bottom: 10px;
-    border: 2px solid #0367BD;
+    /* border: 2px solid #0367BD; */
+    
   }
-  .portfolioListItem:nth-child(3) .portfolioButton{
+  .portfolioListItemBg{
+    background-image: url('../../../assets/photos/appUkr.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 250px;
+    /* box-shadow: 2px 4px 4px solid #ccc; */
+  }
+  .portfolioListTextWrapper{
+    border: 4px solid #ccc;
+    position: relative;
+    top: -20px;
+    z-index: -1;
+padding: 20px 0 4px;
+  }
+  /* .portfolioListItem:nth-child(3) .portfolioButton{
     height: 40px;
     width: 60%;
     margin-top: 120px;
@@ -72,4 +84,4 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */

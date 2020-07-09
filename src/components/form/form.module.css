@@ -168,13 +168,7 @@
 }
 @media (min-width: 1200px) {
   .form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(65, 69, 75, 0.58);
-    padding: 20px 10px;
-    width: 40%;
+    width: 60%;
   }
   .inputsWrapper {
     display: flex;
@@ -184,6 +178,7 @@
   .formInputsRight .formDiv::after{
     display: none;
 }
+
   .formInputsLeft,
   .formInputsLeft {
     width: 50%;
@@ -193,9 +188,16 @@
     width: 300px;
   }
   .formInputFeedback {
-    height: 120px;
+    height: 92px;
+    /* border-bottom: 1px solid rgb(103, 104, 110); */
+    border: 1px solid rgb(103, 104, 110);
   }
   /* .formInputFeedback::after{
 top: 60px;
   } */
+}
+@media (min-width: 1500px) {
+    .form {
+        width: 40%;
+      }
 }
