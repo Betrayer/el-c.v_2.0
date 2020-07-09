@@ -9,8 +9,8 @@ import AboutUs from "./aboutUs/AboutUs";
 const mainPage = () => {
   return (
     <>
-      <ServicePack />
-      {/* <ServicesSection /> */}
+      {/* <ServicePack /> */}
+      <ServicesSection />
       <AboutUs />
       <WeWorkSection />
       <WhyUsSection />
