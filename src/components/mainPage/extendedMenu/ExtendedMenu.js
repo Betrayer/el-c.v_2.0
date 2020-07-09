@@ -1,9 +1,20 @@
 import React, {useState, useEffect} from "react";
 import styles from "./extendedMenu.module.css";
+import { useHistory } from "react-router-dom";
+
 
 const ExtendedMenu = ({ activeMenu }) => {
-  const [defLangState] = useState(localStorage.getItem("lang"));
-  useEffect(() => {}, [defLangState]);
+  const history = useHistory();
+  const [langSwitcher, setLangSwitcher] = useState(false);
+  const [defLangState, setDefLangState] = useState(
+    localStorage.getItem("lang")
+  );
+  useEffect(() => {
+    defLang();
+  }, []);
+  const langSwitch = () => {
+    setLangSwitcher(!langSwitcher);
+  };
   const menuLinksRus = [
     // { name: "Портфолио", redirect: "/portfolio" },
     { name: "Услуги", redirect: "services" },
@@ -28,6 +39,35 @@ const ExtendedMenu = ({ activeMenu }) => {
   const scroller = (name) => {
     document.getElementById(name).scrollIntoView();
   };
+  const refresh = () => {
+    history.go();
+  };
+  const defLang = () => {
+    let lang = localStorage.getItem("lang");
+    if (!lang) {
+      localStorage.setItem("lang", "ukr");
+      setDefLangState("ukr");
+      refresh();
+    }
+  };
+  const changeLang = (e) => {
+    if (e.target.id === "rus") {
+      setDefLangState("rus");
+      localStorage.setItem("lang", "rus");
+      refresh();
+    } else if (e.target.id === "en") {
+      setDefLangState("en");
+      localStorage.setItem("lang", "en");
+      refresh();
+    } else {
+      setDefLangState("ukr");
+      localStorage.setItem("lang", "ukr");
+      refresh();
+    }
+    setLangSwitcher(!langSwitcher);
+  };
+
+
   return (
     <div className={styles.innerContainer}>
       <div className={activeMenu ? styles.circleExpand : styles.circle}></div>
@@ -131,6 +171,56 @@ const ExtendedMenu = ({ activeMenu }) => {
                 </li>
               </ul>
             </div>
+            <div className={styles.langWrapper}>
+                {defLangState === "ukr" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    UKR
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {defLangState === "rus" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    RU
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {defLangState === "en" ? (
+                  <p className={styles.lang} onClick={langSwitch}>
+                    EN
+                  </p>
+                ) : (
+                  <></>
+                )}
+                {langSwitcher ? (
+                  <div className={styles.langs}>
+                    <span
+                      className={styles.langSpan}
+                      id="ukr"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      UKR
+                    </span>
+                    <span
+                      className={styles.langSpan}
+                      id="rus"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      RU
+                    </span>
+                    <span
+                      className={styles.langSpan}
+                      id="en"
+                      onClick={(e) => changeLang(e)}
+                    >
+                      EN
+                    </span>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
           </div>
     </div>
   );
