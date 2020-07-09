@@ -6,7 +6,9 @@ import css from "./form.module.css";
 const Form = (props) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
   const [email, setEmail] = useState();
+  const [name, setName] = useState();
   const [feedback, setFeedback] = useState();
+  const [arrow, setArrow] = useState(false);
 
   useEffect(() => {}, [email, feedback, defLangState]);
 
@@ -17,11 +19,16 @@ const Form = (props) => {
       REACT_APP_EMAILJS_USERID: user,
     } = props.env;
     e.preventDefault();
-    // console.log(template, email, receiverEmail, feedback, user);
-    sendFeedback(template, email, receiverEmail, feedback, user);
+    sendFeedback(template, name, email, receiverEmail, feedback, user);
+    setEmail("");
+    setFeedback("");
+    setName("");
   };
   const handleChange = (e) => {
     setFeedback(e.target.value);
+  };
+  const handleChangeName = (e) => {
+    setName(e.target.value);
   };
 
   const handleChangeMail = (e) => {
@@ -30,19 +37,25 @@ const Form = (props) => {
   const handleCancel = () => {
     setFeedback();
     setEmail();
+    setName();
   };
   const sendFeedback = (
     templateId,
+    name,
     senderEmail,
     receiverEmail,
     feedback,
-    user
+    user,
+    
   ) => {
+    // console.log("USER", user)
+    // console.log(templateId, name, senderEmail, receiverEmail, feedback, user);
     window.emailjs
       .send(
         "default_service",
         templateId,
         {
+          name,
           senderEmail,
           receiverEmail,
           feedback,
@@ -60,7 +73,7 @@ const Form = (props) => {
       <Particles
         className={css.particlesForm}
         params={{
-            background: {},
+          background: {},
           detectRetina: true,
           fpsLimit: 30,
           infection: {
@@ -71,7 +84,7 @@ const Form = (props) => {
             stages: [],
           },
           interactivity: {
-            detectsOn: "window",
+            detectsOn: "canvas",
             events: {
               onClick: {
                 enable: true,
@@ -197,7 +210,7 @@ const Form = (props) => {
               },
               outMode: "out",
               random: false,
-              speed: 2,
+              speed: 1,
               straight: false,
               trail: {
                 enable: false,
@@ -348,118 +361,126 @@ const Form = (props) => {
           {defLangState === "ukr" ? "Пишіть нам" : ""}
           {defLangState === "en" ? "Contact us" : ""}
         </h3>
-        <p className={css.formText}>
-          {defLangState === "rus" ? "Как к вам обращаться?" : ""}
-          {defLangState === "ukr" ? "Як до вас звертатись?" : ""}
-          {defLangState === "en" ? "How may I address you?" : ""}
-        </p>
-        <div className={css.formDiv}>
-          {defLangState === "rus" ? (
-            <input
-              className={css.formInput}
-              type="text"
-              placeholder="Ваше имя"
-              required
-            />
-          ) : (
-            <></>
-          )}
-          {defLangState === "en" ? (
-            <input
-              className={css.formInput}
-              type="text"
-              placeholder="Your name"
-              required
-            />
-          ) : (
-            <></>
-          )}
-          {defLangState === "ukr" ? (
-            <input
-              className={css.formInput}
-              type="text"
-              placeholder="Ваше ім'я"
-              required
-            />
-          ) : (
-            <></>
-          )}
-        </div>
-        <p className={css.formText}>E-mail</p>
-        <div className={css.formDiv}>
-          {defLangState === "en" ? (
-            <input
-              className={css.formInput}
-              type="email"
-              value={email}
-              placeholder="Enter your email"
-              required
-              onChange={(e) => handleChangeMail(e)}
-            />
-          ) : (
-            <></>
-          )}
-          {defLangState === "rus" ? (
-            <input
-              className={css.formInput}
-              type="email"
-              value={email}
-              placeholder="Введите ваш email"
-              required
-              onChange={(e) => handleChangeMail(e)}
-            />
-          ) : (
-            <></>
-          )}
-          {defLangState === "ukr" ? (
-            <input
-              className={css.formInput}
-              type="email"
-              value={email}
-              placeholder="Введіть ваш email"
-              required
-              onChange={(e) => handleChangeMail(e)}
-            />
-          ) : (
-            <></>
-          )}
-        </div>
-        <p className={css.formText}>
-          {defLangState === "rus" ? "Опишите вашу задумку" : ""}
-          {defLangState === "ukr" ? "Опишіть вашу задумку" : ""}
-          {defLangState === "en" ? "Describe your idea" : ""}
-        </p>
-        <div className={css.formDiv}>
-          <input
-            className={css.formInput}
-            id="feedback-entry"
-            name="feedback-entry"
-            onChange={(e) => handleChange(e)}
-            required
-            value={feedback}
-          />
-        </div>
-
-        <div className={css.buttonFlexWhite}>
-          <button
-            // onMouseOver={() => setBlackArrow(true)}
-            // onMouseLeave={() => setBlackArrow(false)}
-            className={css.learnMoreWhite}
-            // onClick={() => openForm()}
-          >
-            {/* <span className={css.circleWhite} aria-hidden=true>
-              {blackArrow ? (
-                <span className={css.arrowWhite}></span>
+        <div className={css.inputsWrapper}>
+          <div className={css.formInputsLeft}>
+            <p className={css.formText}>
+              {defLangState === "rus" ? "Как к вам обращаться?" : ""}
+              {defLangState === "ukr" ? "Як до вас звертатись?" : ""}
+              {defLangState === "en" ? "How may I address you?" : ""}
+            </p>
+            <div className={css.formDiv}>
+              {defLangState === "rus" ? (
+                <input
+                  className={css.formInput}
+                  type="text"
+                  placeholder="Ваше имя"
+                  required
+                  onChange={(e) => handleChangeName(e)}
+                />
               ) : (
-                <span className={css.iconWhite}></span>
+                <></>
               )}
-            </span> */}
-            <span className={css.buttonTextWhite}>
-              {defLangState === "rus" ? "Отправить заявку" : ""}
-              {defLangState === "ukr" ? "Відправити заявку" : ""}
-              {defLangState === "en" ? "Send request" : ""}
-            </span>
-          </button>
+              {defLangState === "en" ? (
+                <input
+                  className={css.formInput}
+                  type="text"
+                  placeholder="Your name"
+                  required
+                  onChange={(e) => handleChangeName(e)}
+                />
+              ) : (
+                <></>
+              )}
+              {defLangState === "ukr" ? (
+                <input
+                  className={css.formInput}
+                  type="text"
+                  placeholder="Ваше ім'я"
+                  required
+                  onChange={(e) => handleChangeName(e)}
+                />
+              ) : (
+                <></>
+              )}
+              <p className={css.formText}>E-mail</p>
+              <div className={css.formDiv}>
+                {defLangState === "en" ? (
+                  <input
+                    className={css.formInput}
+                    type="email"
+                    value={email}
+                    placeholder="Enter your email"
+                    required
+                    onChange={(e) => handleChangeMail(e)}
+                  />
+                ) : (
+                  <></>
+                )}
+                {defLangState === "rus" ? (
+                  <input
+                    className={css.formInput}
+                    type="email"
+                    value={email}
+                    placeholder="Введите ваш email"
+                    required
+                    onChange={(e) => handleChangeMail(e)}
+                  />
+                ) : (
+                  <></>
+                )}
+                {defLangState === "ukr" ? (
+                  <input
+                    className={css.formInput}
+                    type="email"
+                    value={email}
+                    placeholder="Введіть ваш email"
+                    required
+                    onChange={(e) => handleChangeMail(e)}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className={css.formInputsRight}>
+            <p className={css.formText}>
+              {defLangState === "rus" ? "Опишите вашу задумку" : ""}
+              {defLangState === "ukr" ? "Опишіть вашу задумку" : ""}
+              {defLangState === "en" ? "Describe your idea" : ""}
+            </p>
+            <div className={css.formDiv}>
+              <textarea
+                className={css.formInputFeedback}
+                id="feedback-entry"
+                name="feedback-entry"
+                onChange={(e) => handleChange(e)}
+                required
+                value={feedback}
+              />
+            </div>
+          </div>
+          <div className={css.buttonFlexWhite}>
+            <button
+              onMouseOver={() => setArrow(true)}
+              onMouseLeave={() => setArrow(false)}
+              className={css.learnMoreWhite}
+              // onClick={() => openForm()}
+            >
+              <span className={css.circleWhite} aria-hidden="true">
+                {arrow ? (
+                  <span className={css.arrowWhite}></span>
+                ) : (
+                  <span className={css.iconWhite}></span>
+                )}
+              </span>
+              <span className={css.buttonTextWhite}>
+                {defLangState === "rus" ? "Отправить заявку" : ""}
+                {defLangState === "ukr" ? "Відправити заявку" : ""}
+                {defLangState === "en" ? "Send request" : ""}
+              </span>
+            </button>
+          </div>
         </div>
       </form>
     </section>
