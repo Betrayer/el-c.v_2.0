@@ -173,6 +173,58 @@
   .menuSocialsLink:nth-child(3):hover::after {
     background-image: url(../../../assets/icons/socials/instagramWh.svg);
   }
+
+  .langWrapper {
+    width: 36px;
+    position: relative;
+  }
+  
+  .langWrapper::after {
+    content: "";
+    background-color: #1AC3E8;
+    height: 1px;
+    width: 36px;
+    position: absolute;
+  }
+  
+  .langWrapper:hover {
+    cursor: pointer;
+  }
+  
+  .lang {
+    text-align: center;
+  }
+  .langs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 40px;
+    height: 100px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 6px;
+    z-index: 5;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .langSpan {
+    width: 40px;
+    padding: 5px 0;
+    cursor: pointer;
+    text-align: center;
+    z-index: 4;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .langSpan:hover {
+    background-color: rgba(26, 194, 232, 0.219);
+  }
+  .langSpann:nth-child(3):hover{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
   @media (min-width: 500px){
     .circleExpand{
       width:1400px;
