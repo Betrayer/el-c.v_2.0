@@ -11,21 +11,21 @@ const Header = () => {
   const menuLinksRus = [
     { name: "Услуги", redirect: "services" },
     { name: "Портфолио", redirect: "portfolio" },
-    { name: "О нас", redirect: "weWork" },
+    { name: "О нас", redirect: "about" },
     { name: "Почему мы", redirect: "why" },
     { name: "Блог", redirect: "blog" },
   ];
   const menuLinksUkr = [
     { name: "Послуги", redirect: "services" },
     { name: "Портфоліо", redirect: "portfolio" },
-    { name: "Про нас", redirect: "weWork" },
+    { name: "Про нас", redirect: "about" },
     { name: "Чому ми", redirect: "why" },
     { name: "Блог", redirect: "blog" },
   ];
   const menuLinksEng = [
     { name: "Services", redirect: "services" },
     { name: "Portfolio", redirect: "portfolio" },
-    { name: "About us", redirect: "weWork" },
+    { name: "About us", redirect: "about" },
     { name: "Why us", redirect: "why" },
     { name: "Blog", redirect: "blog" },
   ];
