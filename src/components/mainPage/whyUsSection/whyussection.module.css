@@ -168,8 +168,15 @@
   .like {
     opacity: 0;
   }
+  .likeTextWrapper{
+    width: 200px;
+    margin: 0 auto;
+  }
+  .likeText{
+    color: #fff;
+    text-align: center;
+  }
 }
-
 @media (min-width: 1200px) {
   .whyUsContainer {
     padding-top: 80px;

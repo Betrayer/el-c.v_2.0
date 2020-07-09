@@ -1,0 +1,62 @@
+.formSection{
+    position: relative;
+    margin-bottom: 40px;
+    color: #fff;
+}
+.particlesForm{
+    background-image: url(../../assets/photos/sky2.jpg);
+    background-size: cover;
+    height: 400px;
+}
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(36, 36, 41, 0.438);
+    padding: 20px 10px;
+}
+.formTitleForm,
+.formTitleSpan {
+  font-weight: 500;
+  text-align: left;
+  padding-left: 10px;
+  color: #fff;
+  font-size: 24px;
+}
+.formTitleSpan {
+  display: block;
+  padding-left: 0;
+}
+.formText {
+  font-weight: 400;
+  font-size: 14px;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.formContactText {
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: rgb(210, 212, 223);
+}
+.formInput {
+  margin-left: 10px;
+  width: 280px;
+}
+.formDiv {
+  position: relative;
+}
+
+.formDiv::after {
+  content: "";
+  background-color: rgb(103, 104, 110);
+  height: 1px;
+  width: 260px;
+  position: absolute;
+  top: 23px;
+  left: 10px;
+}

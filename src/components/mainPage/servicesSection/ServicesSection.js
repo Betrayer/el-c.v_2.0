@@ -10,8 +10,8 @@ const ServicesSection = () => {
       <div className={css.contentWrapper}>
         <h2 className={css.servicesHeader}>
           {defLangState === "rus" ? "Что мы предлагаем" : ""}
-          {defLangState === "ukr" ? "Послуги" : ""}
-          {defLangState === "en" ? "Services" : ""}
+          {defLangState === "ukr" ? "Що ми пропонуємо" : ""}
+          {defLangState === "en" ? "We offer" : ""}
         </h2>
         <ul className={css.servicesList}>
           <li className={css.servicesListItem}>
@@ -20,67 +20,21 @@ const ServicesSection = () => {
             <span className={css.iconCircleLighter}></span>
             <img
               className={css.icon}
-              src={require("../../../assets/services/design.svg")}
+              src={require("../../../assets/services/landing.svg")}
               alt="services-icon"
               height={50}
               width={"auto"}
             />
-            <p className={css.servicesTitle}>{defLangState === "rus" ? "Дизайн" : ""}
-          {defLangState === "ukr" ? "Дизайн" : ""}
-          {defLangState === "en" ? "Design" : ""}</p>
+            <p className={css.servicesTitle}>Landing Page</p>
             <p className={css.servicesText}>
               {defLangState === "rus"
-                ? "Проектирование интерфейсов"
+                ? "Создаем логическую структуру целевой страницы, которая побуждает посетителей к конкретным действиям - заказ услуги или товара, регистрации, подписки и т.д."
                 : ""}
               {defLangState === "ukr"
-                ? "Проектування інтерфейсів"
+                ? "Створюємо логічну структуру цільової сторінки, що спонукатиме відвідувачів до конкретних дій – замовлення послуги чи товару, реєстрації, підписки тощо"
                 : ""}
               {defLangState === "en"
-                ? "Designing Interfaces"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Дизайн лендингов"
-                : ""}
-              {defLangState === "ukr"
-                ? "Дизайн лендінгів"
-                : ""}
-              {defLangState === "en"
-                ? "Landing Design"
-                : ""}
-            </p>
-            {/* <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Веб-дизайн"
-                : ""}
-              {defLangState === "ukr"
-                ? "Веб-дизайн"
-                : ""}
-              {defLangState === "en"
-                ? "Web design"
-                : ""}
-            </p> */}
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Дизайн сайтов"
-                : ""}
-              {defLangState === "ukr"
-                ? "Дизайн сайтів"
-                : ""}
-              {defLangState === "en"
-                ? "Website Design"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Дизайн интернет-магазинов"
-                : ""}
-              {defLangState === "ukr"
-                ? "Дизайн інтернет-магазинів"
-                : ""}
-              {defLangState === "en"
-                ? "Online Store Design"
+                ? "We create a logicaly structured landing page, which will motivate visitors to specific actions - ordering a service or product, registration, subscription, etc."
                 : ""}
             </p>
           </li>
@@ -90,91 +44,53 @@ const ServicesSection = () => {
             <span className={css.iconCircleLighter}></span>
             <img
               className={css.icon}
-              src={require("../../../assets/services/webDev.svg")}
+              src={require("../../../assets/services/shop.svg")}
               alt="services-icon"
               height={50}
               width={"auto"}
             />
             <p className={css.servicesTitle}>
-              {defLangState === "rus" ? "Веб-разработка" : ""}
-              {defLangState === "ukr" ? "Веб-розробка" : ""}
-              {defLangState === "en" ? "Web development" : ""}
-            </p>
-            {/* <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Веб-сайты"
-                : ""}
-              {defLangState === "ukr"
-                ? "Веб-сайти"
-                : ""}
-              {defLangState === "en"
-                ? "Websites"
-                : ""}
-            </p> */}
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Корпоративные сайты"
-                : ""}
-              {defLangState === "ukr"
-                ? "Корпоративні сайти"
-                : ""}
-              {defLangState === "en"
-                ? "Business solutions"
-                : ""}
+              {defLangState === "rus" ? "Интернет-магазин" : ""}
+              {defLangState === "ukr" ? "Інтернет-магазин" : ""}
+              {defLangState === "en" ? "Online stores" : ""}
             </p>
             <p className={css.servicesText}>
               {defLangState === "rus"
-                ? "Интернет-магазины"
+                ? "Главная задача - удобство и функциональность. Выполним все технические пожелания, которые необходимы для вашего бизнеса."
                 : ""}
               {defLangState === "ukr"
-                ? "Інтернет-магазини"
+                ? "Головна задача – зручність та функціональність. Виконаємо всі технічні побажання, які необхідні для вашого бізнесу."
                 : ""}
               {defLangState === "en"
-                ? "Online stores"
+                ? "Our main task is convenience and functionality. We grant every technical wish that are necessary for your business."
                 : ""}
+            </p>
+          </li>
+          <li className={css.servicesListItem}>
+            <span className={css.iconCircle}></span>
+            <span className={css.iconCircleLight}></span>
+            <span className={css.iconCircleLighter}></span>
+            <img
+              className={css.icon}
+              src={require("../../../assets/services/data.svg")}
+              alt="services-icon"
+              height={50}
+              width={"auto"}
+            />
+            <p className={css.servicesTitle}>
+              {defLangState === "rus" ? "Корпоративний сайт" : ""}
+              {defLangState === "ukr" ? "Корпоративний сайт" : ""}
+              {defLangState === "en" ? "Business websites" : ""}
             </p>
             <p className={css.servicesText}>
               {defLangState === "rus"
-                ? "Промо-сайты"
+                ? "Поможем представить вашу компанию как наилучше. Знаем, как сделать уникальный сайт, который вызывает доверие клиентов."
                 : ""}
               {defLangState === "ukr"
-                ? "Промо-сайти"
+                ? "Допоможемо презентувати вашу компанію якнайкраще. Знаємо, як зробити унікальний сайт, що викликає довіру клієнтів."
                 : ""}
               {defLangState === "en"
-                ? "Промо-сайты"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Лендинг пейдж"
-                : ""}
-              {defLangState === "ukr"
-                ? "Лендінг пейдж"
-                : ""}
-              {defLangState === "en"
-                ? "Landing page"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Сайт-Визитки"
-                : ""}
-              {defLangState === "ukr"
-                ? "Сайт-Візитівка"
-                : ""}
-              {defLangState === "en"
-                ? "Сайт-Визитки"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Интернет-витрины"
-                : ""}
-              {defLangState === "ukr"
-                ? "Інтернет-вітрини"
-                : ""}
-              {defLangState === "en"
-                ? "Интернет-витрины"
+                ? "We will help you present your company in the best possible way. We know how to make a unique site that inspires customer trust."
                 : ""}
             </p>
           </li>
@@ -196,107 +112,13 @@ const ServicesSection = () => {
             </p>
             <p className={css.servicesText}>
               {defLangState === "rus"
-                ? "Android приложения"
+                ? "Разработаем прогрессивное и удобнле мобильное приложение любой сложности. Адаптируем продукт под все типы гаджетов."
                 : ""}
               {defLangState === "ukr"
-                ? "Android додатки"
+                ? "Розробимо прогресивний та зручний мобільний додаток будь-якої складності. Адаптуємо продукт під всі типи девайсів."
                 : ""}
               {defLangState === "en"
-                ? "Android applications"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "iOS Интернет-витрины"
-                : ""}
-              {defLangState === "ukr"
-                ? "iOS додатки"
-                : ""}
-              {defLangState === "en"
-                ? "iOS applications"
-                : ""}
-            </p>
-          </li>
-          <li className={css.servicesListItem}>
-            <span className={css.iconCircle}></span>
-            <span className={css.iconCircleLight}></span>
-            <span className={css.iconCircleLighter}></span>
-            <img
-              className={css.icon}
-              src={require("../../../assets/services/smm.svg")}
-              alt="services-icon"
-              height={50}
-              width={"auto"}
-            />
-            <p className={css.servicesTitle}>
-              {defLangState === "rus" ? "Интернет-маркетинг" : ""}
-              {defLangState === "ukr" ? "Інтернет-маркетинг" : ""}
-              {defLangState === "en" ? "Web marketing" : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Интернет реклама"
-                : ""}
-              {defLangState === "ukr"
-                ? "Інтернет реклама"
-                : ""}
-              {defLangState === "en"
-                ? "Online advertising"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Поисковое продвижение SEO"
-                : ""}
-              {defLangState === "ukr"
-                ? "Поисковое продвижение SEO"
-                : ""}
-              {defLangState === "en"
-                ? "SEO"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Контекстная реклама PPC"
-                : ""}
-              {defLangState === "ukr"
-                ? "Контекстна реклама PPC"
-                : ""}
-              {defLangState === "en"
-                ? "PPC internet advertising"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Баннерная реклама"
-                : ""}
-              {defLangState === "ukr"
-                ? "Баннерна реклама"
-                : ""}
-              {defLangState === "en"
-                ? "Banner advertising"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Социальный маркетинг SMM"
-                : ""}
-              {defLangState === "ukr"
-                ? "Социальний маркетинг SMM"
-                : ""}
-              {defLangState === "en"
-                ? "SMM"
-                : ""}
-            </p>
-            <p className={css.servicesText}>
-              {defLangState === "rus"
-                ? "Реклама в социальных сетях"
-                : ""}
-              {defLangState === "ukr"
-                ? "Реклама в социальних мережах"
-                : ""}
-              {defLangState === "en"
-                ? "Social Media Advertising"
+                ? "We will develop a progressive and convenient mobile app of any complexity. We adapt the product to all types of devices."
                 : ""}
             </p>
           </li>

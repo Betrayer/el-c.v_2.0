@@ -488,7 +488,7 @@ const ToucanPanel = () => {
                       factor: 1000,
                     },
                     limit: 0,
-                    value: 64,
+                    value: 70,
                   },
                   opacity: {
                     animation: {

@@ -20,11 +20,11 @@ const ViewportBlock = handleViewport(Block);
 const mainPage = () => {
   return (
     <>
+      {/* <ServicePack /> */}
       <ServicesSection />
       <Portfolio />
       <ViewportBlock onEnterViewport={() => {}} onLeaveViewport={() => {}} />
       <WeWorkSection />
-      <ServicePack />
       <WhyUsSection />
       <BlogSection />
     </>
