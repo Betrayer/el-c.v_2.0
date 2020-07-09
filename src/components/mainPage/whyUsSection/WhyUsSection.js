@@ -362,6 +362,10 @@ const WhyUsSection = () => {
               </g>
             </g>
           </svg>
+          <div className={styles.likeTextWrapper}>
+          <p className={styles.likeText}>{defLangState === "rus" ? "*нажми на лайк" : ""}
+        {defLangState === "ukr" ? "*тицни на вподобайку" : ""}
+        {defLangState === "en" ? "*slap dat liek butn" : ""}</p></div>
         </div>
       </div>
     </section>

@@ -69,7 +69,6 @@ const WeWorkSection = () => {
             <i className={styles.pencil}></i>
           </div>
           <h3 className={styles.weWorkItemTitle}>
-            Тестуємо та аналізуємо виконану роботу
             {defLangState === "rus" ? "Тестируем и анализируем проделанную работу" : ""}
             {defLangState === "ukr" ? "Тестуємо та аналізуємо виконану роботу" : ""}
             {defLangState === "en" ? "Testing and analyzing completed work" : ""}
