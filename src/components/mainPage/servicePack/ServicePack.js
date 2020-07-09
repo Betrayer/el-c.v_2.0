@@ -144,6 +144,9 @@ const ServicePack = () => {
                     </div>
                   </CSSTransition>
                 </li>
+
+              </div>
+              <div className={css.servicesSliderPage}>
                 <li onMouseEnter={() => setOpened("third")}
                   onMouseLeave={() => setOpened("")} className={css.servicesListItem}>
                   <span className={css.iconCircle}></span>
@@ -193,8 +196,7 @@ const ServicePack = () => {
                     </>
                   </CSSTransition>
                 </li>
-              </div>
-              <div className={css.servicesSliderPage}>
+              
                 <li className={css.servicesListItem} onMouseEnter={() => setOpened("forth")}
                   onMouseLeave={() => setOpened("")}>
                   <span className={css.iconCircle}></span>
@@ -255,7 +257,8 @@ const ServicePack = () => {
                     </div>
                   </CSSTransition>
                 </li>
-
+                </div>
+                <div className={css.servicesSliderPage}>
                 <li className={css.servicesListItem} onMouseEnter={() => setOpened("fifth")}
                   onMouseLeave={() => setOpened("")}>
                   <span className={css.iconCircle}></span>
