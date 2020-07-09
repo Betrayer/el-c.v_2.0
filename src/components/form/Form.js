@@ -6,6 +6,7 @@ import css from "./form.module.css";
 const Form = (props) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
   const [email, setEmail] = useState();
+  const [name, setName] = useState();
   const [feedback, setFeedback] = useState();
   const [arrow, setArrow] = useState(false);
 
@@ -18,12 +19,16 @@ const Form = (props) => {
       REACT_APP_EMAILJS_USERID: user,
     } = props.env;
     e.preventDefault();
-    sendFeedback(template, email, receiverEmail, feedback, user);
-    setEmail("")
-    setFeedback("")
+    sendFeedback(template, name, email, receiverEmail, feedback, user);
+    setEmail("");
+    setFeedback("");
+    setName("");
   };
   const handleChange = (e) => {
     setFeedback(e.target.value);
+  };
+  const handleChangeName = (e) => {
+    setName(e.target.value);
   };
 
   const handleChangeMail = (e) => {
@@ -32,19 +37,25 @@ const Form = (props) => {
   const handleCancel = () => {
     setFeedback();
     setEmail();
+    setName();
   };
   const sendFeedback = (
     templateId,
+    name,
     senderEmail,
     receiverEmail,
     feedback,
-    user
+    user,
+    
   ) => {
+    // console.log("USER", user)
+    // console.log(templateId, name, senderEmail, receiverEmail, feedback, user);
     window.emailjs
       .send(
         "default_service",
         templateId,
         {
+          name,
           senderEmail,
           receiverEmail,
           feedback,
@@ -364,6 +375,7 @@ const Form = (props) => {
                   type="text"
                   placeholder="Ваше имя"
                   required
+                  onChange={(e) => handleChangeName(e)}
                 />
               ) : (
                 <></>
@@ -374,6 +386,7 @@ const Form = (props) => {
                   type="text"
                   placeholder="Your name"
                   required
+                  onChange={(e) => handleChangeName(e)}
                 />
               ) : (
                 <></>
@@ -384,6 +397,7 @@ const Form = (props) => {
                   type="text"
                   placeholder="Ваше ім'я"
                   required
+                  onChange={(e) => handleChangeName(e)}
                 />
               ) : (
                 <></>
