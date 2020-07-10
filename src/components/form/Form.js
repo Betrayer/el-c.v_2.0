@@ -8,7 +8,7 @@ const Form = (props) => {
   const [email, setEmail] = useState();
   const [name, setName] = useState();
   const [feedback, setFeedback] = useState();
-  const [arrow, setArrow] = useState(false);
+  const [arrowForm, setArrowForm] = useState(false);
 
   useEffect(() => {}, [email, feedback, defLangState]);
 
@@ -463,13 +463,12 @@ const Form = (props) => {
           </div>
           <div className={css.buttonFlexWhite}>
             <button
-              onMouseOver={() => setArrow(true)}
-              onMouseLeave={() => setArrow(false)}
+              onMouseOver={() => setArrowForm(true)}
+              onMouseLeave={() => setArrowForm(false)}
               className={css.learnMoreWhite}
-              // onClick={() => openForm()}
             >
               <span className={css.circleWhite} aria-hidden="true">
-                {arrow ? (
+                {arrowForm ? (
                   <span className={css.arrowWhite}></span>
                 ) : (
                   <span className={css.iconWhite}></span>

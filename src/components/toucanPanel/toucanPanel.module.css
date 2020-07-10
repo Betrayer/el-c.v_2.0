@@ -9,7 +9,16 @@
   height: calc(100vh - 68px);
   top: 68px;
 }
-
+.particlesMob{
+  background: url(../../assets/photos/toucanMob.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  /* background-color: #ccc; */
+  /* width:100vw; */
+  height: calc(100vh - 68px);
+  top: 60px;
+}
 /* canvas{
   position: relative;
 }*/
