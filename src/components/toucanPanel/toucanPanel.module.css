@@ -32,7 +32,7 @@
   align-items: center;
   
 } */
-.name, .textTop, .textBottom, .textMiddle{
+.name, .textTop, .textBottom, .textTopMob, .nameMob, .textBottomMob{
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -51,20 +51,20 @@
   display: block;
   width: 90%;
 } 
-.textTop, .textMiddle, .textBottom{
+.textTop, .textTopMob, .textBottom, .textBottomMob{
   color: #fff;
   font-size: 24px;
   top: 26%;
   line-height: 0.9;
   font-weight: 400;
 }
-.textMiddle, .textBottom{
+.textBottomMob, .textBottom{
   top: 62%;
   font-size: 16px;
   text-transform: uppercase;
   word-spacing: 18px;
 }
-.textBottom{
+.textBottom, .textBottomMob{
   top: 60%;
   line-height: 1.6;
   font-weight: 500;       
@@ -75,6 +75,13 @@
 .textSpan{
   display: block;
   font-weight: 300;
+}
+ .nameMob, .textBottomMob{
+  mix-blend-mode: normal;
+}
+.textTopMob{
+  text-transform: uppercase;
+  font-weight: 500;
 }
 .getInTouchBtn {
   position: absolute;

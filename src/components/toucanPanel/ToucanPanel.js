@@ -599,7 +599,7 @@ const ToucanPanel = () => {
             // </Particles>
           )}
           <div className={styles.panelText}>
-            <p className={styles.textTop}>
+            <p className={intFrameWidth > 700 ? styles.textTop : styles.textTopMob}>
               {" "}
               {defLangState === "rus" ? "студия" : ""}
               {defLangState === "ukr" ? "студія" : ""}
@@ -610,13 +610,13 @@ const ToucanPanel = () => {
                 {defLangState === "en" ? "agency" : ""}
               </span>
             </p>
-            <h1 className={styles.name}>EL-C</h1>
+            <h1 className={intFrameWidth > 700 ? styles.name : styles.nameMob}>EL-C</h1>
             {/* <p className={styles.textMiddle}>Створюємо проекти будь-якої складності</p> */}
-            <p className={styles.textBottom}>
+            <p className={intFrameWidth > 700 ? styles.textBottom : styles.textBottomMob}>
               {defLangState === "rus" ? "Предлагаем решение для простых" : ""}
               {defLangState === "ukr" ? "Пропонуємо рішення для простих" : ""}
               {defLangState === "en" ? "We suggest solutions for simple" : ""}
-              <span className={styles.textSpanBottom}>
+              <span className={intFrameWidth > 700 ? styles.textSpanBottom : styles.textSpanBottomMob}>
                 {defLangState === "rus" ? "и нестандартных задач" : ""}
                 {defLangState === "ukr" ? "і нестандартних завдань" : ""}
                 {defLangState === "en" ? "and complicated tasks" : ""}
