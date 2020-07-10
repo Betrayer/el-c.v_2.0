@@ -113,7 +113,7 @@
   margin-top: 20px;
   position: relative;
   background: transparent;
-  width: 274px;
+  width: 254px;
   height: auto;
   margin-bottom: 20px;
 }
@@ -175,7 +175,7 @@
   width: 100%;
 }
 .learnMoreWhite:hover .arrowWhite {
-  transform: translate(8rem, 0);
+  transform: translate(7rem, 0);
 }
 .learnMoreWhite:hover .buttonTextWhite {
   color: #1ac2e8;

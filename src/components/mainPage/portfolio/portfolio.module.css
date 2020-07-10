@@ -117,7 +117,7 @@
 }
 .portfolioListItem:nth-child(3) .portfolioListTextWrapper {
   border: 3px solid rgb(125, 69, 131);
-  top: -80px;
+  top: -70px;
   padding: 26px 0px 4px;
 }
 @media (min-width: 768px) {
