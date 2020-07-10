@@ -25,6 +25,10 @@ const ToucanPanel = () => {
     // ctx.font = "30px Arial";
   }, [canvas]);
 
+  const scroller = () => {
+    document.getElementById("form").scrollIntoView();
+  };
+
   return (
     <>
       {history.location.pathname === "/" ? (
@@ -614,7 +618,7 @@ const ToucanPanel = () => {
             {/* <p className={styles.textMiddle}>Створюємо проекти будь-якої складності</p> */}
             <p className={styles.textBottom}>Пропонуємо рішення для простих <span className={styles.textSpanBottom}>і не стандартних завдань</span></p>
           </div>
-          <button className={styles.getInTouchBtn}>Залишити заявку</button>
+          <button className={styles.getInTouchBtn} onClick={() => scroller()}>Залишити заявку</button>
         </div>
       ) : (
         <>{<PageNotFound />}</>

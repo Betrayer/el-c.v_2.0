@@ -7,7 +7,12 @@ import slideL from "../../transitions/slideL.module.css";
 
 const AboutUs = ({ inViewPort }) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
+  const [arrow, setArrow] = useState(false);
   useEffect(() => {}, [defLangState]);
+
+  const scroller = () => {
+    document.getElementById("form").scrollIntoView();
+  };
 
   return (
     <section id="about" className={styles.aboutSection}>
@@ -32,7 +37,7 @@ const AboutUs = ({ inViewPort }) => {
             <div className={styles.aboutImage}></div>
           </CSSTransition>
           
-            <CSSTransition
+             <CSSTransition
               timeout={2000}
               classNames={slideL}
               unmountOnExit
@@ -43,7 +48,7 @@ const AboutUs = ({ inViewPort }) => {
                 мы работаем с нашими клиентами, обеспечивая решения,
                 поддерживаемые передовыми технологиями.
               </p>
-            </CSSTransition>
+            </CSSTransition> 
           
         </div>
 
@@ -56,11 +61,12 @@ const AboutUs = ({ inViewPort }) => {
                 end={10}
                 duration={4}
                 separator=" "
+                suffix=" лет"
               ></CountUp>
             ) : (
               <></>
             )}
-            <p className={styles.aboutListItemText}> ЛЕТ на рынке</p>
+            <p className={styles.aboutListItemText}> на рынке</p>
           </li>
           <li className={styles.aboutListItem}>
             {inViewPort ? (
@@ -93,7 +99,25 @@ const AboutUs = ({ inViewPort }) => {
             <p className={styles.aboutListItemText}>Соблюдение Сроков</p>
           </li>
         </ul>
-        <button className={styles.aboutButton}>Оставить заявку</button>
+        <button
+              onMouseOver={() => setArrow(true)}
+              onMouseLeave={() => setArrow(false)}
+              className={styles.learnMoreWhite}
+              onClick={() => scroller()}
+            >
+              <span className={styles.circleWhite} aria-hidden="true">
+                {arrow ? (
+                  <span className={styles.arrowWhite}></span>
+                ) : (
+                  <span className={styles.iconWhite}></span>
+                )}
+              </span>
+              <span className={styles.buttonTextWhite}>
+                {defLangState === "rus" ? "Отправить заявку" : ""}
+                {defLangState === "ukr" ? "Відправити заявку" : ""}
+                {defLangState === "en" ? "Send request" : ""}
+              </span>
+            </button>
       </div>
     </section>
   );
