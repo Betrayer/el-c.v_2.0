@@ -66,6 +66,7 @@ const AboutUs = ({ inViewPort }) => {
         <ul className={styles.aboutList}>
           <li className={styles.aboutListItem}>
             {inViewPort ? (
+              
               <CountUp
                 className={styles.aboutCounter}
                 start={0}
@@ -74,11 +75,8 @@ const AboutUs = ({ inViewPort }) => {
                 separator=" "
                 suffix="+"
               ></CountUp>
-            ) : (
-              <></>
-            )}
+           ):<></>}
             <p className={styles.aboutListItemText}>
-              {" "}
               {defLangState === "rus" ? "лет на рынке" : ""}
               {defLangState === "ukr" ? "років на ринку" : ""}
               {defLangState === "en" ? "years of work" : ""}
