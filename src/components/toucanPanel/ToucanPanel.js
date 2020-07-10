@@ -5,6 +5,8 @@ import PageNotFound from "../pages/pageNotFound/PageNotFound";
 import styles from "./toucanPanel.module.css";
 
 const ToucanPanel = () => {
+  const [defLangState] = useState(localStorage.getItem("lang"));
+  useEffect(() => {}, [defLangState]);
   const [canvas, setCanvas] = useState(
     document.getElementsByClassName("tsparticles-canvas-el")
   );
@@ -613,12 +615,36 @@ const ToucanPanel = () => {
             </Particles>
           )}
           <div className={styles.panelText}>
-            <p className={styles.textTop}>студія <span className={styles.textSpan}>веб-розробки</span></p>
+            <p className={styles.textTop}>
+              {" "}
+              {defLangState === "rus" ? "студия" : ""}
+              {defLangState === "ukr" ? "студія" : ""}
+              {defLangState === "en" ? "digital" : ""}
+              <span className={styles.textSpan}>
+                {defLangState === "rus" ? "веб-разработки" : ""}
+                {defLangState === "ukr" ? "веб-розробки" : ""}
+                {defLangState === "en" ? "agency" : ""}
+              </span>
+            </p>
             <h1 className={styles.name}>EL-C</h1>
             {/* <p className={styles.textMiddle}>Створюємо проекти будь-якої складності</p> */}
-            <p className={styles.textBottom}>Пропонуємо рішення для простих <span className={styles.textSpanBottom}>і не стандартних завдань</span></p>
+            <p className={styles.textBottom}>
+              {defLangState === "rus" ? "Предлагаем решение для простых" : ""}
+              {defLangState === "ukr" ? "Пропонуємо рішення для простих" : ""}
+              {defLangState === "en" ? "We suggest solutions for simple" : ""}
+              <span className={styles.textSpanBottom}>
+                {defLangState === "rus" ? "и нестандартных задач" : ""}
+                {defLangState === "ukr" ? "і нестандартних завдань" : ""}
+                {defLangState === "en" ? "and complicated tasks" : ""}
+              </span>
+            </p>
           </div>
-          <button className={styles.getInTouchBtn} onClick={() => scroller()}>Залишити заявку</button>
+          <button className={styles.getInTouchBtn}>
+            {" "}
+            {defLangState === "rus" ? "Оставить заявку" : ""}
+            {defLangState === "ukr" ? "Залишити заявку" : ""}
+            {defLangState === "en" ? "Contact Us" : ""}
+          </button>
         </div>
       ) : (
         <>{<PageNotFound />}</>

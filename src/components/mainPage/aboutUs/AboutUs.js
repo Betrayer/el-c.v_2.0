@@ -23,10 +23,16 @@ const AboutUs = ({ inViewPort }) => {
           {defLangState === "en" ? "About us" : ""}
         </h2>
         <p className={styles.aboutDescriptionMob}>
-                Наши опыт сформировал практики и методы, руководствуясь которыи
-                мы работаем с нашими клиентами, обеспечивая решения,
-                поддерживаемые передовыми технологиями.
-              </p>
+          {defLangState === "rus"
+            ? "Наш опыт сформировал практики и методы, руководствуясь которыми мы работаем с нашими клиентами, обеспечивая решения, поддерживаемые передовыми технологиями."
+            : ""}
+          {defLangState === "ukr"
+            ? "Наш досвід сформував практики і методи, керуючись якими ми працюємо з нашими клієнтами, забезпечуючи рішення, підтримувані передовими технологіями."
+            : ""}
+          {defLangState === "en"
+            ? "Our experience has shaped practices and methods, guided by which we work with our customers, providing solutions, supported by advanced technology."
+            : ""}
+        </p>
         <div className={styles.aboutDesctopWrapper}>
           <CSSTransition
             timeout={2000}
@@ -36,20 +42,25 @@ const AboutUs = ({ inViewPort }) => {
           >
             <div className={styles.aboutImage}></div>
           </CSSTransition>
-          
-             <CSSTransition
-              timeout={2000}
-              classNames={slideL}
-              unmountOnExit
-              in={inViewPort}
-            >
-              <p className={styles.aboutDescription}>
-                Наши опыт сформировал практики и методы, руководствуясь которыи
-                мы работаем с нашими клиентами, обеспечивая решения,
-                поддерживаемые передовыми технологиями.
-              </p>
-            </CSSTransition> 
-          
+
+          <CSSTransition
+            timeout={2000}
+            classNames={slideL}
+            unmountOnExit
+            in={inViewPort}
+          >
+            <p className={styles.aboutDescription}>
+              {defLangState === "rus"
+                ? "Наш опыт сформировал практики и методы, руководствуясь которыми мы работаем с нашими клиентами, обеспечивая решения, поддерживаемые передовыми технологиями."
+                : ""}
+              {defLangState === "ukr"
+                ? "Наш досвід сформував практики і методи, керуючись якими ми працюємо з нашими клієнтами, забезпечуючи рішення, підтримувані передовими технологіями."
+                : ""}
+              {defLangState === "en"
+                ? "Our experience has shaped practices and methods, guided by which we work with our customers, providing solutions, supported by advanced technology."
+                : ""}
+            </p>
+          </CSSTransition>
         </div>
 
         <ul className={styles.aboutList}>
@@ -66,7 +77,12 @@ const AboutUs = ({ inViewPort }) => {
             ) : (
               <></>
             )}
-            <p className={styles.aboutListItemText}> на рынке</p>
+            <p className={styles.aboutListItemText}>
+              {" "}
+              {defLangState === "rus" ? "ЛЕТ на рынке" : ""}
+              {defLangState === "ukr" ? "РОКІВ на ринку" : ""}
+              {defLangState === "en" ? "YEARS of work" : ""}
+            </p>
           </li>
           <li className={styles.aboutListItem}>
             {inViewPort ? (
@@ -81,7 +97,11 @@ const AboutUs = ({ inViewPort }) => {
             ) : (
               <></>
             )}
-            <p className={styles.aboutListItemText}>Довольных Клиентов</p>
+            <p className={styles.aboutListItemText}>
+              {defLangState === "rus" ? "Довольных клиентов" : ""}
+              {defLangState === "ukr" ? "Задоволених клієнтів" : ""}
+              {defLangState === "en" ? "Satisfied customers" : ""}
+            </p>
           </li>
           <li className={styles.aboutListItem}>
             {inViewPort ? (
@@ -96,7 +116,12 @@ const AboutUs = ({ inViewPort }) => {
             ) : (
               <></>
             )}
-            <p className={styles.aboutListItemText}>Соблюдение Сроков</p>
+            <p className={styles.aboutListItemText}>
+              {" "}
+              {defLangState === "rus" ? "Соблюдение сроков" : ""}
+              {defLangState === "ukr" ? "Дотримання термінів" : ""}
+              {defLangState === "en" ? "Deadlines" : ""}
+            </p>
           </li>
         </ul>
         <button
@@ -113,9 +138,9 @@ const AboutUs = ({ inViewPort }) => {
                 )}
               </span>
               <span className={styles.buttonTextWhite}>
-                {defLangState === "rus" ? "Отправить заявку" : ""}
-                {defLangState === "ukr" ? "Відправити заявку" : ""}
-                {defLangState === "en" ? "Send request" : ""}
+              {defLangState === "rus" ? "Оставить заявку" : ""}
+          {defLangState === "ukr" ? "Залишити заявку" : ""}
+          {defLangState === "en" ? "Contact Us" : ""}
               </span>
             </button>
       </div>
