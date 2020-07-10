@@ -7,7 +7,12 @@ import slideL from "../../transitions/slideL.module.css";
 
 const AboutUs = ({ inViewPort }) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
+  const [arrow, setArrow] = useState(false);
   useEffect(() => {}, [defLangState]);
+
+  const scroller = () => {
+    document.getElementById("form").scrollIntoView();
+  };
 
   return (
     <section id="about" className={styles.aboutSection}>
@@ -61,21 +66,20 @@ const AboutUs = ({ inViewPort }) => {
         <ul className={styles.aboutList}>
           <li className={styles.aboutListItem}>
             {inViewPort ? (
+              
               <CountUp
                 className={styles.aboutCounter}
                 start={0}
                 end={10}
                 duration={4}
                 separator=" "
+                suffix="+"
               ></CountUp>
-            ) : (
-              <></>
-            )}
+           ):<></>}
             <p className={styles.aboutListItemText}>
-              {" "}
-              {defLangState === "rus" ? "ЛЕТ на рынке" : ""}
-              {defLangState === "ukr" ? "РОКІВ на ринку" : ""}
-              {defLangState === "en" ? "YEARS of work" : ""}
+              {defLangState === "rus" ? "лет на рынке" : ""}
+              {defLangState === "ukr" ? "років на ринку" : ""}
+              {defLangState === "en" ? "years of work" : ""}
             </p>
           </li>
           <li className={styles.aboutListItem}>
@@ -86,7 +90,7 @@ const AboutUs = ({ inViewPort }) => {
                 end={99}
                 duration={4}
                 separator=" "
-                suffix=" %"
+                suffix="%"
               ></CountUp>
             ) : (
               <></>
@@ -105,7 +109,7 @@ const AboutUs = ({ inViewPort }) => {
                 end={100}
                 duration={4}
                 separator=" "
-                suffix=" %"
+                suffix="%"
               ></CountUp>
             ) : (
               <></>
@@ -118,12 +122,25 @@ const AboutUs = ({ inViewPort }) => {
             </p>
           </li>
         </ul>
-        <button className={styles.aboutButton}>
-          {" "}
-          {defLangState === "rus" ? "Оставить заявку" : ""}
+        <button
+              onMouseOver={() => setArrow(true)}
+              onMouseLeave={() => setArrow(false)}
+              className={styles.learnMoreWhite}
+              onClick={() => scroller()}
+            >
+              <span className={styles.circleWhite} aria-hidden="true">
+                {arrow ? (
+                  <span className={styles.arrowWhite}></span>
+                ) : (
+                  <span className={styles.iconWhite}></span>
+                )}
+              </span>
+              <span className={styles.buttonTextWhite}>
+              {defLangState === "rus" ? "Оставить заявку" : ""}
           {defLangState === "ukr" ? "Залишити заявку" : ""}
           {defLangState === "en" ? "Contact Us" : ""}
-        </button>
+              </span>
+            </button>
       </div>
     </section>
   );

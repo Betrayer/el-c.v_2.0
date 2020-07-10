@@ -88,7 +88,7 @@ const Footer = () => {
           <h3 className={css.socialsSubheader}>
             {defLangState === "rus" ? "Мы в соцсетях" : ""}
             {defLangState === "ukr" ? "Ми в соцмережах" : ""}
-            {defLangState === "en" ? "Socail media" : ""}
+            {defLangState === "en" ? "Social media" : ""}
           </h3>
           <ul className={css.socialsList}>
             <li className={css.socialsListItem}>
@@ -96,7 +96,7 @@ const Footer = () => {
                 className={css.socialIcon}
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://twitter.com/AnteBadzim"
+                href="https://twitter.com"
               >
                 <span className={css.linkContent}>content</span>
               </a>
@@ -106,7 +106,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className={css.socialIcon}
                 target="_blank"
-                href="https://www.facebook.com/favouriteprimark/"
+                href="https://www.facebook.com"
               >
                 <span className={css.linkContent}>content</span>
               </a>
@@ -116,7 +116,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className={css.socialIcon}
                 target="_blank"
-                href="http://instagram.com/ante"
+                href="http://instagram.com"
               >
                 <span className={css.linkContent}>content</span>
               </a>

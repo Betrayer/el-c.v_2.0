@@ -2,6 +2,7 @@
   position: relative;
   margin-bottom: 40px;
   color: #fff;
+  padding-top: 50px;
 }
 .particlesForm {
   background-image: url(../../assets/photos/sky2.jpg);
@@ -12,7 +13,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -44%);
   background-color: rgba(65, 69, 75, 0.58);
   padding: 20px 10px;
 }
@@ -142,6 +143,9 @@
   color: #000;
 }
 @media (min-width: 768px) {
+  .formSection {
+    padding-top: 100px;
+  }
   .particlesForm {
     height: 500px;
   }
@@ -153,6 +157,7 @@
     width: 60%;
     padding: 20px;
     padding-left: 40px;
+    transform: translate(-50%, -38%);
   }
   .formText {
     font-size: 18px;
@@ -168,13 +173,7 @@
 }
 @media (min-width: 1200px) {
   .form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(65, 69, 75, 0.58);
-    padding: 20px 10px;
-    width: 40%;
+    width: 60%;
   }
   .inputsWrapper {
     display: flex;
@@ -193,9 +192,16 @@
     width: 300px;
   }
   .formInputFeedback {
-    height: 120px;
+    height: 92px;
+    /* border-bottom: 1px solid rgb(103, 104, 110); */
+    border: 1px solid rgb(103, 104, 110);
   }
   /* .formInputFeedback::after{
 top: 60px;
   } */
+}
+@media (min-width: 1500px) {
+    .form {
+        width: 40%;
+      }
 }

@@ -9,7 +9,16 @@
   height: calc(100vh - 68px);
   top: 68px;
 }
-
+.particlesMob{
+  background: url(../../assets/photos/toucanMob.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  /* background-color: #ccc; */
+  /* width:100vw; */
+  height: calc(100vh - 68px);
+  top: 60px;
+}
 /* canvas{
   position: relative;
 }*/
@@ -23,7 +32,7 @@
   align-items: center;
   
 } */
-.name, .textTop, .textBottom, .textMiddle{
+.name, .textTop, .textBottom, .textTopMob, .nameMob, .textBottomMob{
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -42,20 +51,20 @@
   display: block;
   width: 90%;
 } 
-.textTop, .textMiddle, .textBottom{
+.textTop, .textTopMob, .textBottom, .textBottomMob{
   color: #fff;
   font-size: 24px;
   top: 26%;
   line-height: 0.9;
   font-weight: 400;
 }
-.textMiddle, .textBottom{
+.textBottomMob, .textBottom{
   top: 62%;
   font-size: 16px;
   text-transform: uppercase;
   word-spacing: 18px;
 }
-.textBottom{
+.textBottom, .textBottomMob{
   top: 60%;
   line-height: 1.6;
   font-weight: 500;       
@@ -67,6 +76,13 @@
   display: block;
   font-weight: 300;
 }
+ .nameMob, .textBottomMob{
+  mix-blend-mode: normal;
+}
+.textTopMob{
+  text-transform: uppercase;
+  font-weight: 500;
+}
 .getInTouchBtn {
   position: absolute;
   width: 244px;
@@ -74,7 +90,8 @@
   left: 50%;
   top: 76%;
   mix-blend-mode: difference;
-  background-color: #e0de3a;
+  /* background-color: #e0de3a; */
+  /* background-color: #e53c17; */
   border-radius: 30px;
   transform: translate(-50%) scale(0.8);
   transition: all 0.4s ease;
@@ -130,5 +147,11 @@
   .name{
     font-size: 146px;
     top: 50%;
+  }
+  .getInTouchBtn {
+    transform: translate(-50%) scale(0.9);
+  }
+  .getInTouchBtn:hover {
+    transform: translate(-50%) scale(1.1);
   }
 }
