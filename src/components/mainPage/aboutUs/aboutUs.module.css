@@ -169,6 +169,7 @@
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
+  /* transition: all ease-in-out; */
 }
 .learnMoreWhite:hover .circleWhite {
   width: 100%;
