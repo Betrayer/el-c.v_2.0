@@ -81,11 +81,13 @@
   border: 2px solid white;
   border-radius: 20px;
   text-transform: uppercase;
+  /* transition: all ease-in-out; */
 }
 .aboutButton:hover{
   background-color: #fff;
   color: #0367BD;
   border: 2px solid #0367BD;
+
 }
 
 @media (min-width: 768px) {
