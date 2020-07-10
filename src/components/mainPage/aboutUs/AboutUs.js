@@ -65,25 +65,23 @@ const AboutUs = ({ inViewPort }) => {
 
         <ul className={styles.aboutList}>
           <li className={styles.aboutListItem}>
-            {inViewPort ? (<>
-              {defLangState === "rus" ? 
+            {inViewPort ? (
               <CountUp
                 className={styles.aboutCounter}
                 start={0}
                 end={10}
                 duration={4}
                 separator=" "
-                suffix={"лет"}
-              ></CountUp> : ""}
-              </>
+                suffix="+"
+              ></CountUp>
             ) : (
               <></>
             )}
             <p className={styles.aboutListItemText}>
               {" "}
-              {defLangState === "rus" ? "ЛЕТ на рынке" : ""}
-              {defLangState === "ukr" ? "РОКІВ на ринку" : ""}
-              {defLangState === "en" ? "YEARS of work" : ""}
+              {defLangState === "rus" ? "лет на рынке" : ""}
+              {defLangState === "ukr" ? "років на ринку" : ""}
+              {defLangState === "en" ? "years of work" : ""}
             </p>
           </li>
           <li className={styles.aboutListItem}>
@@ -94,7 +92,7 @@ const AboutUs = ({ inViewPort }) => {
                 end={99}
                 duration={4}
                 separator=" "
-                suffix=" %"
+                suffix="%"
               ></CountUp>
             ) : (
               <></>
@@ -113,7 +111,7 @@ const AboutUs = ({ inViewPort }) => {
                 end={100}
                 duration={4}
                 separator=" "
-                suffix=" %"
+                suffix="%"
               ></CountUp>
             ) : (
               <></>
