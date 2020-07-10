@@ -173,7 +173,7 @@ const ExtendedMenu = ({ activeMenu }) => {
                 className={styles.menuSocialsCircle}
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://twitter.com/AnteBadzim"
+                href="https://twitter.com"
               >
 
               </a>
@@ -183,7 +183,7 @@ const ExtendedMenu = ({ activeMenu }) => {
                 rel="noopener noreferrer"
                 className={styles.menuSocialsCircle}
                 target="_blank"
-                href="https://www.facebook.com/favouriteprimark/"
+                href="https://www.facebook.com"
               >
 
               </a>
@@ -193,7 +193,7 @@ const ExtendedMenu = ({ activeMenu }) => {
                 rel="noopener noreferrer"
                 className={styles.menuSocialsCircle}
                 target="_blank"
-                href="http://instagram.com/ante"
+                href="http://instagram.com"
               >
 
               </a>
