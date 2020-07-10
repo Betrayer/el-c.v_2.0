@@ -7,7 +7,12 @@ import slideL from "../../transitions/slideL.module.css";
 
 const AboutUs = ({ inViewPort }) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
+  const [arrow, setArrow] = useState(false);
   useEffect(() => {}, [defLangState]);
+
+  const scroller = () => {
+    document.getElementById("form").scrollIntoView();
+  };
 
   return (
     <section id="about" className={styles.aboutSection}>
@@ -67,6 +72,7 @@ const AboutUs = ({ inViewPort }) => {
                 end={10}
                 duration={4}
                 separator=" "
+                suffix=" лет"
               ></CountUp>
             ) : (
               <></>
@@ -118,12 +124,25 @@ const AboutUs = ({ inViewPort }) => {
             </p>
           </li>
         </ul>
-        <button className={styles.aboutButton}>
-          {" "}
-          {defLangState === "rus" ? "Оставить заявку" : ""}
+        <button
+              onMouseOver={() => setArrow(true)}
+              onMouseLeave={() => setArrow(false)}
+              className={styles.learnMoreWhite}
+              onClick={() => scroller()}
+            >
+              <span className={styles.circleWhite} aria-hidden="true">
+                {arrow ? (
+                  <span className={styles.arrowWhite}></span>
+                ) : (
+                  <span className={styles.iconWhite}></span>
+                )}
+              </span>
+              <span className={styles.buttonTextWhite}>
+              {defLangState === "rus" ? "Оставить заявку" : ""}
           {defLangState === "ukr" ? "Залишити заявку" : ""}
           {defLangState === "en" ? "Contact Us" : ""}
-        </button>
+              </span>
+            </button>
       </div>
     </section>
   );

@@ -177,7 +177,7 @@
 .langSpan:hover {
   background-color: rgba(26, 194, 232, 0.219);
 }
-.langSpann:nth-child(3):hover{
+.langSpann:nth-child(2):hover{
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }

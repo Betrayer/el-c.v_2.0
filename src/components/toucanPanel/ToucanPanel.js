@@ -27,6 +27,10 @@ const ToucanPanel = () => {
     // ctx.font = "30px Arial";
   }, [canvas]);
 
+  const scroller = () => {
+    document.getElementById("form").scrollIntoView();
+  };
+
   return (
     <>
       {history.location.pathname === "/" ? (
