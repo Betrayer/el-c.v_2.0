@@ -443,7 +443,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <ExtendedMenu activeMenu={active} />
+          <ExtendedMenu activeMenu={active} setActive={setActive}/>
         </header>
       )}
     </>
