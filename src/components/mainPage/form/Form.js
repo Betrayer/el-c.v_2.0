@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import PropTypes from "prop-types";
 import Particles from "react-particles-js";
 import css from "./form.module.css";
+
+
 
 const Form = (props) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
@@ -9,10 +12,14 @@ const Form = (props) => {
   const [name, setName] = useState();
   const [feedback, setFeedback] = useState();
   const [arrowForm, setArrowForm] = useState(false);
+  // const history = useHistory();
+  
 
   useEffect(() => {}, [email, feedback, defLangState]);
 
   const handleSubmit = (e) => {
+    
+    // console.log('history', history)
     const {
       REACT_APP_EMAILJS_RECEIVER: receiverEmail,
       REACT_APP_EMAILJS_TEMPLATEID: template,
@@ -23,6 +30,7 @@ const Form = (props) => {
     setEmail("");
     setFeedback("");
     setName("");
+    // history.push('/gratitude')
   };
   const handleChange = (e) => {
     setFeedback(e.target.value);
