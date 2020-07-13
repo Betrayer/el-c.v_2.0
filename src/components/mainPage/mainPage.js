@@ -6,19 +6,12 @@ import WeWorkSection from "./weWorkSection/WeWorkSection";
 import WhyUsSection from "./whyUsSection/WhyUsSection";
 import ServicesSection from "./servicesSection/ServicesSection";
 import AboutUs from "./aboutUs/AboutUs";
-<<<<<<< HEAD
 import handleViewport from "react-in-viewport";
 import Portfolio from "./portfolio/Portfolio";
 import Form from "./form/Form";
 import { env } from "../../config";
 import styles from "./mainPage.module.css";
 import appear from "../transitions/appear.module.css";
-=======
-import handleViewport from 'react-in-viewport';
-import Portfolio from './portfolio/Portfolio';
-import Form from './form/Form'
-import { env } from "../../config";
->>>>>>> 55a8bb9417608894a0ca7aad2a61acd8c1ff5706
 
 const Block = (props) => {
   const { inViewport, forwardedRef } = props;
