@@ -12,25 +12,25 @@ const Form = (props) => {
   const [name, setName] = useState();
   const [feedback, setFeedback] = useState();
   const [arrowForm, setArrowForm] = useState(false);
-  const history = useHistory();
+  // const history = useHistory();
   
 
   useEffect(() => {}, [email, feedback, defLangState]);
 
   const handleSubmit = (e) => {
     
-    console.log('history', history)
-    // const {
-    //   REACT_APP_EMAILJS_RECEIVER: receiverEmail,
-    //   REACT_APP_EMAILJS_TEMPLATEID: template,
-    //   REACT_APP_EMAILJS_USERID: user,
-    // } = props.env;
+    // console.log('history', history)
+    const {
+      REACT_APP_EMAILJS_RECEIVER: receiverEmail,
+      REACT_APP_EMAILJS_TEMPLATEID: template,
+      REACT_APP_EMAILJS_USERID: user,
+    } = props.env;
     e.preventDefault();
-    // sendFeedback(template, name, email, receiverEmail, feedback, user);
-    // setEmail("");
-    // setFeedback("");
-    // setName("");
-    history.push('/gratitude')
+    sendFeedback(template, name, email, receiverEmail, feedback, user);
+    setEmail("");
+    setFeedback("");
+    setName("");
+    // history.push('/gratitude')
   };
   const handleChange = (e) => {
     setFeedback(e.target.value);
