@@ -187,9 +187,9 @@ const WhyUsSection = () => {
               onClick={() => openwhyUsItem("fifth")}
             >
               <i className={styles.toucanIcon}></i>
-              {defLangState === "rus" ? "Progressive team" : ""}
+              {defLangState === "en" ? "Progressive team" : ""}
               {defLangState === "ukr" ? "Прогресивна команда" : ""}
-              {defLangState === "en" ? "Прогрессивная команда" : ""}
+              {defLangState === "rus" ? "Прогрессивная команда" : ""}
             </h3>
             <CSSTransition
               in={opened.includes("fifth")}
@@ -365,7 +365,7 @@ const WhyUsSection = () => {
           <div className={styles.likeTextWrapper}>
           <p className={styles.likeText}>{defLangState === "rus" ? "*нажми на лайк" : ""}
         {defLangState === "ukr" ? "*тицни на вподобайку" : ""}
-        {defLangState === "en" ? "*slap dat liek butn" : ""}</p></div>
+        {defLangState === "en" ? "*press the like button" : ""}</p></div>
         </div>
       </div>
     </section>

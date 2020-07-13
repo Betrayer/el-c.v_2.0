@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./extendedMenu.module.css";
 import { useHistory } from "react-router-dom";
 
-const ExtendedMenu = ({ activeMenu }) => {
+const ExtendedMenu = ({ activeMenu, setActive }) => {
   const history = useHistory();
   const [langSwitcher, setLangSwitcher] = useState(false);
   const [defLangState, setDefLangState] = useState(
@@ -34,6 +34,7 @@ const ExtendedMenu = ({ activeMenu }) => {
   ];
   const scroller = (name) => {
     document.getElementById(name).scrollIntoView();
+    // setActive(false)
   };
   const refresh = () => {
     history.go();
