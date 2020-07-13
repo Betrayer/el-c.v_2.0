@@ -92,10 +92,10 @@ img {
   display: block;
 }
 
-.container {
+/* .container {
   width: 80%;
   margin: 0 auto;
-}
+} */
 
 #tsparticles {
   background: url(./assets/photos/toucan.png);

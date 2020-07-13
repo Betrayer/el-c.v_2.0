@@ -7,6 +7,8 @@ import ServicesSection from "./servicesSection/ServicesSection";
 import AboutUs from "./aboutUs/AboutUs";
 import handleViewport from 'react-in-viewport';
 import Portfolio from './portfolio/Portfolio';
+import Form from './form/Form'
+import { env } from "../../config";
 
 const Block = (props) => {
   const { inViewport, forwardedRef } = props;
@@ -27,6 +29,7 @@ const mainPage = () => {
       <WeWorkSection />
       <WhyUsSection />
       <BlogSection />
+      <Form env={env}/>
     </>
   );
 };
