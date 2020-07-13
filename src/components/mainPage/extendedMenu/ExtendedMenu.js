@@ -33,7 +33,7 @@ const ExtendedMenu = ({ activeMenu, setActive }) => {
     { name: "Blog", redirect: "blog" },
   ];
   const scroller = (name) => {
-    document.getElementById(name).scrollIntoView();
+    document.getElementById(name).scrollIntoView({behavior: 'smooth'});
     // setActive(false)
   };
   const refresh = () => {
@@ -184,7 +184,7 @@ const ExtendedMenu = ({ activeMenu, setActive }) => {
                 rel="noopener noreferrer"
                 className={styles.menuSocialsCircle}
                 target="_blank"
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/webelc"
               >
 
               </a>

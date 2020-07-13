@@ -103,6 +103,7 @@
 .linkText {
   text-align: center;
   font-weight: 300;
+  cursor: pointer;
 }
 .socialsListItem {
   width: 36px;
