@@ -10,6 +10,10 @@ const lazyMain = lazy(
 //       "../pages/pageNotFound/PageNotFound.js"
 //     ) /* webpackChunkName: '404' */
 // );
+const lazyThankYou = lazy(
+  () => import("../pages/thankyouPage/thankyouPage.js") /* webpackChunkName: 'Thankyou' */
+);
+
 
 export const useRouter = () => {
   return (
@@ -23,6 +27,7 @@ export const useRouter = () => {
       <Switch>
         <Route exact path="/" component={lazyMain} />
         {/* <Route path="*" component={lazy404} /> */}
+        <Route exact path='/gratitude' component={lazyThankYou} />
       </Switch>
     </Suspense>
   );
