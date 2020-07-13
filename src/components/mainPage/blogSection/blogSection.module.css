@@ -1,5 +1,6 @@
 .blogSection {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   /* background-color: rgb(235, 150, 150); */
   margin-bottom: 100px;
   position: relative;
