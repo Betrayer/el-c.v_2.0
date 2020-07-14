@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Particles from "react-particles-js";
 import { useHistory } from "react-router-dom";
 import PageNotFound from "../pages/pageNotFound/PageNotFound";
+import thankyouPage from "../pages/thankyouPage/thankyouPage";
 import styles from "./toucanPanel.module.css";
 
 const ToucanPanel = () => {
@@ -9,10 +10,9 @@ const ToucanPanel = () => {
   useEffect(() => {}, [defLangState]);
   const intFrameWidth = window.innerWidth;
   const history = useHistory();
-  
 
   const scroller = () => {
-    document.getElementById("form").scrollIntoView({behavior: 'smooth'});
+    document.getElementById("form").scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -310,7 +310,7 @@ const ToucanPanel = () => {
               }}
             ></Particles>
           ) : (
-            <div id="toucan" className={styles.particlesMob} ></div>
+            <div id="toucan" className={styles.particlesMob}></div>
             // <Particles
             //   className={styles.particles}
             //   params={{
@@ -599,7 +599,11 @@ const ToucanPanel = () => {
             // </Particles>
           )}
           <div className={styles.panelText}>
-            <p className={intFrameWidth > 700 ? styles.textTop : styles.textTopMob}>
+            <p
+              className={
+                intFrameWidth > 700 ? styles.textTop : styles.textTopMob
+              }
+            >
               {" "}
               {defLangState === "rus" ? "студия" : ""}
               {defLangState === "ukr" ? "студія" : ""}
@@ -610,26 +614,40 @@ const ToucanPanel = () => {
                 {defLangState === "en" ? "agency" : ""}
               </span>
             </p>
-            <h1 className={intFrameWidth > 700 ? styles.name : styles.nameMob}>EL-C</h1>
+            <h1 className={intFrameWidth > 700 ? styles.name : styles.nameMob}>
+              EL-C
+            </h1>
             {/* <p className={styles.textMiddle}>Створюємо проекти будь-якої складності</p> */}
-            <p className={intFrameWidth > 700 ? styles.textBottom : styles.textBottomMob}>
+            <p
+              className={
+                intFrameWidth > 700 ? styles.textBottom : styles.textBottomMob
+              }
+            >
               {defLangState === "rus" ? "Предлагаем решение для простых" : ""}
               {defLangState === "ukr" ? "Пропонуємо рішення для простих" : ""}
               {defLangState === "en" ? "We suggest solutions for simple" : ""}
-              <span className={intFrameWidth > 700 ? styles.textSpanBottom : styles.textSpanBottomMob}>
+              <span
+                className={
+                  intFrameWidth > 700
+                    ? styles.textSpanBottom
+                    : styles.textSpanBottomMob
+                }
+              >
                 {defLangState === "rus" ? "и нестандартных задач" : ""}
                 {defLangState === "ukr" ? "і нестандартних завдань" : ""}
                 {defLangState === "en" ? "and complicated tasks" : ""}
               </span>
             </p>
           </div>
-          <button className={styles.getInTouchBtn} onClick={()=> scroller()}>
+          <button className={styles.getInTouchBtn} onClick={() => scroller()}>
             {" "}
             {defLangState === "rus" ? "Оставить заявку" : ""}
             {defLangState === "ukr" ? "Залишити заявку" : ""}
             {defLangState === "en" ? "Contact Us" : ""}
           </button>
         </div>
+      ) : history.location.pathname === "/gratitude" ? (
+        <>{<thankyouPage />}</>
       ) : (
         <>{<PageNotFound />}</>
       )}
