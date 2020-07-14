@@ -67,6 +67,9 @@
   list-style: none;
   scroll-behavior: smooth;
 }
+p, span,h1, h2, h3,h4 {
+  cursor: default;
+}
 
 button {
   outline: none;

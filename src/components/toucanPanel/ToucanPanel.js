@@ -12,7 +12,7 @@ const ToucanPanel = () => {
   
 
   const scroller = () => {
-    document.getElementById("form").scrollIntoView();
+    document.getElementById("form").scrollIntoView({behavior: 'smooth'});
   };
 
   return (
@@ -310,7 +310,7 @@ const ToucanPanel = () => {
               }}
             ></Particles>
           ) : (
-            <div  className={styles.particlesMob} ></div>
+            <div id="toucan" className={styles.particlesMob} ></div>
             // <Particles
             //   className={styles.particles}
             //   params={{
