@@ -16,18 +16,17 @@ const Form = (props) => {
   useEffect(() => {}, [email, feedback, defLangState]);
 
   const handleSubmit = (e) => {
-    console.log("history", history);
-    // const {
-    //   REACT_APP_EMAILJS_RECEIVER: receiverEmail,
-    //   REACT_APP_EMAILJS_TEMPLATEID: template,
-    //   REACT_APP_EMAILJS_USERID: user,
-    // } = props.env;
+    const {
+      REACT_APP_EMAILJS_RECEIVER: receiverEmail,
+      REACT_APP_EMAILJS_TEMPLATEID: template,
+      REACT_APP_EMAILJS_USERID: user,
+    } = props.env;
     e.preventDefault();
-    // sendFeedback(template, name, email, receiverEmail, feedback, user);
-    // setEmail("");
-    // setFeedback("");
-    // setName("");
-    history.push("/gratitude")
+    sendFeedback(template, name, email, receiverEmail, feedback, user);
+    setEmail("");
+    setFeedback("");
+    setName("");
+    history.push("/gratitude");
   };
   const handleChange = (e) => {
     setFeedback(e.target.value);
