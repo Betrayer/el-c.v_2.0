@@ -94,7 +94,7 @@ const Header = () => {
     setLangSwitcher(!langSwitcher);
   };
   const scroller = (name) => {
-    document.getElementById(name).scrollIntoView();
+    document.getElementById(name).scrollIntoView({behavior: 'smooth'});
   };
 
   const history = useHistory();
@@ -246,7 +246,7 @@ const Header = () => {
                     rel="noopener noreferrer"
                     className={styles.menuSocialsCircle}
                     target="_blank"
-                    href="https://www.facebook.com"
+                    href="https://www.facebook.com/webelc"
                   >
                     <span></span>
                   </a>
