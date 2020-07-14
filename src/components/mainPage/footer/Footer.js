@@ -106,7 +106,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className={css.socialIcon}
                 target="_blank"
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/webelc"
               >
                 <span className={css.linkContent}>content</span>
               </a>

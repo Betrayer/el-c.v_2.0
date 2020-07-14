@@ -11,7 +11,7 @@ const AboutUs = ({ inViewPort }) => {
   useEffect(() => {}, [defLangState]);
 
   const scroller = () => {
-    document.getElementById("form").scrollIntoView();
+    document.getElementById("form").scrollIntoView({behavior: 'smooth'});
   };
 
   return (
