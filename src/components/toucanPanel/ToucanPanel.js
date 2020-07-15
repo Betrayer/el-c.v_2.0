@@ -310,7 +310,7 @@ const ToucanPanel = () => {
               }}
             ></Particles>
           ) : (
-            <div id="toucan" className={styles.particlesMob} ></div>
+            <div id="toucan" className={styles.particlesMob}/>
             // <Particles
             //   className={styles.particles}
             //   params={{
@@ -598,8 +598,8 @@ const ToucanPanel = () => {
             // >
             // </Particles>
           )}
-          <div className={styles.panelText}>
-            <p className={intFrameWidth > 700 ? styles.textTop : styles.textTopMob}>
+           <div className={styles.panelText}>
+            {/*<p className={intFrameWidth > 700 ? styles.textTop : styles.textTopMob}>
               {" "}
               {defLangState === "rus" ? "студия" : ""}
               {defLangState === "ukr" ? "студія" : ""}
@@ -611,7 +611,6 @@ const ToucanPanel = () => {
               </span>
             </p>
             <h1 className={intFrameWidth > 700 ? styles.name : styles.nameMob}>EL-C</h1>
-            {/* <p className={styles.textMiddle}>Створюємо проекти будь-якої складності</p> */}
             <p className={intFrameWidth > 700 ? styles.textBottom : styles.textBottomMob}>
               {defLangState === "rus" ? "Предлагаем решение для простых" : ""}
               {defLangState === "ukr" ? "Пропонуємо рішення для простих" : ""}
@@ -628,8 +627,8 @@ const ToucanPanel = () => {
             {defLangState === "rus" ? "Оставить заявку" : ""}
             {defLangState === "ukr" ? "Залишити заявку" : ""}
             {defLangState === "en" ? "Contact Us" : ""}
-          </button>
-        </div>
+          </button>*/}
+        </div> </div>
       ) : (
         <>{<PageNotFound />}</>
       )}

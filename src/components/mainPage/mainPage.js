@@ -55,11 +55,7 @@ const MainPage = () => {
       <WeWorkSection />
       <WhyUsSection />
       <BlogSection />
-<<<<<<< HEAD
       <Form env={env} />
-=======
-      <Form env={env}/>
->>>>>>> 55a8bb9417608894a0ca7aad2a61acd8c1ff5706
     </>
   );
 };

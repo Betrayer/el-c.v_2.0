@@ -16,7 +16,7 @@ const App = (props) => {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <ToucanPanel />
         <div className={css.container}>{routing}</div>
 
