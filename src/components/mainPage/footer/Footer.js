@@ -91,7 +91,7 @@ const Footer = () => {
             {defLangState === "en" ? "Social media" : ""}
           </h3>
           <ul className={css.socialsList}>
-            <li className={css.socialsListItem}>
+            {/* <li className={css.socialsListItem}>
               <a
                 className={css.socialIcon}
                 rel="noopener noreferrer"
@@ -100,7 +100,7 @@ const Footer = () => {
               >
                 <span className={css.linkContent}>content</span>
               </a>
-            </li>
+            </li> */}
             <li className={css.socialsListItem}>
               <a
                 rel="noopener noreferrer"
