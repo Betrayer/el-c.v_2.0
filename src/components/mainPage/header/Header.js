@@ -231,7 +231,7 @@ const Header = () => {
                 )}
               </div>
               <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
+                {/* <li className={styles.menuSocialsLink}>
                   <a
                     className={styles.menuSocialsCircle}
                     rel="noopener noreferrer"
@@ -240,7 +240,7 @@ const Header = () => {
                   >
                     <span></span>
                   </a>
-                </li>
+                </li> */}
                 <li className={styles.menuSocialsLink}>
                   <a
                     rel="noopener noreferrer"
@@ -401,7 +401,7 @@ const Header = () => {
                 )}
               </div>
               <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
+                {/* <li className={styles.menuSocialsLink}>
                   <a
                     className={styles.menuSocialsCircle}
                     rel="noopener noreferrer"
@@ -410,7 +410,7 @@ const Header = () => {
                   >
                     <span></span>
                   </a>
-                </li>
+                </li> */}
                 <li className={styles.menuSocialsLink}>
                   <a
                     rel="noopener noreferrer"
