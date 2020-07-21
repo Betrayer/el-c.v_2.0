@@ -30,7 +30,7 @@ const Footer = () => {
                 <li className={css.contactsListItem}>
                   <a
                     className={css.contactsLink}
-                    href="tel:+380678095578"
+                    href="tel:+380680524300"
                     rel="noopener noreferrer"
                   >
                     <span className={css.linkText}>+38 067 809 55 78</span>
