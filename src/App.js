@@ -10,18 +10,27 @@ const App = (props) => {
   const routing = useRouter(props);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    setLoaded(true);
+    const timer = setTimeout(() => setLoaded(true), 5000);
   }, []);
 
   return (
     <>
-      <Router>
-        <Header />
-        <ToucanPanel />
-        <div className={css.container}>{routing}</div>
-
-        <Footer />
-      </Router>
+      {!loaded ? (
+        <div className={css.containers}>
+          <div className={css.item1}></div>
+          <div className={css.item2}></div>
+          <div className={css.item3}></div>
+          <div className={css.item4}></div>
+          <div className={css.item5}></div>
+        </div>
+      ) : (
+        <Router>
+          <Header />
+          <ToucanPanel />
+          <div className={css.container}>{routing}</div>
+          <Footer />
+        </Router>
+      )}
     </>
   );
 };
