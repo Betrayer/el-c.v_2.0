@@ -6,22 +6,24 @@ const lazyMain = lazy(
 );
 
 const lazyThankYou = lazy(
-  () => import("../pages/thankyouPage/thankyouPage.js") /* webpackChunkName: 'Thankyou' */
+  () =>
+    import(
+      "../pages/thankyouPage/thankyouPage.js"
+    ) /* webpackChunkName: 'Thankyou' */
 );
-
 
 export const useRouter = () => {
   return (
     <Suspense
       fallback={
         <div>
-          <h2>Loading...</h2>
+          <span>Loading...</span>
         </div>
       }
     >
       <Switch>
         <Route exact path="/" component={lazyMain} />
-        <Route exact path='/gratitude' component={lazyThankYou} />
+        <Route exact path="/gratitude" component={lazyThankYou} />
       </Switch>
     </Suspense>
   );
