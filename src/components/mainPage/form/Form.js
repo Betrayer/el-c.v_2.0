@@ -478,7 +478,7 @@ const Form = (props) => {
                     type="tel"
                     placeholder="Phone"
                     required
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    pattern="(\+?\d[- .]*){7,13}"
                     onChange={(e) => handleChangeTel(e)}
                   />
                 ) : (
@@ -490,7 +490,7 @@ const Form = (props) => {
                     type="tel"
                     placeholder="Телефон"
                     required
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    pattern="(\+?\d[- .]*){7,13}"
                     onChange={(e) => handleChangeTel(e)}
                   />
                 ) : (
