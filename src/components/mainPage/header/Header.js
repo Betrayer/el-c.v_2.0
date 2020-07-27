@@ -94,7 +94,7 @@ const Header = () => {
     setLangSwitcher(!langSwitcher);
   };
   const scroller = (name) => {
-    document.getElementById(name).scrollIntoView();
+    document.getElementById(name).scrollIntoView({behavior: 'smooth'});
   };
 
   const history = useHistory();
@@ -231,12 +231,22 @@ const Header = () => {
                 )}
               </div>
               <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
+                {/* <li className={styles.menuSocialsLink}>
                   <a
                     className={styles.menuSocialsCircle}
                     rel="noopener noreferrer"
                     target="_blank"
-                    href="https://twitter.com/AnteBadzim"
+                    href="https://twitter.com"
+                  >
+                    <span></span>
+                  </a>
+                </li> */}
+                <li className={styles.menuSocialsLink}>
+                  <a
+                    rel="noopener noreferrer"
+                    className={styles.menuSocialsCircle}
+                    target="_blank"
+                    href="https://www.facebook.com/webelc"
                   >
                     <span></span>
                   </a>
@@ -246,17 +256,7 @@ const Header = () => {
                     rel="noopener noreferrer"
                     className={styles.menuSocialsCircle}
                     target="_blank"
-                    href="https://www.facebook.com/favouriteprimark/"
-                  >
-                    <span></span>
-                  </a>
-                </li>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    rel="noopener noreferrer"
-                    className={styles.menuSocialsCircle}
-                    target="_blank"
-                    href="http://instagram.com/ante"
+                    href="http://instagram.com"
                   >
                     <span></span>
                   </a>
@@ -401,7 +401,7 @@ const Header = () => {
                 )}
               </div>
               <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
+                {/* <li className={styles.menuSocialsLink}>
                   <a
                     className={styles.menuSocialsCircle}
                     rel="noopener noreferrer"
@@ -410,7 +410,7 @@ const Header = () => {
                   >
                     <span></span>
                   </a>
-                </li>
+                </li> */}
                 <li className={styles.menuSocialsLink}>
                   <a
                     rel="noopener noreferrer"
@@ -443,7 +443,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <ExtendedMenu activeMenu={active} />
+          <ExtendedMenu activeMenu={active} setActive={setActive}/>
         </header>
       )}
     </>

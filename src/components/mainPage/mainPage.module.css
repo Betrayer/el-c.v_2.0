@@ -1,0 +1,46 @@
+.arrowToTop{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(3, 102, 189, 0.9);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+.arrowToTop::before, .arrowToTop::after{
+    content: "";
+    position: absolute;
+    background-image: url(../../assets/icons/arrow.svg);
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transition: all 0.3s ease-in-out;
+}
+.arrowToTop::after{
+    opacity: 0;
+    top: 70%;
+}
+.arrowToTop:hover{
+    transform: scale(1.16);
+}
+.arrowToTop:hover::before{
+    top: 38%;
+}
+.arrowToTop:hover::after{
+    opacity: 0.5;
+    top: 60%;
+}
+@media (min-width: 768px) {
+    .arrowToTop{
+        width: 44px;
+        height: 44px;
+    }
+    .arrowToTop::before{
+        width: 24px;
+        height: 24px;
+    }
+}
