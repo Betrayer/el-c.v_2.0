@@ -55,7 +55,7 @@ const MainPage = () => {
       <WeWorkSection />
       <WhyUsSection />
       <BlogSection />
-      <Form env={env}/>
+      <Form env={env} />
     </>
   );
 };
