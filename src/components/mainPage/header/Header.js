@@ -231,16 +231,7 @@ const Header = () => {
                 )}
               </div>
               <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
-                  <a
-                    className={styles.menuSocialsCircle}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="https://twitter.com"
-                  >
-                    <span></span>
-                  </a>
-                </li>
+                
                 <li className={styles.menuSocialsLink}>
                   <a
                     rel="noopener noreferrer"
@@ -256,7 +247,7 @@ const Header = () => {
                     rel="noopener noreferrer"
                     className={styles.menuSocialsCircle}
                     target="_blank"
-                    href="http://instagram.com"
+                    href="https://www.instagram.com/webstudio_elc/?igshid=1gxjtn1ywqds7"
                   >
                     <span></span>
                   </a>
@@ -401,7 +392,7 @@ const Header = () => {
                 )}
               </div>
               <ul className={styles.menuSocialsList}>
-                <li className={styles.menuSocialsLink}>
+                {/* <li className={styles.menuSocialsLink}>
                   <a
                     className={styles.menuSocialsCircle}
                     rel="noopener noreferrer"
@@ -410,7 +401,7 @@ const Header = () => {
                   >
                     <span></span>
                   </a>
-                </li>
+                </li> */}
                 <li className={styles.menuSocialsLink}>
                   <a
                     rel="noopener noreferrer"
