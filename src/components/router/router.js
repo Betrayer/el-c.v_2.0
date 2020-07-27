@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 
 const lazyMain = lazy(
-  () => import("../mainPage/MainPage.js") /* webpackChunkName: 'Main' */
+  () => import("../mainPage/mainPage.js") /* webpackChunkName: 'Main' */
 );
 
 const lazyThankYou = lazy(
