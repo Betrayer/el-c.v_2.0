@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Particles from "react-particles-js";
 import { useHistory } from "react-router-dom";
 import PageNotFound from "../pages/pageNotFound/PageNotFound";
-import thankyouPage from "../pages/thankyouPage/thankyouPage";
+import ThankyouPage from "../pages/thankyouPage/ThankyouPage";
 import styles from "./toucanPanel.module.css";
 
 const ToucanPanel = () => {
@@ -647,7 +647,7 @@ const ToucanPanel = () => {
           </button>
         </div>
       ) : history.location.pathname === "/gratitude" ? (
-        <>{<thankyouPage />}</>
+        <>{<ThankyouPage />}</>
       ) : (
         <>{<PageNotFound />}</>
       )}
