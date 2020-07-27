@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
-// import ServicePack from "./servicePack/ServicePack";
 import BlogSection from "./blogSection/BlogSection";
 import WeWorkSection from "./weWorkSection/WeWorkSection";
 import WhyUsSection from "./whyUsSection/WhyUsSection";
@@ -12,6 +11,8 @@ import Form from "./form/Form";
 import { env } from "../../config";
 import styles from "./mainPage.module.css";
 import appear from "../transitions/appear.module.css";
+import Footer from "../mainPage/footer/Footer";
+import ToucanPanel from "../toucanPanel/ToucanPanel";
 
 const Block = (props) => {
   const { inViewport, forwardedRef } = props;
@@ -40,12 +41,12 @@ const MainPage = () => {
     });
   }, [arrow]);
 
-        const scroller = () => {
-          document.getElementById("toucan").scrollIntoView({behavior: 'smooth'});
-        };
+  const scroller = () => {
+    document.getElementById("toucan").scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
-      {/* <ServicePack /> */}
+      <ToucanPanel />
       <CSSTransition in={arrow} classNames={appear} timeout={500} unmountOnExit>
         <div onClick={scroller} className={styles.arrowToTop}></div>
       </CSSTransition>
@@ -55,7 +56,8 @@ const MainPage = () => {
       <WeWorkSection />
       <WhyUsSection />
       <BlogSection />
-      <Form env={env}/>
+      <Form env={env} />
+      <Footer />
     </>
   );
 };

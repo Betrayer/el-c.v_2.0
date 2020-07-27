@@ -7,6 +7,7 @@ import css from "./form.module.css";
 const Form = (props) => {
   const [defLangState] = useState(localStorage.getItem("lang"));
   const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
   const [name, setName] = useState();
   const [feedback, setFeedback] = useState();
   const [arrowForm, setArrowForm] = useState(false);
@@ -22,10 +23,12 @@ const Form = (props) => {
       REACT_APP_EMAILJS_USERID: user,
     } = props.env;
     e.preventDefault();
-    sendFeedback(template, name, email, receiverEmail, feedback, user);
+    sendFeedback(template, name, email, phone, receiverEmail, feedback, user);
     setEmail("");
+    setPhone("");
     setFeedback("");
     setName("");
+    // console.log("SEND")
     history.push("/gratitude");
   };
   const handleChange = (e) => {
@@ -33,6 +36,9 @@ const Form = (props) => {
   };
   const handleChangeName = (e) => {
     setName(e.target.value);
+  };
+  const handleChangeTel = (e) => {
+    setPhone(e.target.value);
   };
 
   const handleChangeMail = (e) => {
@@ -47,6 +53,7 @@ const Form = (props) => {
     templateId,
     name,
     senderEmail,
+    phone,
     receiverEmail,
     feedback,
     user
@@ -60,6 +67,7 @@ const Form = (props) => {
         {
           name,
           senderEmail,
+          phone,
           receiverEmail,
           feedback,
         },
@@ -440,6 +448,50 @@ const Form = (props) => {
                     placeholder="Введіть ваш email"
                     required
                     onChange={(e) => handleChangeMail(e)}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>
+
+              <p className={css.formText}>
+                {defLangState === "rus" ? "Номер телефона" : ""}
+                {defLangState === "ukr" ? "Номер телефону" : ""}
+                {defLangState === "en" ? "Phone number" : ""}
+              </p>
+              <div className={css.formDiv}>
+                {defLangState === "rus" ? (
+                  <input
+                    className={css.formInput}
+                    type="tel"
+                    placeholder="Телефон"
+                    required
+                    pattern="(\+?\d[- .]*){7,13}"
+                    onChange={(e) => handleChangeTel(e)}
+                  />
+                ) : (
+                  <></>
+                )}
+                {defLangState === "en" ? (
+                  <input
+                    className={css.formInput}
+                    type="tel"
+                    placeholder="Phone"
+                    required
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    onChange={(e) => handleChangeTel(e)}
+                  />
+                ) : (
+                  <></>
+                )}
+                {defLangState === "ukr" ? (
+                  <input
+                    className={css.formInput}
+                    type="tel"
+                    placeholder="Телефон"
+                    required
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    onChange={(e) => handleChangeTel(e)}
                   />
                 ) : (
                   <></>

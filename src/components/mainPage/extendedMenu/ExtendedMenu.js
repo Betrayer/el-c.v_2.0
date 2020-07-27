@@ -169,16 +169,7 @@ const ExtendedMenu = ({ activeMenu, setActive }) => {
             {defLangState === "en" ? "Social media" : ""}
           </h3>
           <ul className={styles.menuSocialsList}>
-            <li className={styles.menuSocialsLink}>
-              <a
-                className={styles.menuSocialsCircle}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://twitter.com"
-              >
-
-              </a>
-            </li>
+            
             <li className={styles.menuSocialsLink}>
               <a
                 rel="noopener noreferrer"
@@ -194,7 +185,7 @@ const ExtendedMenu = ({ activeMenu, setActive }) => {
                 rel="noopener noreferrer"
                 className={styles.menuSocialsCircle}
                 target="_blank"
-                href="http://instagram.com"
+                href="https://www.instagram.com/webstudio_elc/?igshid=1gxjtn1ywqds7"
               >
 
               </a>
