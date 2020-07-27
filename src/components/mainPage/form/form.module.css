@@ -79,8 +79,11 @@
   background: transparent;
   width: 274px;
   height: auto;
+  cursor: pointer;
 }
-
+.learnMoreWhite span{
+  cursor: pointer;
+}
 .circleWhite {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
