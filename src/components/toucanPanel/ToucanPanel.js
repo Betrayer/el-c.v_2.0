@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Particles from "react-particles-js";
 import { useHistory } from "react-router-dom";
 import PageNotFound from "../pages/pageNotFound/PageNotFound";
-import ThankyouPage from "../pages/thankyouPage/ThankyouPage";
 import styles from "./toucanPanel.module.css";
 
 const ToucanPanel = () => {
@@ -12,7 +11,7 @@ const ToucanPanel = () => {
   const history = useHistory();
 
   const scroller = () => {
-    document.getElementById("form").scrollIntoView({behavior: 'smooth'});
+    document.getElementById("form").scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -310,7 +309,7 @@ const ToucanPanel = () => {
               }}
             ></Particles>
           ) : (
-            <div id="toucan" className={styles.particlesMob} ></div>
+            <div id="toucan" className={styles.particlesMob}></div>
             // <Particles
             //   className={styles.particles}
             //   params={{
@@ -647,7 +646,7 @@ const ToucanPanel = () => {
           </button>
         </div>
       ) : history.location.pathname === "/gratitude" ? (
-        <>{<ThankyouPage />}</>
+        <></>
       ) : (
         <>{<PageNotFound />}</>
       )}
