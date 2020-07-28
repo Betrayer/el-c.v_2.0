@@ -9,7 +9,7 @@ const App = (props) => {
   const routing = useRouter(props);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    setTimeout(() => setLoaded(true), 3500);
+    setTimeout(() => setLoaded(true), 3000);
   }, []);
 
   return (
@@ -27,6 +27,34 @@ const App = (props) => {
         <meta property="og:locale:alternate" content="ru_RU" />
         <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:site_name" content="EL-C" />
+        <link
+          rel="preload"
+          href="../src/assets/fonts/MPLUS1p-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="../src/assets/fonts/MPLUS1p-Bold.ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="../src/assets/fonts/MPLUS1p-Light.ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="../src/assets/fonts/MPLUS1p-Medium.ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        />
       </Helmet>
       {!loaded ? (
         <div className={css.containers}>

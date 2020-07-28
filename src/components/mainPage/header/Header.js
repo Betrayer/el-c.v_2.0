@@ -34,10 +34,52 @@ const Header = () => {
   const [scroll, setScroll] = useState(false);
   let lastScroll;
 
+  const isPathAvailable = (hash) => {
+    if (
+      hash === "#%D0%A3%D1%81%D0%BB%D1%83%D0%B3%D0%B8" ||
+      hash === "#%D0%9F%D0%BE%D1%81%D0%BB%D1%83%D0%B3%D0%B8" ||
+      hash === "#Services"
+    ) {
+      document
+        .getElementById("services")
+        .scrollIntoView({ behavior: "smooth" });
+    } else if (
+      hash === "#%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE" ||
+      hash === "#%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D1%96%D0%BE" ||
+      hash === "#Portfolio"
+    ) {
+      document
+        .getElementById("portfolio")
+        .scrollIntoView({ behavior: "smooth" });
+    } else if (
+      hash === "#%D0%9F%D1%80%D0%BE%20%D0%BD%D0%B0%D1%81" ||
+      hash === "#%D0%9E%20%D0%BD%D0%B0%D1%81" ||
+      hash === "#About%20us"
+    ) {
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    } else if (
+      hash === "#%D0%A7%D0%BE%D0%BC%D1%83%20%D0%BC%D0%B8" ||
+      hash === "#%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%BC%D1%8B" ||
+      hash === "#Why%20us"
+    ) {
+      document.getElementById("why").scrollIntoView({ behavior: "smooth" });
+    } else if (hash === "#%D0%91%D0%BB%D0%BE%D0%B3" || hash === "#Blog") {
+      document.getElementById("blog").scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     lastScroll = 0;
+    setTimeout(() => {
+      if (window.location.hash) {
+        isPathAvailable(window.location.hash);
+      }
+      console.log("window.location.hash", window.location.hash);
+    }, 1000);
+
     defLang();
   }, []);
+
   const langSwitch = () => {
     setLangSwitcher(!langSwitcher);
   };
@@ -95,6 +137,7 @@ const Header = () => {
   };
   const scroller = (name) => {
     document.getElementById(name).scrollIntoView({ behavior: "smooth" });
+    sessionStorage.setItem("scrollAnchor", name);
   };
 
   const history = useHistory();
