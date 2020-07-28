@@ -75,7 +75,6 @@ const Header = () => {
         isPathAvailable(window.location.hash);
       }
     }, 1000);
-
     defLang();
   }, []);
 

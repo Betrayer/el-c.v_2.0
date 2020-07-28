@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { useRouter } from "./components/router/router";
 import Header from "./components/mainPage/header/Header";
 import css from "./app.module.css";
