@@ -32,7 +32,7 @@ const Header = () => {
   const [active, setActive] = useState(false);
   const [header, setHeader] = useState(true);
   const [scroll, setScroll] = useState(false);
-  let lastScroll;
+  let lastScroll = 0;
 
   const isPathAvailable = (hash) => {
     if (
@@ -137,7 +137,6 @@ const Header = () => {
   };
   const scroller = (name) => {
     document.getElementById(name).scrollIntoView({ behavior: "smooth" });
-    sessionStorage.setItem("scrollAnchor", name);
   };
 
   const history = useHistory();

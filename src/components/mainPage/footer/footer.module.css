@@ -221,7 +221,9 @@
     font-size: 24px;
   }
   .socialsList {
+height: 70%;
     flex-direction: column;
+    justify-content: space-around;
     max-width: 420px;
   }
 }

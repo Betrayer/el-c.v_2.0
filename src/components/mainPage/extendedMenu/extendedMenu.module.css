@@ -86,7 +86,7 @@
   .menuSocialsList {
     display: flex;
     width: 170px;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .menuSocialsLink {
     width: 36px;
@@ -96,6 +96,7 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: 1px 2px 3px #eee;
   }
   .menuSocialsCircle {
     width: 36px;
