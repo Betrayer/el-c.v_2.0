@@ -22,6 +22,7 @@ const App = (props) => {
           property="og:description"
           content="Якісна та швидка розробка web-сторінок, сайтів та мобільних додатків різної складності"
         />
+        <meta property="og:image" content="./assets/webImage/toucanWeb.png" />
         <meta property="og:locale" content="uk_UA" />
         <meta property="og:locale:alternate" content="ru_RU" />
         <meta property="og:locale:alternate" content="en_US" />
