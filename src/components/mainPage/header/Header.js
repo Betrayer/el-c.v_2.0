@@ -74,7 +74,6 @@ const Header = () => {
       if (window.location.hash) {
         isPathAvailable(window.location.hash);
       }
-      console.log("window.location.hash", window.location.hash);
     }, 1000);
 
     defLang();
