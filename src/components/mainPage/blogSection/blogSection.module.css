@@ -144,13 +144,13 @@ background-color: #fff;
     height: 540px;
   }
   .postsList div{
-    height: 670px;
+    height: 680px;
     }
   .textWrapper{
     padding: 10px 26px;
   }
   .postText {
-    font-size: 18px;
+    font-size: 17px;
   }
   .postText:nth-child(1){
     font-size: 19px;
@@ -166,6 +166,9 @@ background-color: #fff;
     }
   .postImg {
     height: 600px;
+  }
+  .postText {
+    font-size: 18px;
   }
   .postText:nth-child(1){
     padding-bottom: 10px;
