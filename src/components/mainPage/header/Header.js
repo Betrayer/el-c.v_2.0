@@ -32,10 +32,10 @@ const Header = () => {
   const [active, setActive] = useState(false);
   const [header, setHeader] = useState(true);
   const [scroll, setScroll] = useState(false);
-  let lastScroll;
+  let lastScroll = 0;
 
   useEffect(() => {
-    lastScroll = 0;
+    // lastScroll = 0;
     defLang();
   }, []);
   const langSwitch = () => {

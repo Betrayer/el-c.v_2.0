@@ -8,7 +8,7 @@ const App = (props) => {
   const routing = useRouter(props);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 3500);
+    setTimeout(() => setLoaded(true), 3500);
   }, []);
 
   return (

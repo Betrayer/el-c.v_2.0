@@ -7,7 +7,7 @@
 .particlesForm {
   background-image: url(../../../assets/photos/sky2.jpg);
   background-size: cover;
-  height: 400px;
+  height: 438px;
 }
 .form {
   position: absolute;
@@ -160,7 +160,7 @@
     width: 60%;
     padding: 20px;
     padding-left: 40px;
-    transform: translate(-50%, -38%);
+    transform: translate(-50%, -40%);
   }
   .formText {
     font-size: 18px;

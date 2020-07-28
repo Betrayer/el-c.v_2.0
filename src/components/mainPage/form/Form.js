@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 // import Particles from "react-particles-js";
 import css from "./form.module.css";
