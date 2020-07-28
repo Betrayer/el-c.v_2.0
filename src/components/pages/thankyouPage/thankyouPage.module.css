@@ -1,5 +1,5 @@
 .thankyouWrapper {
-  width: 100vw;
+  width: 100%;
   height: calc(100vh);
   background-image: url(../../../assets/photos/toucan.png);
   background-size: cover;
@@ -18,7 +18,6 @@
   left: 0;
   background-color: rgba(3, 3, 3, 0.434);
   position: absolute;
-  margin-top: 10px;
 }
 
 .textWrapper {
@@ -137,26 +136,26 @@
 .linkContent {
   display: none;
 }
-.goBackBtn{
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 12px;
-    margin-top: 20px;
-    border-radius: 2px;
-    color: #fff;
-    font-weight: normal;
-    font-size: 18px;
-    position: relative;
-    z-index: 1;
+.goBackBtn {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 2px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
-    .textWrapper {
-        width: 75vw;
-        padding: 42px 40px;
-        background-color: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(3px);
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        max-width: 460px;
-      }
+  .textWrapper {
+    width: 75vw;
+    padding: 42px 40px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 460px;
+  }
 }

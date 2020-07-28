@@ -94,7 +94,7 @@ const Header = () => {
     setLangSwitcher(!langSwitcher);
   };
   const scroller = (name) => {
-    document.getElementById(name).scrollIntoView({behavior: 'smooth'});
+    document.getElementById(name).scrollIntoView({ behavior: "smooth" });
   };
 
   const history = useHistory();
@@ -134,12 +134,13 @@ const Header = () => {
                 <ul className={styles.menuNavList}>
                   {menuLinksRus.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
-                      <span
+                      <a
+                        href={"#" + link.name}
                         onClick={() => scroller(link.redirect)}
                         className={styles.menuPageLinkText}
                       >
                         {link.name}
-                      </span>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -150,12 +151,13 @@ const Header = () => {
                 <ul className={styles.menuNavList}>
                   {menuLinksUkr.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
-                      <span
+                      <a
+                        href={"#" + link.name}
                         onClick={() => scroller(link.redirect)}
                         className={styles.menuPageLinkText}
                       >
                         {link.name}
-                      </span>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -166,12 +168,13 @@ const Header = () => {
                 <ul className={styles.menuNavList}>
                   {menuLinksEng.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
-                      <span
+                      <a
+                        href={"#" + link.name}
                         onClick={() => scroller(link.redirect)}
                         className={styles.menuPageLinkText}
                       >
                         {link.name}
-                      </span>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -231,7 +234,6 @@ const Header = () => {
                 )}
               </div>
               <ul className={styles.menuSocialsList}>
-                
                 <li className={styles.menuSocialsLink}>
                   <a
                     rel="noopener noreferrer"
@@ -287,12 +289,13 @@ const Header = () => {
                 <ul className={styles.menuNavList}>
                   {menuLinksRus.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
-                      <span
+                      <a
+                        href={"#" + link.name}
                         onClick={() => scroller(link.redirect)}
                         className={styles.menuPageLinkText}
                       >
                         {link.name}
-                      </span>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -307,12 +310,13 @@ const Header = () => {
                       key={ind}
                       className={styles.menuSocialsLinkActive}
                     >
-                      <span
+                      <a
+                        href={"#" + link.name}
                         onClick={() => scroller(link.redirect)}
                         className={styles.menuPageLinkText}
                       >
                         {link.name}
-                      </span>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -327,12 +331,13 @@ const Header = () => {
                       key={ind}
                       className={styles.menuSocialsLinkActive}
                     >
-                      <span
+                      <a
+                        href={"#" + link.name}
                         onClick={() => scroller(link.redirect)}
                         className={styles.menuPageLinkText}
                       >
                         {link.name}
-                      </span>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -434,7 +439,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <ExtendedMenu activeMenu={active} setActive={setActive}/>
+          <ExtendedMenu activeMenu={active} setActive={setActive} />
         </header>
       )}
     </>

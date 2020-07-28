@@ -6,7 +6,6 @@ const ThankyouPage = () => {
   const history = useHistory();
   const [defLangState] = useState(localStorage.getItem("lang"));
   useEffect(() => {}, [defLangState]);
-  
 
   return (
     <div className={styles.thankyouWrapper}>
