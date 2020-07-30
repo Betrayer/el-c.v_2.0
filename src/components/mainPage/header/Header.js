@@ -33,9 +33,18 @@ const Header = () => {
   const [header, setHeader] = useState(true);
   const [scroll, setScroll] = useState(false);
   let lastScroll = 0;
+  const isPathAvailable = (hash) =>{
+    console.log('hash', hash)
 
+    //about us
+    // else if(hash==='#%D0%91%D0%BB%D0%BE%D0%B3' ||  hash === '#Blog')
+  }
   useEffect(() => {
     // lastScroll = 0;
+    setTimeout(() => {
+      console.log("history.location.path", window.location.hash);
+      isPathAvailable(window.location.hash)
+    }, 2000);
     defLang();
   }, []);
   const langSwitch = () => {
