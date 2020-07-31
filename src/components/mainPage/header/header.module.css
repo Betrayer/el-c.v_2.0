@@ -204,9 +204,9 @@
   opacity: 0;
   pointer-events: none;
 }
-.themeToggle:hover, .themeToggle:hover label, .themeToggle:hover .darkLight:checked + label{
+/* .themeToggle:hover, .themeToggle:hover label, .themeToggle:hover .darkLight:checked + label{
 transform: scale(1.1);
-}
+} */
 .themeToggle:hover .darkLight:checked + label{
   transform: scale(1.1) rotate(360deg);
 }
@@ -458,6 +458,5 @@ transform: scale(1.1);
   .menuSocialsLink:nth-child(3):hover::after {
     background-image: url(../../../assets/icons/socials/phoneWh.svg);
   }
-
 
 }
