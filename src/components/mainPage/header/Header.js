@@ -169,7 +169,8 @@ const Header = ({ toggleTheme }) => {
               EL-C
             </p>
             <div className={styles.mobMenu}>
-              <li className={styles.themeToggle}>
+              {window.innerWidth < 1200 ? 
+              <div className={styles.themeToggle}>
                 <input
                   className={styles.darkLight}
                   type="checkbox"
@@ -178,7 +179,7 @@ const Header = ({ toggleTheme }) => {
                   onChange={() => toggleTheme()}
                 />
                 <label htmlFor="dark-light"></label>
-              </li>
+              </div>:<></>}
               <button
                 onClick={() => setActive(!active)}
                 className={active ? styles.menuActive : styles.menu}
@@ -379,7 +380,8 @@ const Header = ({ toggleTheme }) => {
               EL-C
             </p>
             <div className={styles.mobMenu}>
-              <li className={styles.themeToggle}>
+            {window.innerWidth < 1200 ? 
+              <div className={styles.themeToggle}>
                 <input
                   className={styles.darkLight}
                   type="checkbox"
@@ -388,7 +390,7 @@ const Header = ({ toggleTheme }) => {
                   onChange={() => toggleTheme()}
                 />
                 <label htmlFor="dark-light"></label>
-              </li>
+              </div>:<></>}
               <button
                 onClick={() => setActive(!active)}
                 className={active ? styles.menuActive : styles.menu}
