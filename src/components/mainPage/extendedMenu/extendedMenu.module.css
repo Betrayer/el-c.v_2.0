@@ -11,8 +11,8 @@
 	height: 0px; 
 	position:fixed;
 	top: 35px;
-	right: 0;
-	background:rgba(255, 255, 255, 0.95);
+  right: 0;
+	background: var(--menu);
 	opacity:1;
 	-webkit-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
 	   -moz-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
@@ -71,7 +71,7 @@
   }
   .menuSocialsLinkActive:hover {
     transform: translateX(3%);
-    color: #40bad5;
+    color: var(--color-lightBlue);
   }
   .menuSocials, .menuSocialsActive {
     margin-top: 50px;
@@ -87,6 +87,7 @@
     display: flex;
     width: 170px;
     justify-content: space-around;
+    align-items: center;
   }
   .menuSocialsLink {
     width: 36px;
@@ -96,7 +97,7 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 1px 2px 3px #eee;
+    box-shadow: 1px 2px 3px var(--shadow);
   }
   .menuSocialsCircle {
     width: 36px;
@@ -127,10 +128,8 @@
     transform: translate(-50%, -50%);
     transition: all 0.2s;
   }
-  .menuSocialsLink:nth-child(1)::after {
-    background-image: url(../../../assets/icons/socials/twitter.svg);
-  }
-  .menuSocialsLink:nth-child(3)::after {
+
+  .menuSocialsLink:nth-child(2)::after {
     background-image: url(../../../assets/icons/socials/instagram.svg);
   }
   .menuSocialsLink:before {
@@ -152,10 +151,8 @@
   .menuSocialsLink:before {
     background-color: #3b5998;
   }
-  .menuSocialsLink:nth-child(1)::before {
-    background-color: #3cf;
-  }
-  .menuSocialsLink:nth-child(3)::before {
+
+  .menuSocialsLink:nth-child(2)::before {
     background: linear-gradient(#4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
   }
   .menuSocialsLink:focus,
@@ -166,12 +163,9 @@
   .menuSocialsLink:hover::after {
     background-image: url(../../../assets/icons/socials/facebookWh.svg);
   }
-  .menuSocialsLink:nth-child(1):focus::after,
-  .menuSocialsLink:nth-child(1):hover::after {
-    background-image: url(../../../assets/icons/socials/twitterWh.svg);
-  }
-  .menuSocialsLink:nth-child(3):focus::after,
-  .menuSocialsLink:nth-child(3):hover::after {
+
+  .menuSocialsLink:nth-child(2):focus::after,
+  .menuSocialsLink:nth-child(2):hover::after {
     background-image: url(../../../assets/icons/socials/instagramWh.svg);
   }
 
@@ -182,7 +176,7 @@
   
   .langWrapper::after {
     content: "";
-    background-color: #1AC3E8;
+    background-color: var(--color-lightBlue);
     height: 1px;
     width: 36px;
     position: absolute;
@@ -217,7 +211,7 @@
     z-index: 4;
     transition: all 0.1s ease-in-out;
     font-weight: 500;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: var(--menu);
     border-radius: 2px;
   }
   .langSpanActive{
@@ -230,6 +224,7 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
   }
+  
   @media (min-width: 500px){
     .circleExpand{
       width:1400px;

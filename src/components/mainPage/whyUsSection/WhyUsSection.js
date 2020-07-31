@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
+import { ThemeContext } from "styled-components";
 import gsap from "gsap";
 import styles from "./whyussection.module.css";
 import slideTransition from "../../transitions/slideTransition.module.css";
@@ -7,6 +8,8 @@ import slideTransition from "../../transitions/slideTransition.module.css";
 const WhyUsSection = () => {
   const [opened, setOpened] = useState(["first"]);
   const [defLangState] = useState(localStorage.getItem("lang"));
+  const themeContext = useContext(ThemeContext);
+
 
   useEffect(() => {}, [defLangState]);
   useEffect(() => {
@@ -39,7 +42,7 @@ const WhyUsSection = () => {
         {defLangState === "en" ? "Why us?" : ""}
       </h2>
       <div className={styles.whyUsContent}>
-        <ul className={styles.whyUsList}>
+        <ul className={themeContext.primary === "#fff" ? styles.whyUsList : styles.whyUsListDark}>
           <li
             className={
               opened.includes("first")

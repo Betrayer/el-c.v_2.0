@@ -11,6 +11,7 @@
   font-size: 28px;
   font-weight: 500;
   text-align: center;
+  color: var(--color-text);
 }
 
 .whyUsItem,
@@ -30,8 +31,10 @@
 .animatedwhyUsItem:nth-child(4) {
   height: 200px;
 }
-.whyUsItem .toucanIcon,
-.animatedwhyUsItem .toucanIcon {
+.whyUsList .whyUsItem .toucanIcon,
+.whyUsList .animatedwhyUsItem .toucanIcon,
+.whyUsListDark .whyUsItem .toucanIcon,
+.whyUsListDark .animatedwhyUsItem .toucanIcon {
   width: 30px;
   height: 40px;
   position: absolute;
@@ -41,15 +44,29 @@
   top: 0px;
   left: -0px;
   transform: scaleX(1);
-  opacity: 0.7;
+  /* opacity: 0.7; */
+}
+.whyUsListDark .whyUsItem .toucanIcon,
+.whyUsListDark .animatedwhyUsItem .toucanIcon {
+  background-image: url(../../../assets/logo/logo1Dark.svg);
+  opacity: 0.9;
 }
 .whyUsItem:nth-child(2n) .toucanIcon {
   background-image: url(../../../assets/logo/logo2.svg);
 }
-.animatedwhyUsItem .toucanIcon {
+.whyUsListDark .whyUsItem:nth-child(2n) .toucanIcon {
+  background-image: url(../../../assets/logo/logo2Dark.svg);
+  opacity: 0.9;
+}
+.whyUsList .animatedwhyUsItem .toucanIcon {
   transform: scaleX(-1);
   background-image: url(../../../assets/logo/logo.svg);
   opacity: 0.8;
+}
+.whyUsListDark .animatedwhyUsItem .toucanIcon {
+  transform: scaleX(-1);
+  background-image: url(../../../assets/logo/logoDark.svg);
+  opacity: 0.84;
 }
 
 .whyUsItemTitle {
@@ -59,10 +76,10 @@
   cursor: pointer;
   padding-bottom: 10px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--color-text);
 }
 .whyUsItemTitle:hover {
-  color: #1ac3e8;
+  color: var(--color-lightBlue);
 }
 .whyUsItemTitle:hover .toucanIcon {
   transform: scale(1.1, 1.1);
@@ -73,7 +90,7 @@
 .whyUsItemText {
   font-size: 17px;
   font-weight: 400;
-  color: rgb(139, 139, 139);
+  color: var(--color-lightText);
 }
 .likeWrapper {
   display: none;
@@ -105,7 +122,7 @@
     font-size: 30px;
     padding-top: 30px;
   }
-  .whyUsList {
+  .whyUsList, .whyUsListDark {
     padding-left: 0px;
     width: 58%;
   }
@@ -127,6 +144,10 @@
   .whyUsItemTitle {
     font-size: 22px;
   }
+  .whyUsContainer .whyUsContent .toucanIcon{
+    width: 36px;
+    height: 50px;
+  }
   .whyUsContent {
     display: flex;
     align-items: flex-start;
@@ -144,7 +165,7 @@
     position: absolute;
     width: 130%;
     height: 130%;
-    background-color: #1AC3E8;
+    background-color: var(--color-lightBlue);
     opacity: 0.9;
     z-index: -1;
     top: -15%;
@@ -186,7 +207,7 @@
     font-size: 40px;
     padding-top: 20px;
   }
-  .whyUsList {
+  .whyUsList, .whyUsListDark {
     width: 38%;
   }
   .likeWrapper{

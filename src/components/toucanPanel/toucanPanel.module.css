@@ -19,6 +19,16 @@
   height: calc(100vh - 68px);
   top: 60px;
 }
+/* .toucanDark #tsparticles,
+.toucanDark.particles {
+  background: url(../../assets/photos/toucanDark.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  
+  height: calc(100vh - 68px);
+  top: 68px;
+} */
 /* canvas{
   position: relative;
 }*/
