@@ -12,7 +12,7 @@ const App = (props) => {
   const [theme, setTheme] = useState('light');
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    setTimeout(() => setLoaded(true), 200);
+    setTimeout(() => setLoaded(true), 3000);
   }, []);
 
   const toggleTheme = () => {
