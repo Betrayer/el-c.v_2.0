@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
+import { ThemeContext } from "styled-components";
 import gsap from "gsap";
 import styles from "./whyussection.module.css";
 import slideTransition from "../../transitions/slideTransition.module.css";
@@ -7,6 +8,8 @@ import slideTransition from "../../transitions/slideTransition.module.css";
 const WhyUsSection = () => {
   const [opened, setOpened] = useState(["first"]);
   const [defLangState] = useState(localStorage.getItem("lang"));
+  const themeContext = useContext(ThemeContext);
+
 
   useEffect(() => {}, [defLangState]);
   useEffect(() => {
@@ -39,7 +42,7 @@ const WhyUsSection = () => {
         {defLangState === "en" ? "Why us?" : ""}
       </h2>
       <div className={styles.whyUsContent}>
-        <ul className={styles.whyUsList}>
+        <ul className={themeContext.primary === "#fff" ? styles.whyUsList : styles.whyUsListDark}>
           <li
             className={
               opened.includes("first")
@@ -160,7 +163,6 @@ const WhyUsSection = () => {
               {defLangState === "rus" ? "Фиксированная цена" : ""}
               {defLangState === "ukr" ? "Фіксована ціна" : ""}
               {defLangState === "en" ? "Fixed price" : ""}
-              
             </h3>
             <CSSTransition
               in={opened.includes("forth")}
@@ -169,9 +171,15 @@ const WhyUsSection = () => {
               unmountOnExit
             >
               <p className={styles.whyUsItemText}>
-                {defLangState === "rus" ? "Мы имеем четко установленный прайс и гарантируем, что в течение работы над проектом стоимость не изменится." : ""}
-                {defLangState === "ukr" ? "Ми маємо чітко встановлений прайс і гарантуємо, що протягом роботи над проектом вартість не зміниться." : ""}
-                {defLangState === "en" ? "We have a set price and we guarantee that during the work on the project the cost will not change." : ""}
+                {defLangState === "rus"
+                  ? "Мы имеем четко установленный прайс и гарантируем, что в процессе работы над проектом стоимость не изменится."
+                  : ""}
+                {defLangState === "ukr"
+                  ? "Ми маємо чітко встановлений прайс і гарантуємо, що протягом роботи над проектом вартість не зміниться."
+                  : ""}
+                {defLangState === "en"
+                  ? "We have a set price and we guarantee that during the work on the project the cost will not change."
+                  : ""}
               </p>
             </CSSTransition>
           </li>
@@ -198,9 +206,16 @@ const WhyUsSection = () => {
               unmountOnExit
             >
               <p className={styles.whyUsItemText}>
-                {defLangState === "rus" ? "Наша студия - это специалисты, которые идут в ногу со временем и всегда в курсе технических новинок." : ""}
-                {defLangState === "ukr" ? "Наша студія – це спеціалісти, які йдуть в ногу з часом і завжди в курсі технічних новинок." : ""}
-                {defLangState === "en" ? "Our studio consists of the specialists who always keep up with the technical innovations." : ""}              </p>
+                {defLangState === "rus"
+                  ? "Наша студия - это специалисты, которые идут в ногу со временем и всегда в курсе технических новинок."
+                  : ""}
+                {defLangState === "ukr"
+                  ? "Наша студія – це спеціалісти, які йдуть в ногу з часом і завжди в курсі технічних новинок."
+                  : ""}
+                {defLangState === "en"
+                  ? "Our studio consists of the specialists who always keep up with the technical innovations."
+                  : ""}{" "}
+              </p>
             </CSSTransition>
           </li>
           <li
@@ -218,7 +233,6 @@ const WhyUsSection = () => {
               {defLangState === "rus" ? "Исследование рынка" : ""}
               {defLangState === "ukr" ? "Дослідження ринку" : ""}
               {defLangState === "en" ? "Market research" : ""}
-              
             </h3>
             <CSSTransition
               in={opened.includes("sixth")}
@@ -227,9 +241,15 @@ const WhyUsSection = () => {
               unmountOnExit
             >
               <p className={styles.whyUsItemText}>
-                {defLangState === "rus" ? "Перед началом работы мы проводим глубокий анализ и разрабатываем стратегию для вашего проекта." : ""}
-                {defLangState === "ukr" ? "Перед початком роботи ми проводимо глибокий аналіз та розробляємо стратегію для вашого проекту." : ""}
-                {defLangState === "en" ? "Before starting the project, we conduct an in-depth analysis and develop a strategy for your project." : ""}
+                {defLangState === "rus"
+                  ? "Перед началом работы мы проводим глубокий анализ и разрабатываем стратегию для вашего проекта."
+                  : ""}
+                {defLangState === "ukr"
+                  ? "Перед початком роботи ми проводимо глибокий аналіз та розробляємо стратегію для вашого проекту."
+                  : ""}
+                {defLangState === "en"
+                  ? "Before starting the project, we conduct an in-depth analysis and develop a strategy for your project."
+                  : ""}
               </p>
             </CSSTransition>
           </li>
@@ -363,9 +383,12 @@ const WhyUsSection = () => {
             </g>
           </svg>
           <div className={styles.likeTextWrapper}>
-          <p className={styles.likeText}>{defLangState === "rus" ? "*нажми на лайк" : ""}
-        {defLangState === "ukr" ? "*тицни на вподобайку" : ""}
-        {defLangState === "en" ? "*press the like button" : ""}</p></div>
+            <p className={styles.likeText}>
+              {defLangState === "rus" ? "*нажми на лайк" : ""}
+              {defLangState === "ukr" ? "*тицни на вподобайку" : ""}
+              {defLangState === "en" ? "*press the like button" : ""}
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -9,10 +9,10 @@ import handleViewport from "react-in-viewport";
 import Portfolio from "./portfolio/Portfolio";
 import Form from "./form/Form";
 import { env } from "../../config";
-import styles from "./mainPage.module.css";
 import appear from "../transitions/appear.module.css";
 import Footer from "../mainPage/footer/Footer";
 import ToucanPanel from "../toucanPanel/ToucanPanel";
+import styles from "./mainPage.module.css";
 
 const Block = (props) => {
   const { inViewport, forwardedRef } = props;
