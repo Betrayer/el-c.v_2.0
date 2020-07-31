@@ -85,21 +85,24 @@ const Header = ({ toggleTheme }) => {
   };
 
   useEffect(() => {
-    if (window.innerWidth >= 768){
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset;
 
-      if (currentScroll === 0) {
-        // body.classList.remove(scrollUp);
-        setHeader(true);
-        setScroll(false);
-        lastScroll = 0;
-        return;
-      }
-      if (active) {
-        setHeader(true);
-        return;
-      }
+    if (window.innerWidth >= 768) {
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+
+        if (currentScroll === 0) {
+          // body.classList.remove(scrollUp);
+          setHeader(true);
+          setScroll(false);
+          lastScroll = 0;
+          return;
+        }
+        if (active) {
+          setHeader(true);
+          return;
+        }
+
 
       if (currentScroll > lastScroll) {
         setHeader(false);
@@ -110,6 +113,7 @@ const Header = ({ toggleTheme }) => {
       }
       lastScroll = currentScroll;
     });}
+
   }, [header, scroll]);
 
   const defLang = () => {
@@ -167,16 +171,28 @@ const Header = ({ toggleTheme }) => {
             >
               EL-C
             </p>
-            <button
-              onClick={() => setActive(!active)}
-              className={active ? styles.menuActive : styles.menu}
-            >
-              <svg className={styles.menuSvg} viewBox="0 0 64 48">
-                <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
-                <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
-                <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
-              </svg>
-            </button>
+            <div className={styles.mobMenu}>
+              <li className={styles.themeToggle}>
+                <input
+                  className={styles.darkLight}
+                  type="checkbox"
+                  id="dark-light"
+                  name="dark-light"
+                  onChange={() => toggleTheme()}
+                />
+                <label htmlFor="dark-light"></label>
+              </li>
+              <button
+                onClick={() => setActive(!active)}
+                className={active ? styles.menuActive : styles.menu}
+              >
+                <svg className={styles.menuSvg} viewBox="0 0 64 48">
+                  <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
+                  <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
+                  <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
+                </svg>
+              </button>
+            </div>
             <nav className={styles.nav}>
               {defLangState === "rus" ? (
                 <ul
@@ -348,7 +364,13 @@ const Header = ({ toggleTheme }) => {
               </ul>
             </div>
           </div>
-          <ExtendedMenu activeMenu={active} setActive={setActive} toggleTheme={toggleTheme}/>
+
+          <ExtendedMenu
+            activeMenu={active}
+            setActive={setActive}
+            toggleTheme={toggleTheme}
+          />
+
         </header>
       ) : (
         <header className={header ? styles.scrollUp : styles.scrollDown}>
@@ -362,26 +384,29 @@ const Header = ({ toggleTheme }) => {
               EL-C
             </p>
             <div className={styles.mobMenu}>
-            <li className={styles.themeToggle}>
-                  <input
-                    className={styles.darkLight}
-                    type="checkbox"
-                    id="dark-light"
-                    name="dark-light"
-                    onChange={() => toggleTheme()}
-                  />
-                  <label htmlFor="dark-light"></label>
-                </li>
-            <button
-              onClick={() => setActive(!active)}
-              className={active ? styles.menuActive : styles.menu}
-            >
-              <svg className={styles.menuSvg} viewBox="0 0 64 48">
-                <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
-                <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
-                <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
-              </svg>
-            </button></div>
+
+              <li className={styles.themeToggle}>
+                <input
+                  className={styles.darkLight}
+                  type="checkbox"
+                  id="dark-light"
+                  name="dark-light"
+                  onChange={() => toggleTheme()}
+                />
+                <label htmlFor="dark-light"></label>
+              </li>
+              <button
+                onClick={() => setActive(!active)}
+                className={active ? styles.menuActive : styles.menu}
+              >
+                <svg className={styles.menuSvg} viewBox="0 0 64 48">
+                  <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
+                  <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
+                  <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
+                </svg>
+              </button>
+            </div>
+
             <nav className={styles.nav}>
               {defLangState === "rus" ? (
                 <ul
@@ -571,7 +596,13 @@ const Header = ({ toggleTheme }) => {
               </ul>
             </div>
           </div>
-          <ExtendedMenu activeMenu={active} setActive={setActive} toggleTheme={toggleTheme}/>
+
+          <ExtendedMenu
+            activeMenu={active}
+            setActive={setActive}
+            toggleTheme={toggleTheme}
+          />
+
         </header>
       )}
     </>
