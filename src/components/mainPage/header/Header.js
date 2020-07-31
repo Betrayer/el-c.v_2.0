@@ -85,9 +85,11 @@ const Header = ({ toggleTheme }) => {
   };
 
   useEffect(() => {
+
     if (window.innerWidth >= 768) {
       window.addEventListener("scroll", () => {
         const currentScroll = window.pageYOffset;
+
 
         if (currentScroll === 0) {
           // body.classList.remove(scrollUp);
@@ -101,16 +103,17 @@ const Header = ({ toggleTheme }) => {
           return;
         }
 
-        if (currentScroll > lastScroll) {
-          setHeader(false);
-          setScroll(true);
-        } else if (currentScroll < lastScroll) {
-          // up
-          setHeader(true);
-        }
-        lastScroll = currentScroll;
-      });
-    }
+
+      if (currentScroll > lastScroll) {
+        setHeader(false);
+        setScroll(true);
+      } else if (currentScroll < lastScroll) {
+        // up
+        setHeader(true);
+      }
+      lastScroll = currentScroll;
+    });}
+
   }, [header, scroll]);
 
   const defLang = () => {
@@ -361,11 +364,13 @@ const Header = ({ toggleTheme }) => {
               </ul>
             </div>
           </div>
+
           <ExtendedMenu
             activeMenu={active}
             setActive={setActive}
             toggleTheme={toggleTheme}
           />
+
         </header>
       ) : (
         <header className={header ? styles.scrollUp : styles.scrollDown}>
@@ -379,6 +384,7 @@ const Header = ({ toggleTheme }) => {
               EL-C
             </p>
             <div className={styles.mobMenu}>
+
               <li className={styles.themeToggle}>
                 <input
                   className={styles.darkLight}
@@ -400,6 +406,7 @@ const Header = ({ toggleTheme }) => {
                 </svg>
               </button>
             </div>
+
             <nav className={styles.nav}>
               {defLangState === "rus" ? (
                 <ul
@@ -589,11 +596,13 @@ const Header = ({ toggleTheme }) => {
               </ul>
             </div>
           </div>
+
           <ExtendedMenu
             activeMenu={active}
             setActive={setActive}
             toggleTheme={toggleTheme}
           />
+
         </header>
       )}
     </>
