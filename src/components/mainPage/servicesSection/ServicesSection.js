@@ -1,9 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { ThemeContext } from "styled-components";
 import css from "./servicesSection.module.css";
 
 const ServicesSection = () => {
+  const themeContext = useContext(ThemeContext);
   const [defLangState] = useState(localStorage.getItem("lang"));
   useEffect(() => {}, [defLangState]);
+
+  const hover = (element, name) => {
+    element.setAttribute(
+      "src",
+      `require(../../../assets/services/${name}.svg)`
+    );
+  };
+
+  const unhover = (element, name) => {
+    element.setAttribute(
+      "src",
+      `require(../../../assets/services/${name}.svg)`
+    );
+  };
 
   return (
     <section id="services" className={css.servicesSection}>
@@ -18,12 +34,10 @@ const ServicesSection = () => {
             <span className={css.iconCircle}></span>
             <span className={css.iconCircleLight}></span>
             <span className={css.iconCircleLighter}></span>
-            <img
-              className={css.icon}
-              src={require("../../../assets/services/landing.svg")}
-              alt="services-icon"
-              height={50}
-              width={"auto"}
+            <div
+              className={
+                themeContext.primary !== "#fff" ? css.iconDark : css.icon
+              }
             />
             <p className={css.servicesTitle}>Landing Page</p>
             <p className={css.servicesText}>
@@ -42,12 +56,10 @@ const ServicesSection = () => {
             <span className={css.iconCircle}></span>
             <span className={css.iconCircleLight}></span>
             <span className={css.iconCircleLighter}></span>
-            <img
-              className={css.icon}
-              src={require("../../../assets/services/shop.svg")}
-              alt="services-icon"
-              height={50}
-              width={"auto"}
+            <div
+              className={
+                themeContext.primary !== "#fff" ? css.iconDark : css.icon
+              }
             />
             <p className={css.servicesTitle}>
               {defLangState === "rus" ? "Интернет-магазин" : ""}
@@ -70,12 +82,10 @@ const ServicesSection = () => {
             <span className={css.iconCircle}></span>
             <span className={css.iconCircleLight}></span>
             <span className={css.iconCircleLighter}></span>
-            <img
-              className={css.icon}
-              src={require("../../../assets/services/data.svg")}
-              alt="services-icon"
-              height={50}
-              width={"auto"}
+            <div
+              className={
+                themeContext.primary !== "#fff" ? css.iconDark : css.icon
+              }
             />
             <p className={css.servicesTitle}>
               {defLangState === "rus" ? "Корпоративний сайт" : ""}
@@ -98,12 +108,10 @@ const ServicesSection = () => {
             <span className={css.iconCircle}></span>
             <span className={css.iconCircleLight}></span>
             <span className={css.iconCircleLighter}></span>
-            <img
-              className={css.icon}
-              src={require("../../../assets/services/mobile.svg")}
-              alt="services-icon"
-              height={50}
-              width={"auto"}
+            <div
+              className={
+                themeContext.primary !== "#fff" ? css.iconDark : css.icon
+              }
             />
             <p className={css.servicesTitle}>
               {defLangState === "rus" ? "Мобильные приложения" : ""}

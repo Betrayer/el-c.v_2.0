@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { ThemeContext } from "styled-components";
 import Particles from "react-particles-js";
 import { useHistory } from "react-router-dom";
 import PageNotFound from "../pages/pageNotFound/PageNotFound";
@@ -7,6 +8,7 @@ import styles from "./toucanPanel.module.css";
 const ToucanPanel = () => {
   const [defLangState] = useState(localStorage.getItem("lang"));
   useEffect(() => {}, [defLangState]);
+  const themeContext = useContext(ThemeContext);
   const intFrameWidth = window.innerWidth;
   const history = useHistory();
 
@@ -17,7 +19,7 @@ const ToucanPanel = () => {
   return (
     <>
       {history.location.pathname === "/" ? (
-        <div id="toucan">
+        <div id="toucan" className={themeContext.primary === "#fff" ? styles.toucan : styles.toucanDark}>
           {intFrameWidth > 700 ? (
             <Particles
               className={styles.particles}
@@ -26,11 +28,14 @@ const ToucanPanel = () => {
                 backgroundMask: {
                   cover: {
                     color: {
-                      value: {
+                      value: themeContext.primary === "#fff" ? {
                         r: 255,
                         g: 255,
                         b: 255,
-                      },
+                      } : {
+                        r: 40,
+                        g: 40,
+                        b: 42,},
                     },
                     opacity: 1,
                   },

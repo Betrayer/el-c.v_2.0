@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "styled-components";
 import styles from "./weworksection.module.css";
 
 const WeWorkSection = () => {
   const [defLangState] = useState(localStorage.getItem("lang"));
   useEffect(() => {}, [defLangState]);
+  const themeContext = useContext(ThemeContext);
 
   return (
     <section id="weWork" className={styles.weWorkContainer}>
@@ -15,10 +17,10 @@ const WeWorkSection = () => {
       <ul className={styles.weWorkList}>
         <li className={styles.weWorkItem}>
           <div className={styles.iconWrapper}>
-            <i className={styles.icon}></i>
-            <i className={styles.iconLine}></i>
-            <i className={styles.iconSecondLine}></i>
-            <i className={styles.iconTalk}></i>
+            <i className={themeContext.primary === "#fff" ? styles.icon : styles.iconDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.iconLine : styles.iconLineDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.iconSecondLine : styles.iconSecondLineDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.iconTalk : styles.iconTalkDark}></i>
           </div>
           <h3 className={styles.weWorkItemTitle}>
             {defLangState === "rus" ? "Слушаем ваши пожелания и видение" : ""}
@@ -30,9 +32,9 @@ const WeWorkSection = () => {
         </li>
         <li className={styles.weWorkItem}>
           <div className={styles.iconWrapper}>
-            <i className={styles.icon}></i>
-            <i className={styles.iconLines}></i>
-            <i className={styles.iconGraph}></i>
+          <i className={themeContext.primary === "#fff" ? styles.icon : styles.iconDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.iconLines : styles.iconLinesDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.iconGraph : styles.iconGraphDark}></i>
           </div>
           <h3 className={styles.weWorkItemTitle}>
             {defLangState === "rus" ? "Проводим исследования рынка" : ""}
@@ -42,8 +44,8 @@ const WeWorkSection = () => {
         </li>
         <li className={styles.weWorkItem}>
           <div className={styles.iconWrapper}>
-            <i className={styles.icon}></i>
-            <i className={styles.brush}></i>
+          <i className={themeContext.primary === "#fff" ? styles.icon : styles.iconDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.brush : styles.brushDark}></i>
           </div>
           <h3 className={styles.weWorkItemTitle}>
             {defLangState === "rus" ? "Создаем уникальный дизайн" : ""}
@@ -53,9 +55,9 @@ const WeWorkSection = () => {
         </li>
         <li className={styles.weWorkItem}>
           <div className={styles.iconWrapper}>
-            <i className={styles.icon}></i>
-            <i className={styles.mobile}></i>
-            <i className={styles.tablet}></i>
+          <i className={themeContext.primary === "#fff" ? styles.icon : styles.iconDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.mobile : styles.mobileDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.tablet : styles.tabletDark}></i>
           </div>
           <h3 className={styles.weWorkItemTitle}>
             {defLangState === "rus" ? "Адаптируем сайт под различные устройства" : ""}
@@ -65,8 +67,8 @@ const WeWorkSection = () => {
         </li>
         <li className={styles.weWorkItem}>
           <div className={styles.iconWrapper}>
-            <i className={styles.icon}></i>
-            <i className={styles.pencil}></i>
+          <i className={themeContext.primary === "#fff" ? styles.icon : styles.iconDark}></i>
+            <i className={themeContext.primary === "#fff" ? styles.pencil : styles.pencilDark}></i>
           </div>
           <h3 className={styles.weWorkItemTitle}>
             {defLangState === "rus" ? "Тестируем и анализируем проделанную работу" : ""}

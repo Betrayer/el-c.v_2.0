@@ -70,7 +70,9 @@
   text-decoration: none;
   list-style: none;
   scroll-behavior: smooth;
+  transition: all 0.14s ease-in-out;
 }
+
 p, span,h1, h2, h3,h4 {
   cursor: default;
 }

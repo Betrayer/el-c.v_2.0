@@ -34,7 +34,7 @@ const ExtendedMenu = ({ activeMenu, setActive }) => {
   ];
   const scroller = (name) => {
     document.getElementById(name).scrollIntoView({behavior: 'smooth'});
-    // setActive(false)
+    setActive(false)
   };
   const refresh = () => {
     history.go();
