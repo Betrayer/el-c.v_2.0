@@ -7,7 +7,7 @@
 .particlesForm {
   background-image: url(../../../assets/photos/sky2.jpg);
   background-size: cover;
-  height: 438px;
+  height: 498px;
 }
 .form {
   position: absolute;
@@ -150,7 +150,7 @@
     padding-top: 100px;
   }
   .particlesForm {
-    height: 500px;
+    height: 530px;
   }
   .formTitleForm {
     font-size: 30px;
