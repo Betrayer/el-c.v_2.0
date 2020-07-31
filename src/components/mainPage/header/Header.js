@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "styled-components";
 import { useHistory } from "react-router-dom";
 import ExtendedMenu from "../extendedMenu/ExtendedMenu";
 import styles from "./header.module.css";
 
-const Header = () => {
+const Header = ({ toggleTheme }) => {
+  const themeContext = useContext(ThemeContext);
   const [langSwitcher, setLangSwitcher] = useState(false);
+  const [active, setActive] = useState(false);
+  const [header, setHeader] = useState(true);
+  const [scroll, setScroll] = useState(false);
   const [defLangState, setDefLangState] = useState(
     localStorage.getItem("lang")
   );
@@ -29,10 +34,7 @@ const Header = () => {
     { name: "Why us", redirect: "why" },
     { name: "Blog", redirect: "blog" },
   ];
-  const [active, setActive] = useState(false);
-  const [header, setHeader] = useState(true);
-  const [scroll, setScroll] = useState(false);
-  let lastScroll = 0;
+  let lastScroll;
 
   const isPathAvailable = (hash) => {
     if (
@@ -83,6 +85,7 @@ const Header = () => {
   };
 
   useEffect(() => {
+    if (window.innerWidth >= 768){
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
 
@@ -106,7 +109,7 @@ const Header = () => {
         setHeader(true);
       }
       lastScroll = currentScroll;
-    });
+    });}
   }, [header, scroll]);
 
   const defLang = () => {
@@ -156,7 +159,12 @@ const Header = () => {
       {!scroll ? (
         <header className={styles.scrollUp}>
           <div className={styles.triggerMenuWrapper}>
-            <p className={styles.logo} onClick={refresher}>
+            <p
+              className={
+                themeContext.primary === "#fff" ? styles.logo : styles.logoDark
+              }
+              onClick={refresher}
+            >
               EL-C
             </p>
             <button
@@ -171,7 +179,13 @@ const Header = () => {
             </button>
             <nav className={styles.nav}>
               {defLangState === "rus" ? (
-                <ul className={styles.menuNavList}>
+                <ul
+                  className={
+                    themeContext.primary === "#fff"
+                      ? styles.menuNavList
+                      : styles.menuNavListDark
+                  }
+                >
                   {menuLinksRus.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
                       <a
@@ -188,7 +202,13 @@ const Header = () => {
                 <></>
               )}
               {defLangState === "ukr" ? (
-                <ul className={styles.menuNavList}>
+                <ul
+                  className={
+                    themeContext.primary === "#fff"
+                      ? styles.menuNavList
+                      : styles.menuNavListDark
+                  }
+                >
                   {menuLinksUkr.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
                       <a
@@ -205,7 +225,13 @@ const Header = () => {
                 <></>
               )}
               {defLangState === "en" ? (
-                <ul className={styles.menuNavList}>
+                <ul
+                  className={
+                    themeContext.primary === "#fff"
+                      ? styles.menuNavList
+                      : styles.menuNavListDark
+                  }
+                >
                   {menuLinksEng.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
                       <a
@@ -273,7 +299,13 @@ const Header = () => {
                   <></>
                 )}
               </div>
-              <ul className={styles.menuSocialsList}>
+              <ul
+                className={
+                  themeContext.primary === "#fff"
+                    ? styles.menuSocialsList
+                    : styles.menuSocialsListDark
+                }
+              >
                 <li className={styles.menuSocialsLink}>
                   <a
                     rel="noopener noreferrer"
@@ -303,17 +335,43 @@ const Header = () => {
                     <span></span>
                   </a>
                 </li>
+                <li className={styles.themeToggle}>
+                  <input
+                    className={styles.darkLight}
+                    type="checkbox"
+                    id="dark-light"
+                    name="dark-light"
+                    onChange={() => toggleTheme()}
+                  />
+                  <label htmlFor="dark-light"></label>
+                </li>
               </ul>
             </div>
           </div>
-          <ExtendedMenu activeMenu={active} />
+          <ExtendedMenu activeMenu={active} setActive={setActive} toggleTheme={toggleTheme}/>
         </header>
       ) : (
         <header className={header ? styles.scrollUp : styles.scrollDown}>
           <div className={styles.triggerMenuWrapper}>
-            <p className={styles.logo} onClick={refresher}>
+            <p
+              className={
+                themeContext.primary === "#fff" ? styles.logo : styles.logoDark
+              }
+              onClick={refresher}
+            >
               EL-C
             </p>
+            <div className={styles.mobMenu}>
+            <li className={styles.themeToggle}>
+                  <input
+                    className={styles.darkLight}
+                    type="checkbox"
+                    id="dark-light"
+                    name="dark-light"
+                    onChange={() => toggleTheme()}
+                  />
+                  <label htmlFor="dark-light"></label>
+                </li>
             <button
               onClick={() => setActive(!active)}
               className={active ? styles.menuActive : styles.menu}
@@ -323,10 +381,16 @@ const Header = () => {
                 <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
                 <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
               </svg>
-            </button>
+            </button></div>
             <nav className={styles.nav}>
               {defLangState === "rus" ? (
-                <ul className={styles.menuNavList}>
+                <ul
+                  className={
+                    themeContext.primary === "#fff"
+                      ? styles.menuNavList
+                      : styles.menuNavListDark
+                  }
+                >
                   {menuLinksRus.map((link, ind) => (
                     <li key={ind} className={styles.menuSocialsLinkActive}>
                       <a
@@ -343,7 +407,13 @@ const Header = () => {
                 <></>
               )}
               {defLangState === "ukr" ? (
-                <ul className={styles.menuNavList}>
+                <ul
+                  className={
+                    themeContext.primary === "#fff"
+                      ? styles.menuNavList
+                      : styles.menuNavListDark
+                  }
+                >
                   {menuLinksUkr.map((link, ind) => (
                     <li
                       to={link.redirect}
@@ -364,7 +434,13 @@ const Header = () => {
                 <></>
               )}
               {defLangState === "en" ? (
-                <ul className={styles.menuNavList}>
+                <ul
+                  className={
+                    themeContext.primary === "#fff"
+                      ? styles.menuNavList
+                      : styles.menuNavListDark
+                  }
+                >
                   {menuLinksEng.map((link, ind) => (
                     <li
                       to={link.redirect}
@@ -436,7 +512,13 @@ const Header = () => {
                   <></>
                 )}
               </div>
-              <ul className={styles.menuSocialsList}>
+              <ul
+                className={
+                  themeContext.primary === "#fff"
+                    ? styles.menuSocialsList
+                    : styles.menuSocialsListDark
+                }
+              >
                 {/* <li className={styles.menuSocialsLink}>
                   <a
                     className={styles.menuSocialsCircle}
@@ -452,7 +534,7 @@ const Header = () => {
                     rel="noopener noreferrer"
                     className={styles.menuSocialsCircle}
                     target="_blank"
-                    href="https://www.facebook.com/favouriteprimark/"
+                    href="https://www.facebook.com/webelc"
                   >
                     <span></span>
                   </a>
@@ -462,7 +544,7 @@ const Header = () => {
                     rel="noopener noreferrer"
                     className={styles.menuSocialsCircle}
                     target="_blank"
-                    href="http://instagram.com/ante"
+                    href="https://www.instagram.com/webstudio_elc/?igshid=1gxjtn1ywqds7"
                   >
                     <span></span>
                   </a>
@@ -476,10 +558,20 @@ const Header = () => {
                     <span></span>
                   </a>
                 </li>
+                <li className={styles.themeToggle}>
+                  <input
+                    className={styles.darkLight}
+                    type="checkbox"
+                    id="dark-light"
+                    name="dark-light"
+                    onChange={() => toggleTheme()}
+                  />
+                  <label htmlFor="dark-light"></label>
+                </li>
               </ul>
             </div>
           </div>
-          <ExtendedMenu activeMenu={active} setActive={setActive} />
+          <ExtendedMenu activeMenu={active} setActive={setActive} toggleTheme={toggleTheme}/>
         </header>
       )}
     </>

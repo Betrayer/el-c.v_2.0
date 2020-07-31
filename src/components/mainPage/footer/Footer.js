@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { ThemeContext } from "styled-components";
 import css from "./footer.module.css";
 
 const Footer = () => {
   const history = useHistory();
+  const themeContext = useContext(ThemeContext);
   const [defLangState] = useState(localStorage.getItem("lang"));
   useEffect(() => {}, [defLangState]);
   return (
@@ -27,7 +29,7 @@ const Footer = () => {
                 {defLangState === "en" ? "Contacts" : ""}
               </h3>
               <ul className={css.contactsList}>
-                <li className={css.contactsListItem}>
+              <li className={themeContext.primary === "#fff" ?css.contactsListItem : css.contactsListItemDark}>
                   <a
                     className={css.contactsLink}
                     href="tel:+380680524300"
@@ -39,7 +41,7 @@ const Footer = () => {
                     </svg>
                   </a>
                 </li>
-                <li className={css.contactsListItem}>
+                <li className={themeContext.primary === "#fff" ? css.contactsListItem : css.contactsListItemDark}>
                   <a
                     className={css.contactsLink}
                     href="tel:+380663862689"
@@ -51,7 +53,7 @@ const Footer = () => {
                     </svg>
                   </a>
                 </li>
-                <li className={css.contactsListItem}>
+                <li className={themeContext.primary === "#fff" ? css.contactsListItem : css.contactsListItemDark}>
                   <a
                     className={css.contactsLink}
                     href="mailto:Ellie.Yelizarieva@el-c.com.ua"
@@ -65,7 +67,7 @@ const Footer = () => {
                     </svg>
                   </a>
                 </li>
-                <li className={css.contactsListItem}>
+                <li className={themeContext.primary === "#fff" ?css.contactsListItem : css.contactsListItemDark}>
                   <a
                     className={css.contactsLink}
                     href="https://2gis.ua/kiev/geo/15059546909457325?m=30.505205%2C50.512694%2F18.5"
@@ -96,7 +98,7 @@ const Footer = () => {
                 {defLangState === "ukr" ? "Ми в соцмережах" : ""}
                 {defLangState === "en" ? "Social media" : ""}
               </h3>
-              <ul className={css.socialsList}>
+              <ul className={themeContext.primary === "#fff" ? css.socialsList :css.socialsListDark}>
                 <li className={css.socialsListItem}>
                   <a
                     rel="noopener noreferrer"
