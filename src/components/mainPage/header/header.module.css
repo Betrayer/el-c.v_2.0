@@ -191,6 +191,90 @@
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
+.mobMenu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90px;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+.themeToggle:hover, .themeToggle:hover label, .themeToggle:hover .darkLight:checked + label{
+transform: scale(1.1);
+}
+.themeToggle:hover .darkLight:checked + label{
+  transform: scale(1.1) rotate(360deg);
+}
+.darkLight:checked + label,
+.darkLight:not(:checked) + label{
+  position: relative;
+  /* top: 20px;
+  right: 20px; */
+  z-index: 20000;
+  display: block;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  transition: all 200ms linear;
+  box-shadow: 0 0 25px rgba(255, 234, 167, 0.312);
+}
+.darkLight:checked + label{
+  transform: rotate(360deg);
+}
+.darkLight:checked + label:after,
+.darkLight:not(:checked) + label:after{
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  z-index: 2;
+  display: block;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  background-color: #091847;
+  background-image: url('https://assets.codepen.io/1462889/moon.svg');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 200ms linear;
+  opacity: 0;
+}
+.darkLight:checked + label:after {
+  opacity: 1;
+}
+.darkLight:checked + label:before,
+.darkLight:not(:checked) + label:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  display: block;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  background-color: #48dbfb;
+  background-image: url('https://assets.codepen.io/1462889/sun.svg');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 200ms linear;
+}
+.darkLight:checked + label:before{
+  background-color: #000;
+}
+.darkLight:checked ~ .lightBack{
+  opacity: 1;
+}
 @media (min-width: 900px) {
   .triggerMenuWrapper {
     height: 100px;
@@ -221,7 +305,7 @@
   }
 }
 @media (min-width: 1200px) {
-  .menu {
+  .mobMenu {
     display: none;
   }
   .logo,
@@ -374,80 +458,6 @@
   .menuSocialsLink:nth-child(3):hover::after {
     background-image: url(../../../assets/icons/socials/phoneWh.svg);
   }
-  [type="checkbox"]:checked,
-[type="checkbox"]:not(:checked){
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
-  pointer-events: none;
-}
-.themeToggle:hover, .themeToggle:hover label, .themeToggle:hover label:before{
-transform: scale(1.1);
-}
-.darkLight:checked + label,
-.darkLight:not(:checked) + label{
-  position: relative;
-  /* top: 20px;
-  right: 20px; */
-  z-index: 20000;
-  display: block;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  cursor: pointer;
-  transition: all 200ms linear;
-  box-shadow: 0 0 25px rgba(255, 234, 167, 0.312);
-}
-.darkLight:checked + label{
-  transform: rotate(360deg);
-}
-.darkLight:checked + label:after,
-.darkLight:not(:checked) + label:after{
-  position: absolute;
-  content: '';
-  top: 1px;
-  left: 1px;
-  overflow: hidden;
-  z-index: 2;
-  display: block;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  background-color: #091847;
-  background-image: url('https://assets.codepen.io/1462889/moon.svg');
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: all 200ms linear;
-  opacity: 0;
-}
-.darkLight:checked + label:after {
-  opacity: 1;
-}
-.darkLight:checked + label:before,
-.darkLight:not(:checked) + label:before{
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: 1;
-  display: block;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  background-color: #48dbfb;
-  background-image: url('https://assets.codepen.io/1462889/sun.svg');
-  background-size: 25px 25px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: all 200ms linear;
-}
-.darkLight:checked + label:before{
-  background-color: #000;
-}
-.darkLight:checked ~ .lightBack{
-  opacity: 1;
-}
+
 
 }

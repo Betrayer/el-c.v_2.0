@@ -87,6 +87,7 @@
     display: flex;
     width: 170px;
     justify-content: space-around;
+    align-items: center;
   }
   .menuSocialsLink {
     width: 36px;
@@ -223,6 +224,7 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
   }
+  
   @media (min-width: 500px){
     .circleExpand{
       width:1400px;

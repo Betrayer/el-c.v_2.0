@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./extendedMenu.module.css";
 import { useHistory } from "react-router-dom";
 
-const ExtendedMenu = ({ activeMenu, setActive }) => {
+const ExtendedMenu = ({ activeMenu, setActive, toggleTheme }) => {
   const history = useHistory();
   const [langSwitcher, setLangSwitcher] = useState(false);
   const [defLangState, setDefLangState] = useState(
