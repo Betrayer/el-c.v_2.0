@@ -35,7 +35,7 @@ const Footer = () => {
                     href="tel:+380680524300"
                     rel="noopener noreferrer"
                   >
-                    <span className={css.linkText}>+38 067 809 55 78</span>
+                    <span className={css.linkText}>+38 068 052 43 00</span>
                     <svg className={css.underline} viewBox="0 0 13 20">
                       <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
                     </svg>
