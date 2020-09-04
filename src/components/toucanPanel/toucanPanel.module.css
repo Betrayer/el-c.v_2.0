@@ -113,6 +113,50 @@
 .getInTouchBtn:hover {
   transform: translate(-50%) scale(1);
 }
+.goDownBtn{
+  /* background-color: #ccc; */
+  background-color: transparent;
+  width: 48px;
+  height: 50px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  mix-blend-mode: difference;
+  top: 90%;
+  padding: 0px 10px;
+  padding-top: 4px;
+  transition-duration: 0.3s;
+}
+@keyframes opacityArrow {
+  0% {
+    opacity: 1;
+  }
+  40%,50% {
+    opacity: 0.4;
+  }
+  80%, 100% {
+    opacity: 1;
+  }
+}
+.topArrow, .bottomArrow{
+  background-image: url(../../assets/icons/arrowToucan.svg);
+  width: 24px;
+  height: 24px;
+  transform: rotate(90deg);
+  /* animation-name: opacity; */
+  animation: opacityArrow 1s linear infinite;
+}
+.bottomArrow{
+  animation-delay: 0.3s;
+}
+.topArrow{
+  position: absolute;
+  top: 8%;
+}
+.goDownBtn:hover{
+  transform: translateX(-50%) scale(1.2);
+}
 @media (min-width: 700px) {
   .getInTouchBtn {
     width: 304px;
