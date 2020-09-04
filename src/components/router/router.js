@@ -8,7 +8,7 @@ const lazyMain = lazy(
 const lazyThankYou = lazy(
   () =>
     import(
-      "../pages/thankyouPage/ThankyouPage.js"
+      "../pages/thankyouPage/thankyouPage.js"
     ) /* webpackChunkName: 'Thankyou' */
 );
 

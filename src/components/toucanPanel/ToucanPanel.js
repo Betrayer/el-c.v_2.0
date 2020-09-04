@@ -608,7 +608,6 @@ const ToucanPanel = () => {
                 intFrameWidth > 700 ? styles.textTop : styles.textTopMob
               }
             >
-              {" "}
               {defLangState === "rus" ? "студия" : ""}
               {defLangState === "ukr" ? "студія" : ""}
               {defLangState === "en" ? "digital" : ""}
@@ -648,6 +647,10 @@ const ToucanPanel = () => {
             {defLangState === "rus" ? "Оставить заявку" : ""}
             {defLangState === "ukr" ? "Залишити заявку" : ""}
             {defLangState === "en" ? "Contact Us" : ""}
+          </button>
+          <button className={styles.goDownBtn}>
+            <div className={styles.topArrow}></div>
+            <div className={styles.bottomArrow}></div>
           </button>
         </div>
       ) : history.location.pathname === "/gratitude" ? (
