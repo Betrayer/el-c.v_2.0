@@ -106,6 +106,17 @@ img {
   display: block;
 }
 
+/* Bodya's code below is hidin' vertical scrollbar in most used browsers */
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* .container {
   width: 80%;
   margin: 0 auto;
