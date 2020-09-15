@@ -16,10 +16,19 @@ const ToucanPanel = () => {
     document.getElementById("form").scrollIntoView({ behavior: "smooth" });
   };
 
+  const explore = () => {
+    document.getElementById("weWork").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <>
       {history.location.pathname === "/" ? (
-        <div id="toucan" className={themeContext.primary === "#fff" ? styles.toucan : styles.toucanDark}>
+        <div
+          id="toucan"
+          className={
+            themeContext.primary === "#fff" ? styles.toucan : styles.toucanDark
+          }
+        >
           {intFrameWidth > 700 ? (
             <Particles
               className={styles.particles}
@@ -28,14 +37,18 @@ const ToucanPanel = () => {
                 backgroundMask: {
                   cover: {
                     color: {
-                      value: themeContext.primary === "#fff" ? {
-                        r: 255,
-                        g: 255,
-                        b: 255,
-                      } : {
-                        r: 40,
-                        g: 40,
-                        b: 42,},
+                      value:
+                        themeContext.primary === "#fff"
+                          ? {
+                              r: 255,
+                              g: 255,
+                              b: 255,
+                            }
+                          : {
+                              r: 40,
+                              g: 40,
+                              b: 42,
+                            },
                     },
                     opacity: 1,
                   },
@@ -648,7 +661,7 @@ const ToucanPanel = () => {
             {defLangState === "ukr" ? "Залишити заявку" : ""}
             {defLangState === "en" ? "Contact Us" : ""}
           </button>
-          <button className={styles.goDownBtn}>
+          <button className={styles.goDownBtn} onClick={explore}>
             <div className={styles.topArrow}></div>
             <div className={styles.bottomArrow}></div>
           </button>
