@@ -105,12 +105,12 @@
   background-image: url(../../../assets/photos/thirdElemLi.png);
 }
 .portfolioListItem:nth-child(2) .portfolioListTextWrapper {
-  border: 3px solid #ec544e;
-  top: -60px;
+  border: 3px solid #b3563e;
+  top: -44px;
   padding: 26px 4px 4px;
 }
 .portfolioListItem:nth-child(2) .portfolioButton {
-  background-color: #ec544e;
+  background-color: #b3563e;
 }
 .portfolioListItem:nth-child(2) .portfolioListItemBg {
   background-image: url(../../../assets/photos/second.png);
@@ -126,6 +126,7 @@
 @media (min-width: 768px) {
   .portfolioSection {
     padding-top: 100px;
+    width: 100%;
   }
   .portfolioTitle {
     font-size: 30px;
@@ -177,16 +178,16 @@
     opacity: var(--opacity);
   }
   .portfolioListItem:nth-child(2) .portfolioListTextWrapper {
-    background-color: #ec544e;
+    background-color: #b3563e;
     align-items: flex-start;
     padding: 40px 40px 20px;
   }
   .portfolioListItem:nth-child(2) .portfolioListItemBg {
     right: -0%;
-    bottom: 70%;
-    height: 260px;
+    bottom: 40%;
+    height: 360px;
     background-size: 100%;
-    max-width: 350px;
+    max-width: 270px;
   }
   .portfolioListItem:nth-child(3) .portfolioListTextWrapper {
     background-color: rgb(125, 69, 131);
@@ -222,9 +223,6 @@
     transform: scale(1.2);
     margin-top: 320px;
   }
-  .portfolioListItem:nth-child(2).portfolioListItemBg {
-    height: 300px;
-  }
   .portfolioListItem:nth-child(3) {
     margin-top: 280px;
   }
@@ -239,6 +237,11 @@
   }
   .portfolioListItem:nth-child(3) {
     margin-top: 280px;
+  }
+
+  .portfolioListItem:nth-child(2) .portfolioListItemBg {
+    height: 400px;
+    max-width: 290px;
   }
 }
 @media (min-width: 1500px) {

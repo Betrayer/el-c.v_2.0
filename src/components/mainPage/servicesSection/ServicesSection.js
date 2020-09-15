@@ -7,19 +7,19 @@ const ServicesSection = () => {
   const [defLangState] = useState(localStorage.getItem("lang"));
   useEffect(() => {}, [defLangState]);
 
-  const hover = (element, name) => {
-    element.setAttribute(
-      "src",
-      `require(../../../assets/services/${name}.svg)`
-    );
-  };
+  // const hover = (element, name) => {
+  //   element.setAttribute(
+  //     "src",
+  //     `require(../../../assets/services/${name}.svg)`
+  //   );
+  // };
 
-  const unhover = (element, name) => {
-    element.setAttribute(
-      "src",
-      `require(../../../assets/services/${name}.svg)`
-    );
-  };
+  // const unhover = (element, name) => {
+  //   element.setAttribute(
+  //     "src",
+  //     `require(../../../assets/services/${name}.svg)`
+  //   );
+  // };
 
   return (
     <section id="services" className={css.servicesSection}>

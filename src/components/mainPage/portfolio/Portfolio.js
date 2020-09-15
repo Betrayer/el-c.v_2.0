@@ -47,7 +47,7 @@ const Portfolio = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="http://1776483.ub393109.web.hosting-test.net/"
+                  href="https://www.nailedsalon.com.ua/"
                   className={styles.portfolioButton}
                 >
                   {defLangState === "rus" ? "Посмотреть демо" : ""}
